@@ -1,5 +1,5 @@
 //
-//  FirstViewController.h
+//  ThirdViewController.h
 //  spinningHalfApp1
 //
 //  Created by andre trosky on 28/02/13.
@@ -8,8 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface FirstViewController : UIViewController
-
-@property (strong, nonatomic) IBOutlet UIWebView *webView;
+@interface ThirdViewController : UIViewController
 
 @end

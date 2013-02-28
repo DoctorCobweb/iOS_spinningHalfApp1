@@ -23,6 +23,12 @@
 		6580AEFA16DEEF6E0051F1FB /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580AEF916DEEF6E0051F1FB /* SecondViewController.m */; };
 		6580AEFC16DEEF6E0051F1FB /* second.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AEFB16DEEF6E0051F1FB /* second.png */; };
 		6580AEFE16DEEF6E0051F1FB /* second@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AEFD16DEEF6E0051F1FB /* second@2x.png */; };
+		6580AF0616DEF00A0051F1FB /* ThirdViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580AF0516DEF00A0051F1FB /* ThirdViewController.m */; };
+		6580AF0916DEF0160051F1FB /* FourthViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6580AF0816DEF0160051F1FB /* FourthViewController.m */; };
+		6580AF0C16DEF3570051F1FB /* fourth.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0A16DEF3560051F1FB /* fourth.png */; };
+		6580AF0D16DEF3570051F1FB /* fourth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0B16DEF3570051F1FB /* fourth@2x.png */; };
+		6580AF1016DEF35E0051F1FB /* third.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0E16DEF35E0051F1FB /* third.png */; };
+		6580AF1116DEF35E0051F1FB /* third@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0F16DEF35E0051F1FB /* third@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +54,14 @@
 		6580AEF916DEEF6E0051F1FB /* SecondViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
 		6580AEFB16DEEF6E0051F1FB /* second.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = second.png; sourceTree = "<group>"; };
 		6580AEFD16DEEF6E0051F1FB /* second@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "second@2x.png"; sourceTree = "<group>"; };
+		6580AF0416DEF00A0051F1FB /* ThirdViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ThirdViewController.h; sourceTree = "<group>"; };
+		6580AF0516DEF00A0051F1FB /* ThirdViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ThirdViewController.m; sourceTree = "<group>"; };
+		6580AF0716DEF0160051F1FB /* FourthViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FourthViewController.h; sourceTree = "<group>"; };
+		6580AF0816DEF0160051F1FB /* FourthViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FourthViewController.m; sourceTree = "<group>"; };
+		6580AF0A16DEF3560051F1FB /* fourth.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = fourth.png; sourceTree = "<group>"; };
+		6580AF0B16DEF3570051F1FB /* fourth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fourth@2x.png"; sourceTree = "<group>"; };
+		6580AF0E16DEF35E0051F1FB /* third.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = third.png; sourceTree = "<group>"; };
+		6580AF0F16DEF35E0051F1FB /* third@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "third@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,10 +115,18 @@
 				6580AEF216DEEF6E0051F1FB /* FirstViewController.m */,
 				6580AEF416DEEF6E0051F1FB /* first.png */,
 				6580AEF616DEEF6E0051F1FB /* first@2x.png */,
+				6580AF0A16DEF3560051F1FB /* fourth.png */,
+				6580AF0E16DEF35E0051F1FB /* third.png */,
+				6580AF0F16DEF35E0051F1FB /* third@2x.png */,
+				6580AF0B16DEF3570051F1FB /* fourth@2x.png */,
+				6580AF0716DEF0160051F1FB /* FourthViewController.h */,
+				6580AF0816DEF0160051F1FB /* FourthViewController.m */,
 				6580AEF816DEEF6E0051F1FB /* SecondViewController.h */,
 				6580AEF916DEEF6E0051F1FB /* SecondViewController.m */,
 				6580AEFB16DEEF6E0051F1FB /* second.png */,
 				6580AEFD16DEEF6E0051F1FB /* second@2x.png */,
+				6580AF0416DEF00A0051F1FB /* ThirdViewController.h */,
+				6580AF0516DEF00A0051F1FB /* ThirdViewController.m */,
 				6580AEDD16DEEF6E0051F1FB /* Supporting Files */,
 			);
 			path = spinningHalfApp1;
@@ -184,6 +206,10 @@
 				6580AEF716DEEF6E0051F1FB /* first@2x.png in Resources */,
 				6580AEFC16DEEF6E0051F1FB /* second.png in Resources */,
 				6580AEFE16DEEF6E0051F1FB /* second@2x.png in Resources */,
+				6580AF0C16DEF3570051F1FB /* fourth.png in Resources */,
+				6580AF0D16DEF3570051F1FB /* fourth@2x.png in Resources */,
+				6580AF1016DEF35E0051F1FB /* third.png in Resources */,
+				6580AF1116DEF35E0051F1FB /* third@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -198,6 +224,8 @@
 				6580AEE716DEEF6E0051F1FB /* AppDelegate.m in Sources */,
 				6580AEF316DEEF6E0051F1FB /* FirstViewController.m in Sources */,
 				6580AEFA16DEEF6E0051F1FB /* SecondViewController.m in Sources */,
+				6580AF0616DEF00A0051F1FB /* ThirdViewController.m in Sources */,
+				6580AF0916DEF0160051F1FB /* FourthViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

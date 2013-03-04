@@ -8,9 +8,16 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SecondViewController : UIViewController
+@interface SecondViewController : UIViewController <UITableViewDelegate, UITableViewDataSource, NSXMLParserDelegate>
+{
+    //NSMutableString *currentString;
+}
 
 @property (nonatomic, strong) NSMutableData *receivedData;
-@property (weak, nonatomic) IBOutlet UITextView *webServiceContent;
+@property (nonatomic, strong) NSMutableString *currentString;
+
+//@property (weak, nonatomic) IBOutlet UITextView *webServiceContent;
+//@property (weak, nonatomic) IBOutlet UILabel *gigLabel;
+
 
 @end

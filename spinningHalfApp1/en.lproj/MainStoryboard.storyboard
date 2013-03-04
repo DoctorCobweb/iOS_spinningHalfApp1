@@ -43,28 +43,38 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfT-ie-ZeK">
-                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="d5S-QC-JU6">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell contentMode="scaleToFill" restorationIdentifier="" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="gigCell" id="Dja-8O-R3n">
+                                        <rect key="frame" x="0.0" y="22" width="320" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="300" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="3" id="wQf-OG-77j"/>
+                                    <outlet property="delegate" destination="3" id="VgJ-Pz-QZc"/>
+                                </connections>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="rfT-ie-ZeK" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8Jb-K7-DDU"/>
-                            <constraint firstItem="rfT-ie-ZeK" firstAttribute="top" secondItem="17" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8lY-rV-YBx"/>
-                            <constraint firstAttribute="bottom" secondItem="rfT-ie-ZeK" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="qw4-JQ-aQg"/>
-                            <constraint firstAttribute="trailing" secondItem="rfT-ie-ZeK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="yCW-ei-gyA"/>
+                            <constraint firstItem="d5S-QC-JU6" firstAttribute="top" secondItem="17" secondAttribute="top" type="default" id="DXG-M8-qOL"/>
+                            <constraint firstItem="d5S-QC-JU6" firstAttribute="leading" secondItem="17" secondAttribute="leading" type="default" id="PbO-xj-KWj"/>
+                            <constraint firstItem="d5S-QC-JU6" firstAttribute="bottom" secondItem="17" secondAttribute="bottom" type="default" id="R4q-D6-pDm"/>
+                            <constraint firstItem="d5S-QC-JU6" firstAttribute="trailing" secondItem="17" secondAttribute="trailing" type="default" id="Sb6-WD-VVZ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tee-oz-Dvx"/>
-                    <connections>
-                        <outlet property="webServiceContent" destination="rfT-ie-ZeK" id="AaJ-h9-FU0"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1245" y="-82"/>
+            <point key="canvasLocation" x="1250" y="-103"/>
         </scene>
         <!--Fourth View Controller - Contact-->
         <scene sceneID="dnb-7D-KBK">
@@ -245,6 +255,7 @@
         <class className="SecondViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
             <relationships>
+                <relationship kind="outlet" name="gigLabel" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="webServiceContent" candidateClass="UITextView"/>
             </relationships>
         </class>

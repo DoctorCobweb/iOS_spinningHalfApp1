@@ -12,16 +12,30 @@
 
 @end
 
-@implementation SecondViewController
+@implementation SecondViewController {
+    NSArray *gigs;
+    NSMutableArray *gigsFromXml;
+    int gigCount;
+}
 
 @synthesize receivedData;
-@synthesize webServiceContent;
+//@synthesize webServiceContent;
+//@synthesize gigLabel;
+@synthesize currentString;
 
 - (void)viewDidLoad
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
     self.title =@"Gig Guide";
+    
+    gigs = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    
+    gigsFromXml = [[NSMutableArray alloc] init];
+    
+    gigCount = 0;
+
+
     
     //create a connection to the gig guide web service, download text
     //and display it to a text view.
@@ -60,6 +74,9 @@
         NSLog(@"The connection failed, dude.");
     }
 }
+
+
+//-----START: NSURLConnection delegate methods-----------------
 
 //NSURLConnection delegate method.
 - (void)connection:(NSURLConnection *)connection didReceiveResponse:(NSURLResponse *)response
@@ -111,15 +128,162 @@
     //set the webServiceContent text view to be
     //content of receivedData.
     
+    /*
     //first define a string variable which has its contents set to
     //be the contents of receivedData variable. also must specify the
     //encoding to be used for the string.
-    NSString *theData = [[NSString alloc] initWithData:receivedData encoding:NSASCIIStringEncoding];
+    NSString *theData = [[NSString alloc] initWithData:receivedData encoding:NSUTF8StringEncoding];
     
     //now we can finally set the contents for the text view.
     self.webServiceContent.text = theData;
+    */
+     
+    //alloc and init the parser object, fill it with the
+    //downloaded data then start parsing xml.
+    //also we are setting this view controller to be the
+    //delegate of the parser, which means that the parser
+    //will call its delegate methods when 'events' occur
+    //and expect to find the implementations of the methods
+    //in this file.
+    NSXMLParser *parser = [[NSXMLParser alloc] initWithData:receivedData];
+    self.currentString = [NSMutableString string];
+    parser.delegate = self;
+    //???if we initialize self.currentString = nil,
+    //the [currentString appendString:string] method in parser:foundCharacters
+    //is always nil! must be forever setting it...
+    //the parser works however if we user the following way to initialize it:
+    [self.currentString setString:@""];
+    //if we comment the above line out, it still works. i dont get it yet fully.
+    
+    NSLog(@"connection:didFinishLoading should only be called ONCE.");
+    
+    [parser parse];
+    
+
 }
 
+//-------END: NSURLConnection delegate methods-----------------
+
+//-------START: NSXMLParser delegate methods-------------------
+
+static NSString * kName_allGigs = @"allGigs";
+static NSString * kName_gig = @"gig";
+static NSString * kName_author = @"author";
+static NSString * kName_show = @"show";
+static NSString * kName_date = @"date";
+static NSString * kName_venue = @"venue";
+static NSString * kName_description = @"description";
+static NSString * kName_tixUrl = @"tixUrl";
+static NSString * kName_price = @"price";
+
+- (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
+{
+    if ([elementName isEqualToString:kName_allGigs]) {
+        NSLog(@"start tag for ALL_GIGS\n");
+    } else if([elementName isEqualToString:kName_gig]) {
+        NSLog(@"start tag for GIG\n");
+    }else if ([elementName isEqualToString:kName_author]) {
+        NSLog(@"start tag for AUTHOR\n");
+    } else if ([elementName isEqualToString:kName_show]) {
+        NSLog(@"start tag for SHOW\n");
+    } else if ([elementName isEqualToString:kName_date]) {
+        NSLog(@"start tag for DATE\n");
+    } else if ([elementName isEqualToString:kName_venue]) {
+        NSLog(@"start tag for VENUE\n");
+    } else if ([elementName isEqualToString:kName_description]) {
+        NSLog(@"start tag for DESCRIPTION\n");
+    } else if ([elementName isEqualToString:kName_tixUrl]) {
+        NSLog(@"start tag for TIXURL\n");
+    } else if ([elementName isEqualToString:kName_price]) {
+        NSLog(@"start tag for PRICE\n");
+    }
+    //call this to reset the string to be empty before cycling thru again
+    //and appending more content to currentString.
+    [currentString setString:@""];
+}
+
+
+- (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
+{
+    if ([elementName isEqualToString:kName_gig]) {
+        NSLog(@"didEndElement tag for GIG\n");
+        NSLog(@"content: %@\n", currentString);
+        [gigsFromXml addObject:currentString];
+        gigCount++;
+    } else if ([elementName isEqualToString:kName_author]) {
+        NSLog(@"didEndElement tag for AUTHOR\n");
+        NSLog(@"content: %@\n", currentString);
+    } else if ([elementName isEqualToString:kName_show]) {
+        NSLog(@"didEndElement tag for SHOW\n");
+        NSLog(@"content: %@\n", currentString);
+    } else if ([elementName isEqualToString:kName_date]) {
+        NSLog(@"didEndElement tag for DATE\n");
+        NSLog(@"content: %@\n", currentString);
+    } else if ([elementName isEqualToString:kName_venue]) {
+        NSLog(@"didEndElement tag for VENUE\n");
+        NSLog(@"content: %@\n", currentString);
+    } else if ([elementName isEqualToString:kName_description]) {
+        NSLog(@"didEndElement tag for DESCRIPTION\n");
+        NSLog(@"content: %@\n", currentString);
+    } else if ([elementName isEqualToString:kName_tixUrl]) {
+        NSLog(@"didEndElement tag for TIXURL\n");
+        NSLog(@"content: %@\n", currentString);
+    } else if ([elementName isEqualToString:kName_price]) {
+        NSLog(@"didEndElement tag for PRICE\n");
+        NSLog(@"content: %@\n", currentString);
+    } else if ([elementName isEqualToString:kName_allGigs]) {
+        NSLog(@"didEndElement tag for ALLGIGS\n");
+        NSLog(@"TOTAL NUMBER OF GIGS: %d\n", gigCount);
+        NSLog(@"TOTOAL NUMBER OF OBJECTS in gigsFromXml array: %d", [gigsFromXml count]);
+    }
+
+    //currentString = nil;
+}
+
+
+- (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
+{
+    NSLog(@"in foundCharacters: method of parser.\n");
+    NSLog(@"input string for parser:foundCharacters: method is: %@", string);
+    //NSMutableString *temp = currentString;
+    [currentString appendString:string];
+    
+    NSLog(@"currentString is now: %@", currentString);
+}
+
+
+
+
+
+
+
+
+
+//-------END:NSXMLParser delegate methods----------------------
+
+
+//-------START: table view delegate methods--------------------
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [gigs count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"gigCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    cell.textLabel.text = [gigs objectAtIndex:indexPath.row];
+    return cell;
+}
+
+//-----END: table view delegate methods------------------------
 
 
 - (void)didReceiveMemoryWarning

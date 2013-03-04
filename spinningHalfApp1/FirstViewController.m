@@ -23,7 +23,6 @@
     NSURL *url = [NSURL URLWithString:urlAddress];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];
-    
 }
 
 - (void)didReceiveMemoryWarning

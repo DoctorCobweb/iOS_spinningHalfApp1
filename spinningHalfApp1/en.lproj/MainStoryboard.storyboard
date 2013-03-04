@@ -43,37 +43,30 @@
                         <rect key="frame" x="0.0" y="64" width="320" height="455"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Second View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="22">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the second view controller — an instance of SecondViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="23">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="cQR-IW-sY8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rfT-ie-ZeK">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="22" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0q6-IA-e8m"/>
-                            <constraint firstAttribute="trailing" secondItem="23" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="fR4-wH-Ih7"/>
-                            <constraint firstItem="23" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="fzb-YA-SeR"/>
-                            <constraint firstAttribute="centerY" secondItem="23" secondAttribute="centerY" type="user" id="llH-eD-iPS"/>
-                            <constraint firstAttribute="trailing" secondItem="22" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="pc3-9Y-W42"/>
-                            <constraint firstItem="23" firstAttribute="top" secondItem="22" secondAttribute="bottom" constant="40" type="user" id="yUx-Ee-KEk"/>
+                            <constraint firstItem="rfT-ie-ZeK" firstAttribute="leading" secondItem="17" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="8Jb-K7-DDU"/>
+                            <constraint firstItem="rfT-ie-ZeK" firstAttribute="top" secondItem="17" secondAttribute="top" constant="20" symbolic="YES" type="default" id="8lY-rV-YBx"/>
+                            <constraint firstAttribute="bottom" secondItem="rfT-ie-ZeK" secondAttribute="bottom" constant="20" symbolic="YES" type="default" id="qw4-JQ-aQg"/>
+                            <constraint firstAttribute="trailing" secondItem="rfT-ie-ZeK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="yCW-ei-gyA"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Tee-oz-Dvx"/>
+                    <connections>
+                        <outlet property="webServiceContent" destination="rfT-ie-ZeK" id="AaJ-h9-FU0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="12" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1245" y="-82"/>
         </scene>
-        <!--Fourth View Controller - Fourth-->
+        <!--Fourth View Controller - Contact-->
         <scene sceneID="dnb-7D-KBK">
             <objects>
                 <viewController id="Qya-Vj-Whd" customClass="FourthViewController" sceneMemberID="viewController">
@@ -107,11 +100,11 @@
                             <constraint firstItem="9vq-wk-bFB" firstAttribute="trailing" secondItem="CNH-e6-ehf" secondAttribute="trailing" type="default" id="uyH-2Z-KWe"/>
                         </constraints>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Fourth" image="fourth.png" id="kun-iS-DDe"/>
+                    <tabBarItem key="tabBarItem" title="Contact" image="fourth.png" id="kun-iS-DDe"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5os-m2-6tS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1245" y="1302"/>
+            <point key="canvasLocation" x="1771" y="1302"/>
         </scene>
         <!--Third View Controller-->
         <scene sceneID="ZEZ-gt-R2Z">
@@ -172,11 +165,11 @@
             </objects>
             <point key="canvasLocation" x="180" y="172"/>
         </scene>
-        <!--Navigation Controller - First-->
+        <!--Navigation Controller - News-->
         <scene sceneID="CUR-cr-oAr">
             <objects>
                 <navigationController id="Z6A-71-nuh" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="First" image="first" id="7"/>
+                    <tabBarItem key="tabBarItem" title="News" image="first" id="7"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="48S-kj-HFD">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -191,11 +184,11 @@
             </objects>
             <point key="canvasLocation" x="759" y="-764"/>
         </scene>
-        <!--Navigation Controller - Second-->
+        <!--Navigation Controller - Gig Guide-->
         <scene sceneID="TLo-f0-6rm">
             <objects>
                 <navigationController id="lN7-gf-8Md" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Second" image="second" id="6"/>
+                    <tabBarItem key="tabBarItem" title="Gig Guide" image="second" id="6"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="g9f-iH-rCR">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -210,11 +203,11 @@
             </objects>
             <point key="canvasLocation" x="765" y="-70"/>
         </scene>
-        <!--Navigation Controller - Third-->
+        <!--Navigation Controller - Services-->
         <scene sceneID="ewT-Ak-FXs">
             <objects>
                 <navigationController storyboardIdentifier="" id="NTC-9Z-ShZ" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Third" image="third.png" id="JpK-0J-SoT"/>
+                    <tabBarItem key="tabBarItem" title="Services" image="third.png" id="JpK-0J-SoT"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="O3C-qh-2Fp">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -251,6 +244,9 @@
         </class>
         <class className="SecondViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webServiceContent" candidateClass="UITextView"/>
+            </relationships>
         </class>
         <class className="ThirdViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ThirdViewController.h"/>

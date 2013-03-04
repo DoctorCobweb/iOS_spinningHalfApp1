@@ -10,4 +10,7 @@
 
 @interface SecondViewController : UIViewController
 
+@property (nonatomic, strong) NSMutableData *receivedData;
+@property (weak, nonatomic) IBOutlet UITextView *webServiceContent;
+
 @end

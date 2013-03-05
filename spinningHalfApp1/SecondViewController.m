@@ -8,6 +8,7 @@
 
 #import "SecondViewController.h"
 #import "Gig.h"
+#import "GigDetailViewController.h"
 
 @interface SecondViewController ()
 
@@ -23,6 +24,7 @@
 
 @synthesize receivedData;
 @synthesize currentString;
+@synthesize tableView;
 
 - (void)viewDidLoad
 {
@@ -98,9 +100,10 @@
     }
     
     //textLabel is a default identifier for a label in prototype cell.
+    //but now we are using a a custom cell protoype.
     Gig *tmp_gig = [gigs objectAtIndex:indexPath.row];
     tmp_gig.imageFile = @"green_tea.jpg";
-    NSString * _tmp = tmp_gig.show;
+    //NSString * _tmp = tmp_gig.show;
     UILabel *gigShow = (UILabel *)[cell viewWithTag:101];
     gigShow.text = tmp_gig.show;
     //cell.textLabel.text = _tmp;
@@ -385,8 +388,17 @@ static NSString * kName_price = @"price";
 }
 
 
-//-------END:NSXMLParser delegate methods----------------------
+//-------END:NSXMLParser delegate methods---------------------
 
+//-------START: Segue to Gig detail view delaga methods-----------
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"showGigDetail"]) {
+        NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+        GigDetailViewController *destViewController = segue.destinationViewController;
+        destViewController.theSelectedGig = [gigs objectAtIndex:indexPath.row];
+    }
+}
 
 
 - (void)didReceiveMemoryWarning

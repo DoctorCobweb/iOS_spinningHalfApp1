@@ -17,5 +17,7 @@
 @property (nonatomic, strong) NSMutableData *receivedData;
 @property (nonatomic, strong) NSMutableString *currentString;
 
+@property (nonatomic, strong) IBOutlet UITableView *tableView;
+
 
 @end

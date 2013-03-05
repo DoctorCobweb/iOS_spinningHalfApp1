@@ -31,6 +31,7 @@
 		6580AF1116DEF35E0051F1FB /* third@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0F16DEF35E0051F1FB /* third@2x.png */; };
 		65D4796616E57C3C00A48D07 /* Gig.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D4796516E57C3C00A48D07 /* Gig.m */; };
 		65D4796A16E597D500A48D07 /* green_tea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65D4796916E597D500A48D07 /* green_tea.jpg */; };
+		65D4796D16E5ACE600A48D07 /* GigDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D4796C16E5ACE600A48D07 /* GigDetailViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -67,6 +68,8 @@
 		65D4796416E57C3C00A48D07 /* Gig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gig.h; sourceTree = "<group>"; };
 		65D4796516E57C3C00A48D07 /* Gig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gig.m; sourceTree = "<group>"; };
 		65D4796916E597D500A48D07 /* green_tea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green_tea.jpg; sourceTree = "<group>"; };
+		65D4796B16E5ACE600A48D07 /* GigDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GigDetailViewController.h; sourceTree = "<group>"; };
+		65D4796C16E5ACE600A48D07 /* GigDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GigDetailViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -116,6 +119,8 @@
 				6580AEE516DEEF6E0051F1FB /* AppDelegate.h */,
 				6580AEE616DEEF6E0051F1FB /* AppDelegate.m */,
 				6580AEEE16DEEF6E0051F1FB /* MainStoryboard.storyboard */,
+				65D4796B16E5ACE600A48D07 /* GigDetailViewController.h */,
+				65D4796C16E5ACE600A48D07 /* GigDetailViewController.m */,
 				65D4796416E57C3C00A48D07 /* Gig.h */,
 				65D4796516E57C3C00A48D07 /* Gig.m */,
 				6580AEF116DEEF6E0051F1FB /* FirstViewController.h */,
@@ -244,6 +249,7 @@
 				6580AF0616DEF00A0051F1FB /* ThirdViewController.m in Sources */,
 				6580AF0916DEF0160051F1FB /* FourthViewController.m in Sources */,
 				65D4796616E57C3C00A48D07 /* Gig.m in Sources */,
+				65D4796D16E5ACE600A48D07 /* GigDetailViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

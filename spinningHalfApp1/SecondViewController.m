@@ -7,15 +7,18 @@
 //
 
 #import "SecondViewController.h"
+#import "Gig.h"
 
 @interface SecondViewController ()
 
 @end
 
 @implementation SecondViewController {
-    NSArray *gigs;
+    //NSArray *gigs;
     NSMutableArray *gigsFromXml;
     int gigCount;
+    NSMutableArray *gigs;
+    Gig *gig;
 }
 
 @synthesize receivedData;
@@ -27,11 +30,14 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.title =@"Gig Guide";
     
+    /*
     gigs = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
+    */
     
     gigsFromXml = [[NSMutableArray alloc] init];
-    
     gigCount = 0;
+    gig = [Gig new];
+    gigs = [[NSMutableArray alloc] init];
 
 
     
@@ -78,7 +84,7 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [gigsFromXml count];
+    return [gigs count];
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -92,7 +98,18 @@
     }
     
     //textLabel is a default identifier for a label in prototype cell.
-    cell.textLabel.text = [gigsFromXml objectAtIndex:indexPath.row];
+    Gig *tmp_gig = [gigs objectAtIndex:indexPath.row];
+    tmp_gig.imageFile = @"green_tea.jpg";
+    NSString * _tmp = tmp_gig.show;
+    UILabel *gigShow = (UILabel *)[cell viewWithTag:101];
+    gigShow.text = tmp_gig.show;
+    //cell.textLabel.text = _tmp;
+    
+    UILabel *gigDate = (UILabel *)[cell viewWithTag:102];
+    gigDate.text = tmp_gig.date;
+    
+    UIImageView *gigImageView = (UIImageView *) [cell viewWithTag:100];
+    gigImageView.image = [UIImage imageNamed:tmp_gig.imageFile];
     return cell;
 }
 
@@ -231,15 +248,68 @@ static NSString * kName_price = @"price";
 
 - (void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName
 {
+    
     if ([elementName isEqualToString:kName_gig]) {
         NSLog(@"didEndElement tag for GIG\n");
         NSLog(@"content: %@\n", currentString);
+        
+        //add the gig object to gigs array.
+        Gig *_tmpGig = [Gig new];
+        _tmpGig.author = gig.author;
+        _tmpGig.show = gig.show;
+        _tmpGig.date = gig.date;
+        _tmpGig.venue = gig.venue;
+        _tmpGig.description = gig.description;
+        _tmpGig.tixUrl = gig.tixUrl;
+        _tmpGig.price = gig.price;
+        
+        NSLog(@"TEMP GIG: %@, %@, %@, %@, %@, %@, %@",
+              _tmpGig.author,
+              _tmpGig.show,
+              _tmpGig.date,
+              _tmpGig.venue,
+              _tmpGig.description,
+              _tmpGig.tixUrl,
+              _tmpGig.price);
+        
+        [gigs addObject:_tmpGig];
+        NSLog(@"gigs array COUNT: %d",[gigs count]);
+        
+        int i = 0;
+        
+        NSLog(@"**********************************\n");
+        NSLog(@"----------------------------------\n");
+        
+        for (Gig *_dummyGig in gigs){
+            NSLog(@"gigs array CONTENT: Gig(%d): %@\n, %@\n, %@\n, %@\n, %@\n, %@\n, %@\n",
+                  i,
+                  _dummyGig.author,
+                  _dummyGig.show,
+                  _dummyGig.date,
+                  _dummyGig.venue,
+                  _dummyGig.description,
+                  _dummyGig.tixUrl,
+                  _dummyGig.price);
+            i++;
+            NSLog(@"----------------------------------\n");
+        }
+        NSLog(@"**********************************\n");
+        
+        
     } else if ([elementName isEqualToString:kName_author]) {
         NSLog(@"didEndElement tag for AUTHOR\n");
         NSLog(@"content: %@\n", currentString);
+        
+        NSString *_currentString = [currentString copy];
+        gig.author = _currentString;
+        
     } else if ([elementName isEqualToString:kName_show]) {
         NSLog(@"didEndElement tag for SHOW\n");
         NSLog(@"content: %@\n", currentString);
+        
+        NSString *_currentString = [currentString copy];
+        gig.show = _currentString;
+        
         if (currentString) {
             //you HAVE to alloc and init another NSString * variable before
             //putting it into the gigsFromXml array.
@@ -247,7 +317,8 @@ static NSString * kName_price = @"price";
             //an array of pointers pointing to the same location, which
             //will have as its contents, each element the same as the last thing
             //currentString pointed to.
-            NSString * _currentString = [[NSString alloc] initWithString:currentString];
+            //NSString * _currentString = [[NSString alloc] initWithString:currentString];
+            NSString *_currentString = [currentString copy];
             [gigsFromXml addObject:_currentString];
         }
         gigCount++;
@@ -257,24 +328,44 @@ static NSString * kName_price = @"price";
     } else if ([elementName isEqualToString:kName_date]) {
         NSLog(@"didEndElement tag for DATE\n");
         NSLog(@"content: %@\n", currentString);
+        
+        NSString *_currentString = [currentString copy];
+        gig.date = _currentString;
+        
     } else if ([elementName isEqualToString:kName_venue]) {
         NSLog(@"didEndElement tag for VENUE\n");
         NSLog(@"content: %@\n", currentString);
+        
+        NSString *_currentString = [currentString copy];
+        gig.venue = _currentString;
+        
     } else if ([elementName isEqualToString:kName_description]) {
         NSLog(@"didEndElement tag for DESCRIPTION\n");
         NSLog(@"content: %@\n", currentString);
+        
+        NSString *_currentString = [currentString copy];
+        gig.description = _currentString;
+        
     } else if ([elementName isEqualToString:kName_tixUrl]) {
         NSLog(@"didEndElement tag for TIXURL\n");
         NSLog(@"content: %@\n", currentString);
+        
+        NSString *_currentString = [currentString copy];
+        gig.tixUrl = _currentString;
+        
     } else if ([elementName isEqualToString:kName_price]) {
         NSLog(@"didEndElement tag for PRICE\n");
         NSLog(@"content: %@\n", currentString);
+        
+        NSString *_currentString = [currentString copy];
+        gig.price = _currentString;
+        
     } else if ([elementName isEqualToString:kName_allGigs]) {
         NSLog(@"didEndElement tag for ALLGIGS\n");
         NSLog(@"TOTAL NUMBER OF GIGS: %d\n", gigCount);
         NSLog(@"TOTOAL NUMBER OF OBJECTS in gigsFromXml array: %d", [gigsFromXml count]);
         for (NSString *_gig in gigsFromXml) {
-            NSLog(@"_GIG_: %@\n", _gig);
+            NSLog(@"gigsFromXml:_GIG_: %@\n", _gig);
         }
         [self.tableView reloadData];
     }

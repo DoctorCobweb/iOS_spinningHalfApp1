@@ -29,6 +29,8 @@
 		6580AF0D16DEF3570051F1FB /* fourth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0B16DEF3570051F1FB /* fourth@2x.png */; };
 		6580AF1016DEF35E0051F1FB /* third.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0E16DEF35E0051F1FB /* third.png */; };
 		6580AF1116DEF35E0051F1FB /* third@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0F16DEF35E0051F1FB /* third@2x.png */; };
+		65D4796616E57C3C00A48D07 /* Gig.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D4796516E57C3C00A48D07 /* Gig.m */; };
+		65D4796A16E597D500A48D07 /* green_tea.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 65D4796916E597D500A48D07 /* green_tea.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -62,6 +64,9 @@
 		6580AF0B16DEF3570051F1FB /* fourth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fourth@2x.png"; sourceTree = "<group>"; };
 		6580AF0E16DEF35E0051F1FB /* third.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = third.png; sourceTree = "<group>"; };
 		6580AF0F16DEF35E0051F1FB /* third@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "third@2x.png"; sourceTree = "<group>"; };
+		65D4796416E57C3C00A48D07 /* Gig.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Gig.h; sourceTree = "<group>"; };
+		65D4796516E57C3C00A48D07 /* Gig.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Gig.m; sourceTree = "<group>"; };
+		65D4796916E597D500A48D07 /* green_tea.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = green_tea.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +116,8 @@
 				6580AEE516DEEF6E0051F1FB /* AppDelegate.h */,
 				6580AEE616DEEF6E0051F1FB /* AppDelegate.m */,
 				6580AEEE16DEEF6E0051F1FB /* MainStoryboard.storyboard */,
+				65D4796416E57C3C00A48D07 /* Gig.h */,
+				65D4796516E57C3C00A48D07 /* Gig.m */,
 				6580AEF116DEEF6E0051F1FB /* FirstViewController.h */,
 				6580AEF216DEEF6E0051F1FB /* FirstViewController.m */,
 				6580AEF416DEEF6E0051F1FB /* first.png */,
@@ -127,6 +134,7 @@
 				6580AEFD16DEEF6E0051F1FB /* second@2x.png */,
 				6580AF0416DEF00A0051F1FB /* ThirdViewController.h */,
 				6580AF0516DEF00A0051F1FB /* ThirdViewController.m */,
+				65D4796816E597AB00A48D07 /* images */,
 				6580AEDD16DEEF6E0051F1FB /* Supporting Files */,
 			);
 			path = spinningHalfApp1;
@@ -144,6 +152,14 @@
 				6580AEEC16DEEF6E0051F1FB /* Default-568h@2x.png */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		65D4796816E597AB00A48D07 /* images */ = {
+			isa = PBXGroup;
+			children = (
+				65D4796916E597D500A48D07 /* green_tea.jpg */,
+			);
+			name = images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -210,6 +226,7 @@
 				6580AF0D16DEF3570051F1FB /* fourth@2x.png in Resources */,
 				6580AF1016DEF35E0051F1FB /* third.png in Resources */,
 				6580AF1116DEF35E0051F1FB /* third@2x.png in Resources */,
+				65D4796A16E597D500A48D07 /* green_tea.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -226,6 +243,7 @@
 				6580AEFA16DEEF6E0051F1FB /* SecondViewController.m in Sources */,
 				6580AF0616DEF00A0051F1FB /* ThirdViewController.m in Sources */,
 				6580AF0916DEF0160051F1FB /* FourthViewController.m in Sources */,
+				65D4796616E57C3C00A48D07 /* Gig.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -342,6 +360,7 @@
 				6580AF0316DEEF6E0051F1FB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

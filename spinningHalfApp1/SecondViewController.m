@@ -19,8 +19,6 @@
 }
 
 @synthesize receivedData;
-//@synthesize webServiceContent;
-//@synthesize gigLabel;
 @synthesize currentString;
 
 - (void)viewDidLoad
@@ -74,6 +72,34 @@
         NSLog(@"The connection failed, dude.");
     }
 }
+
+
+//-------START: table view delegate methods--------------------
+
+- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
+{
+    return [gigsFromXml count];
+}
+
+- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    static NSString *simpleTableIdentifier = @"gigCell";
+    
+    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
+    
+    if (cell == nil) {
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+    }
+    
+    //textLabel is a default identifier for a label in prototype cell.
+    cell.textLabel.text = [gigsFromXml objectAtIndex:indexPath.row];
+    return cell;
+}
+
+//-----END: table view delegate methods------------------------
+
+
+
 
 
 //-----START: NSURLConnection delegate methods-----------------
@@ -208,14 +234,26 @@ static NSString * kName_price = @"price";
     if ([elementName isEqualToString:kName_gig]) {
         NSLog(@"didEndElement tag for GIG\n");
         NSLog(@"content: %@\n", currentString);
-        [gigsFromXml addObject:currentString];
-        gigCount++;
     } else if ([elementName isEqualToString:kName_author]) {
         NSLog(@"didEndElement tag for AUTHOR\n");
         NSLog(@"content: %@\n", currentString);
     } else if ([elementName isEqualToString:kName_show]) {
         NSLog(@"didEndElement tag for SHOW\n");
         NSLog(@"content: %@\n", currentString);
+        if (currentString) {
+            //you HAVE to alloc and init another NSString * variable before
+            //putting it into the gigsFromXml array.
+            //if you just pass in currentString reference, then you end up with
+            //an array of pointers pointing to the same location, which
+            //will have as its contents, each element the same as the last thing
+            //currentString pointed to.
+            NSString * _currentString = [[NSString alloc] initWithString:currentString];
+            [gigsFromXml addObject:_currentString];
+        }
+        gigCount++;
+        for (NSString *_gig in gigsFromXml) {
+            NSLog(@"_GIG_: %@\n", _gig);
+        }
     } else if ([elementName isEqualToString:kName_date]) {
         NSLog(@"didEndElement tag for DATE\n");
         NSLog(@"content: %@\n", currentString);
@@ -235,6 +273,10 @@ static NSString * kName_price = @"price";
         NSLog(@"didEndElement tag for ALLGIGS\n");
         NSLog(@"TOTAL NUMBER OF GIGS: %d\n", gigCount);
         NSLog(@"TOTOAL NUMBER OF OBJECTS in gigsFromXml array: %d", [gigsFromXml count]);
+        for (NSString *_gig in gigsFromXml) {
+            NSLog(@"_GIG_: %@\n", _gig);
+        }
+        [self.tableView reloadData];
     }
 
     //currentString = nil;
@@ -252,38 +294,8 @@ static NSString * kName_price = @"price";
 }
 
 
-
-
-
-
-
-
-
 //-------END:NSXMLParser delegate methods----------------------
 
-
-//-------START: table view delegate methods--------------------
-
-- (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
-{
-    return [gigs count];
-}
-
-- (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
-{
-    static NSString *simpleTableIdentifier = @"gigCell";
-    
-    UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
-    
-    if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
-    }
-    
-    cell.textLabel.text = [gigs objectAtIndex:indexPath.row];
-    return cell;
-}
-
-//-----END: table view delegate methods------------------------
 
 
 - (void)didReceiveMemoryWarning

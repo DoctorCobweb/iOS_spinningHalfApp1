@@ -9,17 +9,18 @@
 #import "SecondViewController.h"
 #import "Gig.h"
 #import "GigDetailViewController.h"
+#import "DAO.h"
 
 @interface SecondViewController ()
 
 @end
 
 @implementation SecondViewController {
-    //NSArray *gigs;
-    NSMutableArray *gigsFromXml;
-    int gigCount;
+    //NSMutableArray *gigsFromXml;
     NSMutableArray *gigs;
     Gig *gig;
+    int gigCount;
+    DAO *dao;
 }
 
 @synthesize receivedData;
@@ -32,15 +33,17 @@
 	// Do any additional setup after loading the view, typically from a nib.
     self.title =@"Gig Guide";
     
-    /*
-    gigs = [NSArray arrayWithObjects:@"Egg Benedict", @"Mushroom Risotto", @"Full Breakfast", @"Hamburger", @"Ham and Egg Sandwich", @"Creme Brelee", @"White Chocolate Donut", @"Starbucks Coffee", @"Vegetable Curry", @"Instant Noodle with Egg", @"Noodle with BBQ Pork", @"Japanese Noodle with Pork", @"Green Tea", @"Thai Shrimp Cake", @"Angry Birds Cake", @"Ham and Cheese Panini", nil];
-    */
-    
-    gigsFromXml = [[NSMutableArray alloc] init];
-    gigCount = 0;
-    gig = [Gig new];
+    //gigsFromXml = [[NSMutableArray alloc] init];
     gigs = [[NSMutableArray alloc] init];
+    gig = [Gig new];
+    gigCount = 0;
+    dao = [[DAO alloc] init];
 
+    //create the database "gigsDB.db" and table "gigsTABLE" in the Documents/ dir of app.
+    [dao createDatabaseAndTable];
+    [dao saveData];
+    [dao getData];
+    
 
     
     //create a connection to the gig guide web service, download text
@@ -101,12 +104,15 @@
     
     //textLabel is a default identifier for a label in prototype cell.
     //but now we are using a a custom cell protoype.
+    //cell.textLabel.text = _tmp;
+
+    //get the gig associated with the row.
     Gig *tmp_gig = [gigs objectAtIndex:indexPath.row];
+    //set a placeholder image for now as the row images.
     tmp_gig.imageFile = @"green_tea.jpg";
-    //NSString * _tmp = tmp_gig.show;
+
     UILabel *gigShow = (UILabel *)[cell viewWithTag:101];
     gigShow.text = tmp_gig.show;
-    //cell.textLabel.text = _tmp;
     
     UILabel *gigDate = (UILabel *)[cell viewWithTag:102];
     gigDate.text = tmp_gig.date;
@@ -192,6 +198,7 @@
     //and expect to find the implementations of the methods
     //in this file.
     NSXMLParser *parser = [[NSXMLParser alloc] initWithData:receivedData];
+    
     self.currentString = [NSMutableString string];
     parser.delegate = self;
     //???if we initialize self.currentString = nil,
@@ -244,7 +251,8 @@ static NSString * kName_price = @"price";
         NSLog(@"start tag for PRICE\n");
     }
     //call this to reset the string to be empty before cycling thru again
-    //and appending more content to currentString.
+    //and appending more content to currentString.if u dont then u get
+    //one gigantice concatenation of all the content between the element tags.
     [currentString setString:@""];
 }
 
@@ -275,9 +283,12 @@ static NSString * kName_price = @"price";
               _tmpGig.tixUrl,
               _tmpGig.price);
         
+        //add the newly parsed and filled Gig object to the gigs array.
         [gigs addObject:_tmpGig];
+        
         NSLog(@"gigs array COUNT: %d",[gigs count]);
         
+        //variable used in for-loop below.
         int i = 0;
         
         NSLog(@"**********************************\n");
@@ -321,13 +332,17 @@ static NSString * kName_price = @"price";
             //will have as its contents, each element the same as the last thing
             //currentString pointed to.
             //NSString * _currentString = [[NSString alloc] initWithString:currentString];
-            NSString *_currentString = [currentString copy];
-            [gigsFromXml addObject:_currentString];
+            //NSString *_currentString = [currentString copy];
+            //[gigsFromXml addObject:_currentString];
         }
         gigCount++;
+        
+        /*
         for (NSString *_gig in gigsFromXml) {
             NSLog(@"_GIG_: %@\n", _gig);
         }
+         */
+        
     } else if ([elementName isEqualToString:kName_date]) {
         NSLog(@"didEndElement tag for DATE\n");
         NSLog(@"content: %@\n", currentString);
@@ -365,15 +380,17 @@ static NSString * kName_price = @"price";
         
     } else if ([elementName isEqualToString:kName_allGigs]) {
         NSLog(@"didEndElement tag for ALLGIGS\n");
-        NSLog(@"TOTAL NUMBER OF GIGS: %d\n", gigCount);
-        NSLog(@"TOTOAL NUMBER OF OBJECTS in gigsFromXml array: %d", [gigsFromXml count]);
+        //NSLog(@"TOTAL NUMBER OF GIGS: %d\n", gigCount);
+        //NSLog(@"TOTOAL NUMBER OF OBJECTS in gigsFromXml array: %d", [gigsFromXml count]);
+        /*
         for (NSString *_gig in gigsFromXml) {
             NSLog(@"gigsFromXml:_GIG_: %@\n", _gig);
         }
+         */
+        
+        //call reload data to display the dowloaded content.
         [self.tableView reloadData];
     }
-
-    //currentString = nil;
 }
 
 
@@ -381,7 +398,6 @@ static NSString * kName_price = @"price";
 {
     NSLog(@"in foundCharacters: method of parser.\n");
     NSLog(@"input string for parser:foundCharacters: method is: %@", string);
-    //NSMutableString *temp = currentString;
     [currentString appendString:string];
     
     NSLog(@"currentString is now: %@", currentString);
@@ -390,8 +406,11 @@ static NSString * kName_price = @"price";
 
 //-------END:NSXMLParser delegate methods---------------------
 
-//-------START: Segue to Gig detail view delaga methods-----------
+//-------START: Segue to Gig detail view delaga methods-------
 
+
+//this method is called when user selects a row in the table view.
+//here we can pass over the Gig object selected to the GigDetailViewController
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     if ([segue.identifier isEqualToString:@"showGigDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];

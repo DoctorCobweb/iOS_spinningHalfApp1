@@ -38,7 +38,7 @@
     
     self.title = theSelectedGig.show;
     
-    //set label contents to that of the selected gig
+    //set label contents to that of the selected gig pass in during the segue.
     gigDetailShowLabel.text = theSelectedGig.show;
     gigDetailDateLabel.text = theSelectedGig.date;
     gigDetailVenueLabel.text = theSelectedGig.venue;

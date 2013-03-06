@@ -10,10 +10,12 @@
 #import "Gig.h"
 
 @interface GigDetailViewController : UIViewController
+
+//properties needed to display the selected gig details.
 @property (strong, nonatomic) IBOutlet UILabel *gigDetailShowLabel;
 @property (strong, nonatomic) IBOutlet UILabel *gigDetailDateLabel;
 @property (strong, nonatomic) IBOutlet UILabel *gigDetailVenueLabel;
-@property (weak, nonatomic) IBOutlet UITextView *gigDetailDescriptionLabel;
+@property (strong, nonatomic) IBOutlet UITextView *gigDetailDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *gigDetailTixUrlLabel;
 @property (strong, nonatomic) IBOutlet UILabel *gigDetailPriceLabel;
 

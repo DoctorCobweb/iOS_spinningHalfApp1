@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		65129BA416E7065F00F2B506 /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 65129BA316E7065F00F2B506 /* DAO.m */; };
+		65129BAB16E7072C00F2B506 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 65129BAA16E7072C00F2B506 /* libsqlite3.dylib */; };
 		6580AED716DEEF6E0051F1FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6580AED616DEEF6E0051F1FB /* UIKit.framework */; };
 		6580AED916DEEF6E0051F1FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6580AED816DEEF6E0051F1FB /* Foundation.framework */; };
 		6580AEDB16DEEF6E0051F1FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6580AEDA16DEEF6E0051F1FB /* CoreGraphics.framework */; };
@@ -35,6 +37,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		65129BA216E7065F00F2B506 /* DAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAO.h; sourceTree = "<group>"; };
+		65129BA316E7065F00F2B506 /* DAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAO.m; sourceTree = "<group>"; };
+		65129BAA16E7072C00F2B506 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		6580AED216DEEF6E0051F1FB /* spinningHalfApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spinningHalfApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6580AED616DEEF6E0051F1FB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6580AED816DEEF6E0051F1FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -77,6 +82,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65129BAB16E7072C00F2B506 /* libsqlite3.dylib in Frameworks */,
 				6580AED716DEEF6E0051F1FB /* UIKit.framework in Frameworks */,
 				6580AED916DEEF6E0051F1FB /* Foundation.framework in Frameworks */,
 				6580AEDB16DEEF6E0051F1FB /* CoreGraphics.framework in Frameworks */,
@@ -89,6 +95,7 @@
 		6580AEC716DEEF6E0051F1FB = {
 			isa = PBXGroup;
 			children = (
+				65129BAA16E7072C00F2B506 /* libsqlite3.dylib */,
 				6580AEDC16DEEF6E0051F1FB /* spinningHalfApp1 */,
 				6580AED516DEEF6E0051F1FB /* Frameworks */,
 				6580AED316DEEF6E0051F1FB /* Products */,
@@ -118,6 +125,8 @@
 			children = (
 				6580AEE516DEEF6E0051F1FB /* AppDelegate.h */,
 				6580AEE616DEEF6E0051F1FB /* AppDelegate.m */,
+				65129BA216E7065F00F2B506 /* DAO.h */,
+				65129BA316E7065F00F2B506 /* DAO.m */,
 				6580AEEE16DEEF6E0051F1FB /* MainStoryboard.storyboard */,
 				65D4796B16E5ACE600A48D07 /* GigDetailViewController.h */,
 				65D4796C16E5ACE600A48D07 /* GigDetailViewController.m */,
@@ -250,6 +259,7 @@
 				6580AF0916DEF0160051F1FB /* FourthViewController.m in Sources */,
 				65D4796616E57C3C00A48D07 /* Gig.m in Sources */,
 				65D4796D16E5ACE600A48D07 /* GigDetailViewController.m in Sources */,
+				65129BA416E7065F00F2B506 /* DAO.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

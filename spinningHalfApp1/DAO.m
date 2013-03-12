@@ -7,6 +7,7 @@
 //
 
 #import "DAO.h"
+#import "Gig.h"
 
 
 @implementation DAO {
@@ -16,6 +17,7 @@
 
 @synthesize databasePath;
 @synthesize gigGuideDB;
+@synthesize finishedSavingToDatabase;
 
 - (NSString *)getDocumentsDirectory {
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -60,63 +62,148 @@
     }
 }
 
-- (void)saveData
+
+- (BOOL)clearGigsTable{
+    NSString *mDocsDir = self.getDocumentsDirectory;
+    //NSLog(@"DAO: mDocsDir = %@", mDocsDir);
+    
+    
+    
+    //build the path to the database file
+    //it should be located at:
+    //"<application_home>/Documents/gigsDB.db"
+    databasePath = [[NSString alloc] initWithString:[mDocsDir stringByAppendingPathComponent:@"gigsDB.db"]];
+    
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    const char *dbpath = [databasePath UTF8String];
+    if ([fileMgr fileExistsAtPath:databasePath] == YES) {
+        
+        
+        //sqlite3_open will create a database if it doesnt already exist.
+        if (sqlite3_open(dbpath, &gigGuideDB) == SQLITE_OK) {
+            char *errMsg;
+            const char *sql_stmt = "DELETE FROM gigsTABLE";
+            
+            if (sqlite3_exec(gigGuideDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK) {
+                NSLog(@"DAO_ERROR: Failed to delete all rows in gigsTABLE");
+                NSLog(@"DAO_ERROR: errMsg: %s", errMsg);
+                return NO;
+            } else {
+                NSLog(@"DAO_SUCCESS: Deleted all rows from table \"gigsTABLE\".");
+            }
+            sqlite3_close(gigGuideDB);
+            return YES;
+        } else {
+            NSLog(@"DAO_ERROR: Failed to open/create database");
+            return NO;
+        }
+    }
+    
+    NSLog(@"There doesnt seem to be a database called gigsDB.db here");
+    return YES;
+}
+
+- (void)saveData:(NSMutableArray *)gigsArray
 {
+    finishedSavingToDatabase = NO;
     sqlite3_stmt *statement;
     const char *dbpath = [databasePath UTF8String];
     
+    /*
+    //variable used in for-loop below.
+    int i = 0;
+    NSLog(@"----------------------------------\n");
+    
+    for (Gig *_dummyGig in gigsArray){
+        NSLog(@"DAO: SAVEDATA: gigsArray CONTENT: Gig(%d): %@\n, %@\n, %@\n, %@\n, %@\n, %@\n, %@\n",
+              i,
+              _dummyGig.author,
+              _dummyGig.show,
+              _dummyGig.date,
+              _dummyGig.venue,
+              _dummyGig.description,
+              _dummyGig.tixUrl,
+              _dummyGig.price);
+        i++;
+        NSLog(@"----------------------------------\n");
+    }
+     */
+
+    int countOfGigs = [gigsArray count];
+    
     if (sqlite3_open(dbpath, &gigGuideDB) == SQLITE_OK) {
-        NSString *insertSQL =[NSString stringWithFormat:@"INSERT INTO gigsTABLE (author, show, date, venue, description, tixurl, price) VALUES (\"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\")", @"TEST_author", @"TEST_show", @"TEST_date", @"TEST_venue", @"TEST_description", @"TEST_tixurl", @"TEST_price"];
         
-        const char *insert_stmt = [insertSQL UTF8String];
-        sqlite3_prepare_v2(gigGuideDB, insert_stmt, -1, &statement, NULL);
-        if (sqlite3_step(statement) == SQLITE_DONE) {
-            NSLog(@"DAO_SUCCESS: TEST data has been inserted into gigsTABLE.");
-        } else {
-            NSLog(@"DAO_ERROR: TEST data failed to be inserted.");
+        
+        for (int j = 0; j < countOfGigs; j++) {
+            Gig *tmp_gig = [gigsArray objectAtIndex:j];
+            
+            NSString *insertSQL =[NSString stringWithFormat:@"INSERT INTO gigsTABLE (author, show, date, venue, description, tixurl, price) VALUES (\"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\", \"%@\")", tmp_gig.author, tmp_gig.show, tmp_gig.date, tmp_gig.venue, tmp_gig.description, tmp_gig.tixUrl, tmp_gig.price];
+            
+            const char *insert_stmt = [insertSQL UTF8String];
+            sqlite3_prepare_v2(gigGuideDB, insert_stmt, -1, &statement, NULL);
+            if (sqlite3_step(statement) == SQLITE_DONE) {
+                NSLog(@"DAO_SUCCESS: TEST data has been inserted into gigsTABLE.");
+            } else {
+                NSLog(@"DAO_ERROR: TEST data failed to be inserted.");
+            }
+            //this deletes the prepared statement. needed to
+            //avoid memory leaks.
+            sqlite3_finalize(statement);
         }
-        sqlite3_finalize(statement);
         sqlite3_close(gigGuideDB);
     }
+    finishedSavingToDatabase = YES;
 }
 
 - (void)getData
 {
     sqlite3_stmt *statement;
     const char *dbpath = [databasePath UTF8String];
+    int i = 0;
     
     if (sqlite3_open(dbpath, &gigGuideDB) == SQLITE_OK) {
-        NSString *querySQL = [NSString stringWithFormat:@"SELECT show, date, venue, description, tixurl, price FROM gigsTABLE WHERE author=\"%@\"", @"TEST_author"];
+        NSString *querySQL = [NSString stringWithFormat:@"SELECT * FROM gigsTABLE"];
         
         const char *query_stmt = [querySQL UTF8String];
         
         if (sqlite3_prepare_v2(gigGuideDB, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
-            if (sqlite3_step(statement) == SQLITE_ROW) {
-                
-                NSString *showField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 0)];
-                
-                NSString *dateField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 1)];
-                
-                NSString *venueField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 2)];
-                
-                NSString *descriptionField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 3)];
-                
-                NSString *tixurlField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 4)];
-                
-                NSString *priceField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 5)];
-                
-                NSLog(@"DAO_SUCCESS: Result matched for query. The first row returned is: show=%@, date=%@, venue=%@, description=%@, tixurl=%@, price=%@", showField, dateField, venueField, descriptionField, tixurlField, priceField);
-                
-            } else {
+            
+            /*
+            if (sqlite3_step(statement) != SQLITE_ROW) {
                 NSLog(@"DAO_ERROR: No result matched from database query");
             }
+             */
+            
+            while (sqlite3_step(statement) == SQLITE_ROW) {
+                
+                NSString *idField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 0)];
+                
+                NSString *authorField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 1)];
+                
+                NSString *showField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 2)];
+                
+                NSString *dateField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 3)];
+                
+                NSString *venueField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 4)];
+                
+                NSString *descriptionField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 5)];
+                
+                NSString *tixUrlField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 6)];
+                
+                NSString *priceField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 7)];
+                
+                NSLog(@"DAO_QUERY_RESULT: Result matched for query. The row[%d] returned is: id=%@, author=%@, show=%@, date=%@, venue=%@, description=%@, tixurl=%@, price=%@", i, idField, authorField, showField, dateField, venueField, descriptionField, tixUrlField, priceField);
+                i++;
+            }
+            
+            if (i == 0) {
+                NSLog(@"No results were match for the query.");
+            }
+            
             sqlite3_finalize(statement);
         }
         sqlite3_close(gigGuideDB);
     }
 }
-
-
-
 
 @end

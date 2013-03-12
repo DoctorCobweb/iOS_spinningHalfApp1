@@ -8,15 +8,18 @@
 
 #import <Foundation/Foundation.h>
 #import <sqlite3.h>
+//#import "Gig.h"
 
 @interface DAO : NSObject
 
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *gigGuideDB;
+@property BOOL finishedSavingToDatabase;
 
 - (NSString *)getDocumentsDirectory;
 - (void)createDatabaseAndTable;
-- (void)saveData;
+- (BOOL)clearGigsTable;
+- (void)saveData:(NSMutableArray *)gigsArray;
 - (void)getData;
 
 @end

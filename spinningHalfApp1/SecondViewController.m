@@ -41,8 +41,8 @@
 
     //create the database "gigsDB.db" and table "gigsTABLE" in the Documents/ dir of app.
     [dao createDatabaseAndTable];
-    [dao saveData];
-    [dao getData];
+    //[dao saveData];
+    //[dao getData];
     
 
     
@@ -232,23 +232,23 @@ static NSString * kName_price = @"price";
 - (void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict
 {
     if ([elementName isEqualToString:kName_allGigs]) {
-        NSLog(@"start tag for ALL_GIGS\n");
+        //NSLog(@"start tag for ALL_GIGS\n");
     } else if([elementName isEqualToString:kName_gig]) {
-        NSLog(@"start tag for GIG\n");
+        //NSLog(@"start tag for GIG\n");
     }else if ([elementName isEqualToString:kName_author]) {
-        NSLog(@"start tag for AUTHOR\n");
+        //NSLog(@"start tag for AUTHOR\n");
     } else if ([elementName isEqualToString:kName_show]) {
-        NSLog(@"start tag for SHOW\n");
+        //NSLog(@"start tag for SHOW\n");
     } else if ([elementName isEqualToString:kName_date]) {
-        NSLog(@"start tag for DATE\n");
+        //NSLog(@"start tag for DATE\n");
     } else if ([elementName isEqualToString:kName_venue]) {
-        NSLog(@"start tag for VENUE\n");
+        //NSLog(@"start tag for VENUE\n");
     } else if ([elementName isEqualToString:kName_description]) {
-        NSLog(@"start tag for DESCRIPTION\n");
+        //NSLog(@"start tag for DESCRIPTION\n");
     } else if ([elementName isEqualToString:kName_tixUrl]) {
-        NSLog(@"start tag for TIXURL\n");
+        //NSLog(@"start tag for TIXURL\n");
     } else if ([elementName isEqualToString:kName_price]) {
-        NSLog(@"start tag for PRICE\n");
+        //NSLog(@"start tag for PRICE\n");
     }
     //call this to reset the string to be empty before cycling thru again
     //and appending more content to currentString.if u dont then u get
@@ -261,8 +261,8 @@ static NSString * kName_price = @"price";
 {
     
     if ([elementName isEqualToString:kName_gig]) {
-        NSLog(@"didEndElement tag for GIG\n");
-        NSLog(@"content: %@\n", currentString);
+        //NSLog(@"didEndElement tag for GIG\n");
+        //NSLog(@"content: %@\n", currentString);
         
         //add the gig object to gigs array.
         Gig *_tmpGig = [Gig new];
@@ -274,6 +274,7 @@ static NSString * kName_price = @"price";
         _tmpGig.tixUrl = gig.tixUrl;
         _tmpGig.price = gig.price;
         
+        /*
         NSLog(@"TEMP GIG: %@, %@, %@, %@, %@, %@, %@",
               _tmpGig.author,
               _tmpGig.show,
@@ -282,16 +283,19 @@ static NSString * kName_price = @"price";
               _tmpGig.description,
               _tmpGig.tixUrl,
               _tmpGig.price);
+         */
         
         //add the newly parsed and filled Gig object to the gigs array.
         [gigs addObject:_tmpGig];
         
-        NSLog(@"gigs array COUNT: %d",[gigs count]);
+        //NSLog(@"gigs array COUNT: %d",[gigs count]);
         
+        
+        //NSLog(@"**********************************\n");
+        
+        /*
         //variable used in for-loop below.
         int i = 0;
-        
-        NSLog(@"**********************************\n");
         NSLog(@"----------------------------------\n");
         
         for (Gig *_dummyGig in gigs){
@@ -307,19 +311,21 @@ static NSString * kName_price = @"price";
             i++;
             NSLog(@"----------------------------------\n");
         }
-        NSLog(@"**********************************\n");
+         */
+        
+        //NSLog(@"**********************************\n");
         
         
     } else if ([elementName isEqualToString:kName_author]) {
-        NSLog(@"didEndElement tag for AUTHOR\n");
-        NSLog(@"content: %@\n", currentString);
+        //NSLog(@"didEndElement tag for AUTHOR\n");
+        //NSLog(@"content: %@\n", currentString);
         
         NSString *_currentString = [currentString copy];
         gig.author = _currentString;
         
     } else if ([elementName isEqualToString:kName_show]) {
-        NSLog(@"didEndElement tag for SHOW\n");
-        NSLog(@"content: %@\n", currentString);
+        //NSLog(@"didEndElement tag for SHOW\n");
+        //NSLog(@"content: %@\n", currentString);
         
         NSString *_currentString = [currentString copy];
         gig.show = _currentString;
@@ -344,42 +350,46 @@ static NSString * kName_price = @"price";
          */
         
     } else if ([elementName isEqualToString:kName_date]) {
-        NSLog(@"didEndElement tag for DATE\n");
-        NSLog(@"content: %@\n", currentString);
+        //NSLog(@"didEndElement tag for DATE\n");
+        //NSLog(@"content: %@\n", currentString);
         
         NSString *_currentString = [currentString copy];
         gig.date = _currentString;
         
     } else if ([elementName isEqualToString:kName_venue]) {
-        NSLog(@"didEndElement tag for VENUE\n");
-        NSLog(@"content: %@\n", currentString);
+        //NSLog(@"didEndElement tag for VENUE\n");
+        //NSLog(@"content: %@\n", currentString);
         
         NSString *_currentString = [currentString copy];
         gig.venue = _currentString;
         
     } else if ([elementName isEqualToString:kName_description]) {
-        NSLog(@"didEndElement tag for DESCRIPTION\n");
-        NSLog(@"content: %@\n", currentString);
+        //NSLog(@"didEndElement tag for DESCRIPTION\n");
+        //NSLog(@"content: %@\n", currentString);
         
         NSString *_currentString = [currentString copy];
         gig.description = _currentString;
         
     } else if ([elementName isEqualToString:kName_tixUrl]) {
-        NSLog(@"didEndElement tag for TIXURL\n");
-        NSLog(@"content: %@\n", currentString);
+        //NSLog(@"didEndElement tag for TIXURL\n");
+        //NSLog(@"content: %@\n", currentString);
         
         NSString *_currentString = [currentString copy];
         gig.tixUrl = _currentString;
         
     } else if ([elementName isEqualToString:kName_price]) {
-        NSLog(@"didEndElement tag for PRICE\n");
-        NSLog(@"content: %@\n", currentString);
+        //NSLog(@"didEndElement tag for PRICE\n");
+        //NSLog(@"content: %@\n", currentString);
         
         NSString *_currentString = [currentString copy];
         gig.price = _currentString;
         
     } else if ([elementName isEqualToString:kName_allGigs]) {
-        NSLog(@"didEndElement tag for ALLGIGS\n");
+        
+        //gigs array should be filled with all the downloaded
+        // and parsed gigs.
+        
+        //NSLog(@"didEndElement tag for ALLGIGS\n");
         //NSLog(@"TOTAL NUMBER OF GIGS: %d\n", gigCount);
         //NSLog(@"TOTOAL NUMBER OF OBJECTS in gigsFromXml array: %d", [gigsFromXml count]);
         /*
@@ -388,7 +398,38 @@ static NSString * kName_price = @"price";
         }
          */
         
+        NSLog(@"Total number of gigs in gigs Array = %d", [gigs count]);
+        
+        
+        if ([dao clearGigsTable]) {
+        //save gigs array data to the database
+            NSLog(@"clearing gigsTABLE");
+        [dao saveData:gigs];
+        } else {
+            NSLog(@"FAILED: To clear the gigsTABLE table.");
+          
+        }
+        
+        //make sure that the database has finished saving
+        //before attempting to read from it.
+        
+        //wait for the database to finish saving
+        while (!dao.finishedSavingToDatabase) {
+            NSLog(@"In Parser: SAVING DATA: Please wait.");
+            continue;
+        }
+        
+        if (dao.finishedSavingToDatabase) {
+            [dao getData];
+        }
+        
+        
+        
+        
         //call reload data to display the dowloaded content.
+        // here we are using the gigs array data instead of
+        //reading from the database as i think it's quicker
+        //to do it this way.
         [self.tableView reloadData];
     }
 }
@@ -396,11 +437,11 @@ static NSString * kName_price = @"price";
 
 - (void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string
 {
-    NSLog(@"in foundCharacters: method of parser.\n");
-    NSLog(@"input string for parser:foundCharacters: method is: %@", string);
+    //NSLog(@"in foundCharacters: method of parser.\n");
+    //NSLog(@"input string for parser:foundCharacters: method is: %@", string);
     [currentString appendString:string];
     
-    NSLog(@"currentString is now: %@", currentString);
+    //NSLog(@"currentString is now: %@", currentString);
 }
 
 

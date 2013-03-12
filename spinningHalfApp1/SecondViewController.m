@@ -106,8 +106,15 @@
     //but now we are using a a custom cell protoype.
     //cell.textLabel.text = _tmp;
 
+    
+    
+    //PUT A DATABASE QUERY TO GET ALL THE GIGS
+    //TO DISPLAY.
+    NSMutableArray *tmp_gigs_array = [dao getAllGigs];
+    
+    
     //get the gig associated with the row.
-    Gig *tmp_gig = [gigs objectAtIndex:indexPath.row];
+    Gig *tmp_gig = [tmp_gigs_array objectAtIndex:indexPath.row];
     //set a placeholder image for now as the row images.
     tmp_gig.imageFile = @"green_tea.jpg";
 
@@ -420,7 +427,7 @@ static NSString * kName_price = @"price";
         }
         
         if (dao.finishedSavingToDatabase) {
-            [dao getData];
+            [dao getAllGigs];
         }
         
         
@@ -456,7 +463,8 @@ static NSString * kName_price = @"price";
     if ([segue.identifier isEqualToString:@"showGigDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         GigDetailViewController *destViewController = segue.destinationViewController;
-        destViewController.theSelectedGig = [gigs objectAtIndex:indexPath.row];
+        NSMutableArray *tmp_all_gigs_array = [dao getAllGigs];
+        destViewController.theSelectedGig = [tmp_all_gigs_array objectAtIndex:indexPath.row];
     }
 }
 

@@ -10,6 +10,7 @@
 
 @interface Gig : NSObject
 
+@property (nonatomic, strong) NSString *primaryId;
 @property (nonatomic, strong) NSString *author;
 @property (nonatomic, strong) NSString *show;
 @property (nonatomic, strong) NSString *date;

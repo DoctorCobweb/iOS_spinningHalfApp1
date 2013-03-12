@@ -20,6 +20,6 @@
 - (void)createDatabaseAndTable;
 - (BOOL)clearGigsTable;
 - (void)saveData:(NSMutableArray *)gigsArray;
-- (void)getData;
+- (NSMutableArray *)getAllGigs;
 
 @end

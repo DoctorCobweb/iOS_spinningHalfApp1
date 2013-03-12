@@ -155,8 +155,11 @@
     finishedSavingToDatabase = YES;
 }
 
-- (void)getData
+
+//THIS SHOULD RETURN AN NSArray of gigs from the query
+- (NSMutableArray *)getAllGigs
 {
+    NSMutableArray *gigs = [[NSMutableArray alloc] init];
     sqlite3_stmt *statement;
     const char *dbpath = [databasePath UTF8String];
     int i = 0;
@@ -176,7 +179,7 @@
             
             while (sqlite3_step(statement) == SQLITE_ROW) {
                 
-                NSString *idField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 0)];
+                NSString *primaryIdField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 0)];
                 
                 NSString *authorField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 1)];
                 
@@ -192,7 +195,20 @@
                 
                 NSString *priceField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 7)];
                 
-                NSLog(@"DAO_QUERY_RESULT: Result matched for query. The row[%d] returned is: id=%@, author=%@, show=%@, date=%@, venue=%@, description=%@, tixurl=%@, price=%@", i, idField, authorField, showField, dateField, venueField, descriptionField, tixUrlField, priceField);
+                NSLog(@"DAO_QUERY_RESULT: Result matched for query. The row[%d] returned is: primaryId=%@, author=%@, show=%@, date=%@, venue=%@, description=%@, tixurl=%@, price=%@", i, primaryIdField, authorField, showField, dateField, venueField, descriptionField, tixUrlField, priceField);
+                
+                Gig *_tmpGig = [Gig new];
+                _tmpGig.primaryId = primaryIdField;
+                _tmpGig.author = authorField;
+                _tmpGig.show = showField;
+                _tmpGig.date = dateField;
+                _tmpGig.venue = venueField;
+                _tmpGig.description = descriptionField;
+                _tmpGig.tixUrl = tixUrlField;
+                _tmpGig.price = priceField;
+                
+                [gigs addObject:_tmpGig];
+                
                 i++;
             }
             
@@ -204,6 +220,8 @@
         }
         sqlite3_close(gigGuideDB);
     }
+return gigs;
+
 }
 
 @end

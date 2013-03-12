@@ -10,6 +10,7 @@
 
 @implementation Gig
 
+@synthesize primaryId;
 @synthesize author;
 @synthesize show;
 @synthesize date;

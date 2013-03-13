@@ -309,45 +309,6 @@
             </objects>
             <point key="canvasLocation" x="1235" y="1250"/>
         </scene>
-        <!--Third View Controller-->
-        <scene sceneID="ZEZ-gt-R2Z">
-            <objects>
-                <viewController id="xEf-Gf-wD5" customClass="ThirdViewController" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="bgE-M5-ecX">
-                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
-                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                        <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Third View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="1HU-zZ-0VZ">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the third view controller — an instance of ThirdViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="JmJ-sR-54C">
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="pXX-Gg-Os3"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
-                        <constraints>
-                            <constraint firstAttribute="trailing" secondItem="JmJ-sR-54C" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="MNX-EE-Eu0"/>
-                            <constraint firstItem="1HU-zZ-0VZ" firstAttribute="top" secondItem="bgE-M5-ecX" secondAttribute="top" constant="42" id="Svt-Gs-hBm"/>
-                            <constraint firstItem="1HU-zZ-0VZ" firstAttribute="leading" secondItem="bgE-M5-ecX" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="ZMa-fG-nnu"/>
-                            <constraint firstItem="JmJ-sR-54C" firstAttribute="leading" secondItem="bgE-M5-ecX" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="f1k-xz-W7y"/>
-                            <constraint firstItem="JmJ-sR-54C" firstAttribute="top" secondItem="1HU-zZ-0VZ" secondAttribute="bottom" constant="40" type="user" id="hE1-mh-Z1g"/>
-                            <constraint firstAttribute="trailing" secondItem="1HU-zZ-0VZ" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="uap-P4-A6N"/>
-                        </constraints>
-                    </view>
-                    <navigationItem key="navigationItem" id="Jwk-rR-yzg"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="Rk3-Mp-eIQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1235" y="648"/>
-        </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
             <objects>
@@ -419,23 +380,222 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="xEf-Gf-wD5" kind="relationship" relationship="rootViewController" id="WLl-xO-EVM"/>
+                        <segue destination="2u4-ld-emw" kind="relationship" relationship="rootViewController" id="NRf-Nd-VDo"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Fuv-Ns-3cq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="759" y="604"/>
         </scene>
+        <!--Services Collection View Controller-->
+        <scene sceneID="t59-Tq-Td2">
+            <objects>
+                <collectionViewController autoresizesArchivedViewToFullSize="NO" id="2u4-ld-emw" customClass="ServicesCollectionViewController" sceneMemberID="viewController">
+                    <collectionView key="view" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" minimumZoomScale="0.0" maximumZoomScale="0.0" dataMode="prototypes" id="JH8-j4-x47">
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="uhm-Lw-Ss1">
+                            <size key="itemSize" width="100" height="100"/>
+                            <size key="headerReferenceSize" width="50" height="50"/>
+                            <size key="footerReferenceSize" width="50" height="50"/>
+                            <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                        </collectionViewFlowLayout>
+                        <cells>
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="Cell" id="hYC-em-x44">
+                                <rect key="frame" x="0.0" y="50" width="100" height="100"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+                                <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" tag="100" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4m9-uG-zKO">
+                                            <constraints>
+                                                <constraint firstAttribute="width" constant="90" id="9rf-q2-50s"/>
+                                                <constraint firstAttribute="height" constant="72" id="X2s-6l-MaR"/>
+                                            </constraints>
+                                        </imageView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                </view>
+                                <constraints>
+                                    <constraint firstItem="4m9-uG-zKO" firstAttribute="centerX" secondItem="hYC-em-x44" secondAttribute="centerX" type="default" id="V5S-ip-dG9"/>
+                                    <constraint firstAttribute="bottom" secondItem="4m9-uG-zKO" secondAttribute="bottom" constant="20" type="default" id="f1R-bR-tMt"/>
+                                </constraints>
+                                <connections>
+                                    <segue destination="kEA-wx-kE2" kind="modal" identifier="showServiceDetail" id="3T8-b4-PSS"/>
+                                </connections>
+                            </collectionViewCell>
+                        </cells>
+                        <collectionReusableView key="sectionHeaderView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="HeaderView" id="DCc-FM-5l6" customClass="ServicesCollectionHeaderView">
+                            <rect key="frame" x="0.0" y="0.0" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="header_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="Yzi-7T-3Ex"/>
+                                <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2I-oJ-MKg">
+                                    <constraints>
+                                        <constraint firstAttribute="height" constant="21" id="DOu-mu-3qM"/>
+                                        <constraint firstAttribute="width" constant="188" id="eya-OQ-jMC"/>
+                                    </constraints>
+                                    <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="Yzi-7T-3Ex" firstAttribute="trailing" secondItem="DCc-FM-5l6" secondAttribute="trailing" type="default" id="4RU-Pk-DNt"/>
+                                <constraint firstItem="P2I-oJ-MKg" firstAttribute="top" secondItem="DCc-FM-5l6" secondAttribute="top" constant="14" id="Aux-sK-kZx"/>
+                                <constraint firstItem="Yzi-7T-3Ex" firstAttribute="leading" secondItem="DCc-FM-5l6" secondAttribute="leading" type="default" id="RbM-k1-AdA"/>
+                                <constraint firstItem="Yzi-7T-3Ex" firstAttribute="bottom" secondItem="DCc-FM-5l6" secondAttribute="bottom" type="default" id="XhG-if-6ME"/>
+                                <constraint firstItem="Yzi-7T-3Ex" firstAttribute="top" secondItem="DCc-FM-5l6" secondAttribute="top" type="default" id="YCn-Cg-rSX"/>
+                                <constraint firstItem="P2I-oJ-MKg" firstAttribute="leading" secondItem="DCc-FM-5l6" secondAttribute="leading" constant="61" id="edb-H4-sAw"/>
+                            </constraints>
+                            <connections>
+                                <outlet property="backgroundImage" destination="Yzi-7T-3Ex" id="Lc6-Bp-Ebd"/>
+                                <outlet property="title" destination="P2I-oJ-MKg" id="zKE-xm-urK"/>
+                            </connections>
+                        </collectionReusableView>
+                        <collectionReusableView key="sectionFooterView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="FooterView" id="voi-o9-jTR">
+                            <rect key="frame" x="0.0" y="150" width="320" height="50"/>
+                            <autoresizingMask key="autoresizingMask"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" image="footer_banner.png" translatesAutoresizingMaskIntoConstraints="NO" id="qaM-Dr-6qG"/>
+                            </subviews>
+                            <constraints>
+                                <constraint firstItem="qaM-Dr-6qG" firstAttribute="trailing" secondItem="voi-o9-jTR" secondAttribute="trailing" type="default" id="7mw-4n-qtK"/>
+                                <constraint firstItem="qaM-Dr-6qG" firstAttribute="leading" secondItem="voi-o9-jTR" secondAttribute="leading" type="default" id="Ecs-io-egZ"/>
+                                <constraint firstItem="qaM-Dr-6qG" firstAttribute="top" secondItem="voi-o9-jTR" secondAttribute="top" type="default" id="Jqg-ZJ-G6f"/>
+                                <constraint firstItem="qaM-Dr-6qG" firstAttribute="bottom" secondItem="voi-o9-jTR" secondAttribute="bottom" type="default" id="xo4-Zh-XO8"/>
+                            </constraints>
+                        </collectionReusableView>
+                        <connections>
+                            <outlet property="dataSource" destination="2u4-ld-emw" id="laK-Uo-xyh"/>
+                            <outlet property="delegate" destination="2u4-ld-emw" id="iCX-zI-s0X"/>
+                        </connections>
+                    </collectionView>
+                    <navigationItem key="navigationItem" id="uyn-GI-pYl"/>
+                </collectionViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="vcP-kF-Mri" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1155" y="604"/>
+        </scene>
+        <!--Services Detail View Controller-->
+        <scene sceneID="N6s-eH-o6s">
+            <objects>
+                <viewController id="kEA-wx-kE2" customClass="ServicesDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="1mz-pT-Ibk">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86t-wz-YpQ">
+                                <items>
+                                    <navigationItem title="Service Detail" id="wgk-qN-1Ws">
+                                        <barButtonItem key="rightBarButtonItem" title="Close" id="hEC-L5-Pdk">
+                                            <connections>
+                                                <action selector="close:" destination="kEA-wx-kE2" id="CFG-Nw-JWP"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fzJ-S4-409">
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="Bcd-Mk-Ylp"/>
+                                </constraints>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="fzJ-S4-409" firstAttribute="top" secondItem="1mz-pT-Ibk" secondAttribute="top" constant="76" id="0Yq-KQ-RBS"/>
+                            <constraint firstItem="86t-wz-YpQ" firstAttribute="trailing" secondItem="1mz-pT-Ibk" secondAttribute="trailing" type="default" id="Du6-Tb-I2Z"/>
+                            <constraint firstItem="fzJ-S4-409" firstAttribute="leading" secondItem="1mz-pT-Ibk" secondAttribute="leading" type="default" id="cwf-6n-LXk"/>
+                            <constraint firstItem="86t-wz-YpQ" firstAttribute="top" secondItem="1mz-pT-Ibk" secondAttribute="top" type="default" id="e9C-IW-IOC"/>
+                            <constraint firstItem="86t-wz-YpQ" firstAttribute="leading" secondItem="1mz-pT-Ibk" secondAttribute="leading" type="default" id="ghg-kZ-kTH"/>
+                            <constraint firstItem="fzJ-S4-409" firstAttribute="trailing" secondItem="1mz-pT-Ibk" secondAttribute="trailing" type="default" id="jMx-VL-Zuh"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="serviceImageView" destination="fzJ-S4-409" id="3wM-Cg-pgT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ksh-gO-aS1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1546" y="604"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="16" height="16"/>
+        <image name="footer_banner.png" width="640" height="100"/>
         <image name="fourth.png" width="30" height="30"/>
+        <image name="header_banner.png" width="640" height="98"/>
         <image name="second" width="16" height="16"/>
         <image name="third.png" width="30" height="30"/>
     </resources>
+    <classes>
+        <class className="FirstViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="webView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
+        <class className="FourthViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/FourthViewController.h"/>
+        </class>
+        <class className="GigDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/GigDetailViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="gigDetailDateLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="gigDetailDescriptionLabel" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="gigDetailPriceLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="gigDetailShowLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="gigDetailTixUrlLabel" candidateClass="UILabel"/>
+                <relationship kind="outlet" name="gigDetailVenueLabel" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="NSLayoutConstraint" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/NSLayoutConstraint.h"/>
+        </class>
+        <class className="SecondViewController" superclassName="UITableViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/SecondViewController.h"/>
+            <relationships>
+                <relationship kind="outlet" name="tableView" candidateClass="UITableView"/>
+            </relationships>
+        </class>
+        <class className="ServicesCollectionHeaderView" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ServicesCollectionHeaderView.h"/>
+            <relationships>
+                <relationship kind="outlet" name="backgroundImage" candidateClass="UIImageView"/>
+                <relationship kind="outlet" name="title" candidateClass="UILabel"/>
+            </relationships>
+        </class>
+        <class className="ServicesCollectionViewController" superclassName="UICollectionViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ServicesCollectionViewController.h"/>
+        </class>
+        <class className="ServicesDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ServicesDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:"/>
+                <relationship kind="outlet" name="serviceImageView" candidateClass="UIImageView"/>
+            </relationships>
+        </class>
+        <class className="UICollectionReusableView" superclassName="UIView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionReusableView.h"/>
+        </class>
+        <class className="UICollectionViewCell" superclassName="UICollectionReusableView">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewCell.h"/>
+        </class>
+        <class className="UICollectionViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewController.h"/>
+        </class>
+        <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
+        </class>
+        <class className="UICollectionViewLayout" superclassName="NSObject">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
+        </class>
+    </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination" type="retina4"/>
+        <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
 </document>

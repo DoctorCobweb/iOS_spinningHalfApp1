@@ -463,7 +463,10 @@ static NSString * kName_price = @"price";
     if ([segue.identifier isEqualToString:@"showGigDetail"]) {
         NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
         GigDetailViewController *destViewController = segue.destinationViewController;
+        
+        //get the gigs from the database
         NSMutableArray *tmp_all_gigs_array = [dao getAllGigs];
+        
         destViewController.theSelectedGig = [tmp_all_gigs_array objectAtIndex:indexPath.row];
     }
 }

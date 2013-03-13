@@ -276,30 +276,200 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="411"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" text="Fourth View" textAlignment="center" lineBreakMode="tailTruncation" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="CNH-e6-ehf">
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="HEAD OFFICE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2OJ-ZP-OZR">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="280" id="bm3-Zy-wsd"/>
+                                    <constraint firstAttribute="width" constant="185" id="AGA-Bx-DCp"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" userInteractionEnabled="NO" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" delaysContentTouches="NO" canCancelContentTouches="NO" minimumZoomScale="0.0" maximumZoomScale="0.0" bouncesZoom="NO" editable="NO" text="Loaded by the fourth view controller — an instance of FourthViewController — specified in the app delegate." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9vq-wk-bFB">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="ONLINE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="frb-BG-ftG">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="REHEARSALS" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghP-At-FSg">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Suite 3 /2 Fenwick St South" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-hw-zvF">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Geelong, VIC, 3220" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nCq-ND-Yul">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qRo-1Q-WDk">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Ph: (03) 5222 1186">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-4B-25D">
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="88" id="Tu3-5J-Buc"/>
+                                    <constraint firstAttribute="width" constant="62" id="vgl-j4-4JS"/>
                                 </constraints>
-                                <fontDescription key="fontDescription" type="system" size="system"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textView>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="F">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rse-Fi-yNC">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="Gw3-9H-VEG"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="T">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvw-si-PvL">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="62" id="joI-qu-gVQ"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Y">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFL-Cp-fMn">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="65" id="60m-Xc-BQn"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="SH">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="313 Bellarine St" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbK-zg-3Yz">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="275" id="gEG-6t-gzH"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="South Geelong, VIC, 3220" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hGB-8J-j5h">
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Eam-yT-fz2">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="78" id="rKP-Ag-cb9"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Ph: (03) 5222 1186">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBq-Fe-zcq">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="80" id="PAS-Yo-ZHB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Ph: 0421 866 977">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-8c-DrY">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="102" id="l0u-FS-26y"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Email: bookings@spinninghalf.com.au">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myp-v5-zcs">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <state key="normal" title="Email: info@spinninghalf.com.au">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="CNH-e6-ehf" firstAttribute="top" secondItem="eKw-Kn-bU9" secondAttribute="top" constant="111" id="B9P-tw-Q5f"/>
-                            <constraint firstItem="CNH-e6-ehf" firstAttribute="leading" secondItem="9vq-wk-bFB" secondAttribute="leading" type="default" id="FCo-Ng-9Pe"/>
-                            <constraint firstItem="CNH-e6-ehf" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="18" id="L1O-vz-6wL"/>
-                            <constraint firstItem="9vq-wk-bFB" firstAttribute="top" secondItem="CNH-e6-ehf" secondAttribute="bottom" constant="40" type="user" id="MH0-LG-zZ0"/>
-                            <constraint firstItem="9vq-wk-bFB" firstAttribute="trailing" secondItem="CNH-e6-ehf" secondAttribute="trailing" type="default" id="uyH-2Z-KWe"/>
+                            <constraint firstItem="zbK-zg-3Yz" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0Gz-8m-c1j"/>
+                            <constraint firstItem="Eam-yT-fz2" firstAttribute="bottom" secondItem="eKw-Kn-bU9" secondAttribute="bottom" type="default" id="2BJ-i6-6Uj"/>
+                            <constraint firstItem="NFt-8c-DrY" firstAttribute="bottom" secondItem="eKw-Kn-bU9" secondAttribute="bottom" type="default" id="8hw-a9-41a"/>
+                            <constraint firstItem="IBq-Fe-zcq" firstAttribute="top" secondItem="eKw-Kn-bU9" secondAttribute="top" constant="369" id="Bay-kM-iy0"/>
+                            <constraint firstAttribute="trailing" secondItem="qRo-1Q-WDk" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Byx-4j-ciD"/>
+                            <constraint firstItem="hsp-4B-25D" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Cjs-8w-JeM"/>
+                            <constraint firstItem="rse-Fi-yNC" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="89" id="EWC-Va-gRG"/>
+                            <constraint firstAttribute="bottom" secondItem="zbK-zg-3Yz" secondAttribute="bottom" constant="74" id="GVC-d0-uY7"/>
+                            <constraint firstItem="qRo-1Q-WDk" firstAttribute="top" secondItem="eKw-Kn-bU9" secondAttribute="top" constant="94" id="GhG-HW-qYT"/>
+                            <constraint firstItem="nCq-ND-Yul" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="JbL-u5-Qhf"/>
+                            <constraint firstItem="Myp-v5-zcs" firstAttribute="top" secondItem="eKw-Kn-bU9" secondAttribute="top" constant="139" id="Lxe-XI-4H3"/>
+                            <constraint firstItem="U1v-hw-zvF" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="M8j-Kw-12m"/>
+                            <constraint firstItem="ghP-At-FSg" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="NT7-Si-Gef"/>
+                            <constraint firstItem="gvw-si-PvL" firstAttribute="baseline" secondItem="rse-Fi-yNC" secondAttribute="baseline" type="default" id="NUx-Ad-MF0"/>
+                            <constraint firstItem="IBq-Fe-zcq" firstAttribute="top" secondItem="hGB-8J-j5h" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="Rqn-CM-RMN"/>
+                            <constraint firstAttribute="trailing" secondItem="NFt-8c-DrY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="SLC-Xu-ozM"/>
+                            <constraint firstItem="Eam-yT-fz2" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="TRM-sr-g9w"/>
+                            <constraint firstItem="NFt-8c-DrY" firstAttribute="leading" secondItem="IBq-Fe-zcq" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="V7v-ob-5Db"/>
+                            <constraint firstItem="nFL-Cp-fMn" firstAttribute="baseline" secondItem="gvw-si-PvL" secondAttribute="baseline" type="default" id="Vq2-nM-31L"/>
+                            <constraint firstItem="frb-BG-ftG" firstAttribute="top" secondItem="eKw-Kn-bU9" secondAttribute="top" constant="202" id="Xm9-aG-au8"/>
+                            <constraint firstItem="nCq-ND-Yul" firstAttribute="top" secondItem="eKw-Kn-bU9" secondAttribute="top" constant="71" id="YX0-2Z-kAZ"/>
+                            <constraint firstItem="rse-Fi-yNC" firstAttribute="baseline" secondItem="hsp-4B-25D" secondAttribute="baseline" type="default" id="ZzY-xO-xdI"/>
+                            <constraint firstItem="frb-BG-ftG" firstAttribute="trailing" secondItem="ghP-At-FSg" secondAttribute="trailing" type="default" id="aB1-Hh-FHj"/>
+                            <constraint firstAttribute="trailing" secondItem="Myp-v5-zcs" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="bdE-d9-sZo"/>
+                            <constraint firstItem="frb-BG-ftG" firstAttribute="trailing" secondItem="2OJ-ZP-OZR" secondAttribute="trailing" type="default" id="ieX-DN-UCA"/>
+                            <constraint firstItem="frb-BG-ftG" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jhA-xi-3zt"/>
+                            <constraint firstAttribute="trailing" secondItem="gvw-si-PvL" secondAttribute="trailing" constant="97" id="kHs-C2-KDv"/>
+                            <constraint firstAttribute="trailing" secondItem="nCq-ND-Yul" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="kkE-nY-M6m"/>
+                            <constraint firstAttribute="trailing" secondItem="hGB-8J-j5h" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mcR-5h-f1F"/>
+                            <constraint firstItem="U1v-hw-zvF" firstAttribute="top" secondItem="2OJ-ZP-OZR" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="nWD-4N-D4L"/>
+                            <constraint firstItem="hGB-8J-j5h" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="o32-HK-nZU"/>
+                            <constraint firstItem="hsp-4B-25D" firstAttribute="top" secondItem="frb-BG-ftG" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="rnf-HP-ExK"/>
+                            <constraint firstAttribute="trailing" secondItem="U1v-hw-zvF" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="sHT-qW-UAJ"/>
+                            <constraint firstItem="2OJ-ZP-OZR" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="sV9-bO-1IF"/>
+                            <constraint firstItem="zbK-zg-3Yz" firstAttribute="top" secondItem="ghP-At-FSg" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uBE-uY-asv"/>
+                            <constraint firstItem="Myp-v5-zcs" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="x7m-kJ-CAn"/>
+                            <constraint firstAttribute="trailing" secondItem="nFL-Cp-fMn" secondAttribute="trailing" constant="22" id="z0F-su-p2a"/>
+                            <constraint firstItem="qRo-1Q-WDk" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="z0e-Tw-x2Z"/>
+                            <constraint firstItem="2OJ-ZP-OZR" firstAttribute="top" secondItem="eKw-Kn-bU9" secondAttribute="top" constant="20" symbolic="YES" type="default" id="zcH-fL-lPE"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="Contact" image="fourth.png" id="kun-iS-DDe"/>
@@ -434,7 +604,7 @@
                                 <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P2I-oJ-MKg">
                                     <constraints>
                                         <constraint firstAttribute="height" constant="21" id="DOu-mu-3qM"/>
-                                        <constraint firstAttribute="width" constant="188" id="eya-OQ-jMC"/>
+                                        <constraint firstAttribute="width" constant="304" id="kvI-74-fhp"/>
                                     </constraints>
                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
                                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -447,7 +617,7 @@
                                 <constraint firstItem="Yzi-7T-3Ex" firstAttribute="leading" secondItem="DCc-FM-5l6" secondAttribute="leading" type="default" id="RbM-k1-AdA"/>
                                 <constraint firstItem="Yzi-7T-3Ex" firstAttribute="bottom" secondItem="DCc-FM-5l6" secondAttribute="bottom" type="default" id="XhG-if-6ME"/>
                                 <constraint firstItem="Yzi-7T-3Ex" firstAttribute="top" secondItem="DCc-FM-5l6" secondAttribute="top" type="default" id="YCn-Cg-rSX"/>
-                                <constraint firstItem="P2I-oJ-MKg" firstAttribute="leading" secondItem="DCc-FM-5l6" secondAttribute="leading" constant="61" id="edb-H4-sAw"/>
+                                <constraint firstItem="P2I-oJ-MKg" firstAttribute="leading" secondItem="DCc-FM-5l6" secondAttribute="leading" constant="6" id="Ydc-u2-7Ic"/>
                             </constraints>
                             <connections>
                                 <outlet property="backgroundImage" destination="Yzi-7T-3Ex" id="Lc6-Bp-Ebd"/>
@@ -588,9 +758,6 @@
         </class>
         <class className="UICollectionViewFlowLayout" superclassName="UICollectionViewLayout">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewFlowLayout.h"/>
-        </class>
-        <class className="UICollectionViewLayout" superclassName="NSObject">
-            <source key="sourceIdentifier" type="project" relativePath="./Classes/UICollectionViewLayout.h"/>
         </class>
     </classes>
     <simulatedMetricsContainer key="defaultSimulatedMetrics">

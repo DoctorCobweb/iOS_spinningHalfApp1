@@ -11,7 +11,7 @@
 #import "ServicesDetailViewController.h"
 
 @interface ServicesCollectionViewController (){
-    NSArray *recipeImages;
+    NSArray *recipeImages, *servicesSectionNames;
 }
 @end
 
@@ -40,7 +40,9 @@
     
     NSArray *mainDishImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg", @"japanese_noodle_with_pork.jpg", @"mushroom_risotto.jpg", @"noodle_with_bbq_pork.jpg", @"thai_shrimp_cake.jpg", @"vegetable_curry.jpg", nil];
     NSArray *drinkDessertImages = [NSArray arrayWithObjects:@"angry_birds_cake.jpg", @"creme_brelee.jpg", @"green_tea.jpg", @"starbucks_coffee.jpg", @"white_chocolate_donut.jpg", nil];
-    recipeImages = [NSArray arrayWithObjects:mainDishImages, drinkDessertImages, nil];
+    recipeImages = [NSArray arrayWithObjects:mainDishImages, drinkDessertImages,mainDishImages, drinkDessertImages, nil];
+    
+    servicesSectionNames = [NSArray arrayWithObjects:@"Management", @"Rehearsals", @"Promotion & Marketing", @"Technical", nil];
     
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
     collectionViewLayout.sectionInset = UIEdgeInsetsMake(20, 0, 20, 0);
@@ -85,7 +87,7 @@
     
     if (kind == UICollectionElementKindSectionHeader) {
         ServicesCollectionHeaderView *headerView = [collectionView dequeueReusableSupplementaryViewOfKind:UICollectionElementKindSectionHeader withReuseIdentifier:@"HeaderView" forIndexPath:indexPath];
-        NSString *title = [[NSString alloc]initWithFormat:@"Recipe Group #%i", indexPath.section + 1];
+        NSString *title = [[NSString alloc]initWithFormat:@"%@", servicesSectionNames[indexPath.section]];
         headerView.title.text = title;
         UIImage *headerImage = [UIImage imageNamed:@"header_banner.png"];
         headerView.backgroundImage.image = headerImage;

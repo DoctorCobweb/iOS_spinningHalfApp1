@@ -224,4 +224,49 @@ return gigs;
 
 }
 
+-(BOOL)isDatabaseEmpty{
+    sqlite3_stmt *statement;
+    const char *dbpath = [databasePath UTF8String];
+    
+    if (sqlite3_open(dbpath, &gigGuideDB) == SQLITE_OK) {
+        NSString *querySQL = [NSString stringWithFormat:@"SELECT * FROM gigsTABLE"];
+        
+        const char *query_stmt = [querySQL UTF8String];
+        
+        if (sqlite3_prepare_v2(gigGuideDB, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
+            
+             if (sqlite3_step(statement) != SQLITE_ROW) {
+             NSLog(@"DAO_DATABASE IS EMPTY: No rows in gigsTABLE database");
+                 return YES;
+             } else {
+                 return NO;
+             }
+            sqlite3_finalize(statement);
+        }
+        sqlite3_close(gigGuideDB);
+    } else {
+        NSLog(@"DAO_ERROR: Unable to open the database.");
+    }
+    //if control reaches here then assume there are no rows in table,
+    //go and fetch them.
+    //potential BUG??
+    return YES;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 @end

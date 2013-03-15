@@ -26,6 +26,7 @@
 @synthesize receivedData;
 @synthesize currentString;
 @synthesize tableView;
+//@synthesize refreshControl;
 
 - (void)viewDidLoad
 {
@@ -38,14 +39,57 @@
     gig = [Gig new];
     gigCount = 0;
     dao = [[DAO alloc] init];
+    
+    
+    //initialise the refresh controller
+    UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
+
+    
+    [refreshControl addTarget:self action:@selector(refreshMyTableView) forControlEvents:UIControlEventValueChanged];
+        self.refreshControl = refreshControl;
+    
+    /*
+    //set the title for pull request
+    refreshControl.attributedTitle = [[NSAttributedString alloc]initWithString:@"Pull to Refresh"];
+    
+    //call the refresh function
+    [refreshControl addTarget:self action:@selector(refreshMyTableView)
+             forControlEvents:UIControlEventValueChanged];
+    self.refreshControl = refreshControl;
+     */
+    
+    
+    /*
+    [self.refreshControl
+     addTarget:self
+     action:@selector(refreshMyTableView)
+     forControlEvents:UIControlEventValueChanged
+     ];
+     */
 
     //create the database "gigsDB.db" and table "gigsTABLE" in the Documents/ dir of app.
     [dao createDatabaseAndTable];
     //[dao saveData];
     //[dao getData];
+    BOOL var = [dao isDatabaseEmpty];
+    NSLog(@"DATABASE_STATUS: isEmpty = %@", (var ? @"YES": @"NO"));
     
+    if (var == YES) {
+        //there's nothing in the database to display. go make a connection
+        //download content, parse and insert it into database.
+        //then display it.
+        [self makeWebServiceConnection];
+    } else {
+        //there's stuff in the database already. use that to display data.
+        //populate the gigs array which table view needs in order to
+        //calculate how many rows it should display, contents for each row
+        //yadda yadda.
+        gigs = [dao getAllGigs];
+    }
+}
 
-    
+
+-(void)makeWebServiceConnection {
     //create a connection to the gig guide web service, download text
     //and display it to a text view.
     //
@@ -61,14 +105,11 @@
     
     //create the request.
     NSString *address =
-        @"http://www.spinning-half-jersey-jaxrs.appspot.com/rest/gigs";
+    @"http://www.spinning-half-jersey-jaxrs.appspot.com/rest/gigs";
     NSURL *url = [NSURL URLWithString:address];
-    NSURLRequest *theRequest = [NSURLRequest requestWithURL:url cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-    
-    /*
-    //ASIDE: or you could chain this all together in the following manner:
-    NSURLRequest *theRequest = [NSURLRequest requestWithURL:[NSURL URLWithString:@"http://www.spinninghalf.com.au"] cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:60.0];
-     */
+    NSURLRequest *theRequest = [NSURLRequest requestWithURL:url
+                                cachePolicy:NSURLRequestUseProtocolCachePolicy
+                                timeoutInterval:60.0];
     
     //create the connection using the request and start loading the data.
     //the downloading start immediately up receiving
@@ -79,7 +120,7 @@
         //create the NSMutatableData to hold the received data.
         receivedData = [NSMutableData data];
     } else {
-      //inform the user that the connection failed.
+        //inform the user that the connection failed.
         NSLog(@"The connection failed, dude.");
     }
 }
@@ -92,6 +133,7 @@
     return [gigs count];
 }
 
+
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     static NSString *simpleTableIdentifier = @"gigCell";
@@ -99,14 +141,13 @@
     UITableViewCell *cell = [tableView dequeueReusableCellWithIdentifier:simpleTableIdentifier];
     
     if (cell == nil) {
-        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:simpleTableIdentifier];
+        cell = [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault
+                                      reuseIdentifier:simpleTableIdentifier];
     }
     
     //textLabel is a default identifier for a label in prototype cell.
     //but now we are using a a custom cell protoype.
     //cell.textLabel.text = _tmp;
-
-    
     
     //PUT A DATABASE QUERY TO GET ALL THE GIGS
     //TO DISPLAY.
@@ -217,6 +258,11 @@
     
     NSLog(@"connection:didFinishLoading should only be called ONCE.");
     
+    //reset the gigs array because the parser will append each gig
+    //=> when calling pull-to-refresh we dont duplicate Gigs.
+    [gigs removeAllObjects];
+    
+    //start parsing, dude.
     [parser parse];
     
 
@@ -426,9 +472,11 @@ static NSString * kName_price = @"price";
             continue;
         }
         
+        
         if (dao.finishedSavingToDatabase) {
-            [dao getAllGigs];
+            gigs = [dao getAllGigs];
         }
+         
         
         
         
@@ -471,6 +519,14 @@ static NSString * kName_price = @"price";
     }
 }
 
+-(void) refreshMyTableView {
+    NSLog(@"REFRESH_MY_TABLE_VIEW: has been called.");
+    [self makeWebServiceConnection];
+    //[self.tableView reloadData];
+    [self.refreshControl endRefreshing];
+    
+    
+}
 
 - (void)didReceiveMemoryWarning
 {

@@ -71,6 +71,10 @@
     recipeImageView.image = [UIImage imageNamed:[recipeImages objectAtIndex:indexPath.section][indexPath.row]];
     
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
+
+    // this is called when user selects a particular image. it results
+    // in a red border being illuminated to signify a touch event.
+    cell.selectedBackgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame-selected.png"]];
     
     return cell;
 }

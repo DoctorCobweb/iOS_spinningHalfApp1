@@ -21,5 +21,6 @@
 - (BOOL)clearGigsTable;
 - (void)saveData:(NSMutableArray *)gigsArray;
 - (NSMutableArray *)getAllGigs;
+-(BOOL)isDatabaseEmpty;
 
 @end

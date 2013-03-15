@@ -45,8 +45,9 @@
     UIRefreshControl *refreshControl = [[UIRefreshControl alloc] init];
 
     
-    [refreshControl addTarget:self action:@selector(refreshMyTableView) forControlEvents:UIControlEventValueChanged];
-        self.refreshControl = refreshControl;
+    [refreshControl addTarget:self action:@selector(refreshMyTableView)
+                    forControlEvents:UIControlEventValueChanged];
+                    self.refreshControl = refreshControl;
     
     /*
     //set the title for pull request
@@ -69,9 +70,15 @@
 
     //create the database "gigsDB.db" and table "gigsTABLE" in the Documents/ dir of app.
     [dao createDatabaseAndTable];
-    //[dao saveData];
-    //[dao getData];
+
+    //because we are always calling isDatabaseEmpty
+    //if the database connection is not closed & statment
+    //finalized we get a Error:database locked.
+    //this was because of the multiple return statements in
+    //isDatabaseEmpty not closing , finalizing statements.
+    //CAUSED MANY WTFs.
     BOOL var = [dao isDatabaseEmpty];
+    //BOOL var = [dao clearGigsTable];
     NSLog(@"DATABASE_STATUS: isEmpty = %@", (var ? @"YES": @"NO"));
     
     if (var == YES) {
@@ -151,7 +158,8 @@
     
     //PUT A DATABASE QUERY TO GET ALL THE GIGS
     //TO DISPLAY.
-    NSMutableArray *tmp_gigs_array = [dao getAllGigs];
+    //NSMutableArray *tmp_gigs_array = [dao getAllGigs];
+    NSMutableArray *tmp_gigs_array = gigs;
     
     
     //get the gig associated with the row.
@@ -171,8 +179,6 @@
 }
 
 //-----END: table view delegate methods------------------------
-
-
 
 
 
@@ -256,7 +262,7 @@
     [self.currentString setString:@""];
     //if we comment the above line out, it still works. i dont get it yet fully.
     
-    NSLog(@"connection:didFinishLoading should only be called ONCE.");
+    NSLog(@"NSURLCONNECTION: connection:didFinishLoading should only be called ONCE.");
     
     //reset the gigs array because the parser will append each gig
     //=> when calling pull-to-refresh we dont duplicate Gigs.
@@ -451,15 +457,16 @@ static NSString * kName_price = @"price";
         }
          */
         
-        NSLog(@"Total number of gigs in gigs Array = %d", [gigs count]);
+        NSLog(@"PARSER_Total number of gigs in gigs Array = %d", [gigs count]);
         
         
         if ([dao clearGigsTable]) {
         //save gigs array data to the database
             NSLog(@"clearing gigsTABLE");
-        [dao saveData:gigs];
+            [dao saveData:gigs];
+            
         } else {
-            NSLog(@"FAILED: To clear the gigsTABLE table.");
+            NSLog(@"PARSER_FAIL: To clear the gigsTABLE table.");
           
         }
         
@@ -468,17 +475,16 @@ static NSString * kName_price = @"price";
         
         //wait for the database to finish saving
         while (!dao.finishedSavingToDatabase) {
-            NSLog(@"In Parser: SAVING DATA: Please wait.");
+            NSLog(@"PARSER_FAIL: SAVING DATA: Please wait.");
             continue;
         }
         
-        
+        /*
         if (dao.finishedSavingToDatabase) {
             gigs = [dao getAllGigs];
         }
-         
-        
-        
+         */
+
         
         
         //call reload data to display the dowloaded content.
@@ -521,8 +527,10 @@ static NSString * kName_price = @"price";
 
 -(void) refreshMyTableView {
     NSLog(@"REFRESH_MY_TABLE_VIEW: has been called.");
+    [dao clearGigsTable];
     [self makeWebServiceConnection];
-    //[self.tableView reloadData];
+    
+    //stop the animation
     [self.refreshControl endRefreshing];
     
     

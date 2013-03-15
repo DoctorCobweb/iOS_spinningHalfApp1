@@ -18,6 +18,7 @@
 @synthesize databasePath;
 @synthesize gigGuideDB;
 @synthesize finishedSavingToDatabase;
+@synthesize gigsTABLEEmpty;
 
 - (NSString *)getDocumentsDirectory {
     dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
@@ -55,15 +56,17 @@
             } else {
             NSLog(@"DAO_SUCCESS: Created database: \"gigsDB.db\" and table \"gigsTABLE\".");
             }
-            sqlite3_close(gigGuideDB);
+            //sqlite3_close(gigGuideDB);
         } else {
             NSLog(@"DAO_ERROR: Failed to open/create database");
         }
+        sqlite3_close(gigGuideDB);
     }
 }
 
 
 - (BOOL)clearGigsTable{
+    gigsTABLEEmpty = NO;
     NSString *mDocsDir = self.getDocumentsDirectory;
     //NSLog(@"DAO: mDocsDir = %@", mDocsDir);
     
@@ -87,19 +90,23 @@
             if (sqlite3_exec(gigGuideDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK) {
                 NSLog(@"DAO_ERROR: Failed to delete all rows in gigsTABLE");
                 NSLog(@"DAO_ERROR: errMsg: %s", errMsg);
+                
+                sqlite3_close(gigGuideDB);
                 return NO;
             } else {
                 NSLog(@"DAO_SUCCESS: Deleted all rows from table \"gigsTABLE\".");
+                gigsTABLEEmpty = YES;
             }
             sqlite3_close(gigGuideDB);
             return YES;
         } else {
             NSLog(@"DAO_ERROR: Failed to open/create database");
+            sqlite3_close(gigGuideDB);
             return NO;
         }
     }
-    
-    NSLog(@"There doesnt seem to be a database called gigsDB.db here");
+    sqlite3_close(gigGuideDB);
+    NSLog(@"DAO_ERROR: There doesnt seem to be a database called gigsDB.db here");
     return YES;
 }
 
@@ -195,7 +202,7 @@
                 
                 NSString *priceField = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 7)];
                 
-                NSLog(@"DAO_QUERY_RESULT: Result matched for query. The row[%d] returned is: primaryId=%@, author=%@, show=%@, date=%@, venue=%@, description=%@, tixurl=%@, price=%@", i, primaryIdField, authorField, showField, dateField, venueField, descriptionField, tixUrlField, priceField);
+                //NSLog(@"DAO_QUERY_RESULT: Result matched for query. The row[%d] returned is: primaryId=%@, author=%@, show=%@, date=%@, venue=%@, description=%@, tixurl=%@, price=%@", i, primaryIdField, authorField, showField, dateField, venueField, descriptionField, tixUrlField, priceField);
                 
                 Gig *_tmpGig = [Gig new];
                 _tmpGig.primaryId = primaryIdField;
@@ -213,17 +220,18 @@
             }
             
             if (i == 0) {
-                NSLog(@"No results were match for the query.");
+                NSLog(@"DAO_ERROR: No results were matched for the query.");
             }
-            
-            sqlite3_finalize(statement);
         }
+        sqlite3_finalize(statement);
         sqlite3_close(gigGuideDB);
     }
 return gigs;
-
 }
 
+
+//NOTE:u must always closed the database and finalize any
+//statements before EACH return. Otherwise, u get Err: Database locked.
 -(BOOL)isDatabaseEmpty{
     sqlite3_stmt *statement;
     const char *dbpath = [databasePath UTF8String];
@@ -237,11 +245,14 @@ return gigs;
             
              if (sqlite3_step(statement) != SQLITE_ROW) {
              NSLog(@"DAO_DATABASE IS EMPTY: No rows in gigsTABLE database");
+                 sqlite3_finalize(statement);
+                 sqlite3_close(gigGuideDB);
                  return YES;
              } else {
+                 sqlite3_finalize(statement);
+                 sqlite3_close(gigGuideDB);
                  return NO;
              }
-            sqlite3_finalize(statement);
         }
         sqlite3_close(gigGuideDB);
     } else {
@@ -250,23 +261,9 @@ return gigs;
     //if control reaches here then assume there are no rows in table,
     //go and fetch them.
     //potential BUG??
+    sqlite3_close(gigGuideDB);
     return YES;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 @end

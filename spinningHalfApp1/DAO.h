@@ -15,6 +15,7 @@
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *gigGuideDB;
 @property BOOL finishedSavingToDatabase;
+@property BOOL gigsTABLEEmpty;
 
 - (NSString *)getDocumentsDirectory;
 - (void)createDatabaseAndTable;

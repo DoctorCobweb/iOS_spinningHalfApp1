@@ -7,7 +7,25 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface FourthViewController : UIViewController
+@interface FourthViewController : UIViewController <MFMailComposeViewControllerDelegate>
+
+@property (weak, nonatomic) IBOutlet UIButton *onlineFacebookButton;
+@property (weak, nonatomic) IBOutlet UIButton *onlineTwitterButton;
+@property (weak, nonatomic) IBOutlet UIButton *onlineYoutubeButton;
+@property (weak, nonatomic) IBOutlet UIButton *onlineSpinningHalfWebsite;
+
+
+
+
+- (IBAction)callOfficeLine:(id)sender;
+- (IBAction)emailInfoAccount:(id)sender;
+- (IBAction)spinningHalfFacebook:(id)sender;
+- (IBAction)spinningHalfTwitter:(id)sender;
+- (IBAction)spinningHalfYoutube:(id)sender;
+- (IBAction)spinningHalfWebsite:(id)sender;
+- (IBAction)callAndreMobile:(id)sender;
+- (IBAction)emailBookingsAccount:(id)sender;
 
 @end

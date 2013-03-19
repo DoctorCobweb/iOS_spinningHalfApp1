@@ -525,7 +525,7 @@ static NSString * kName_price = @"price";
     }
 }
 
--(void) refreshMyTableView {
+-(void)refreshMyTableView {
     NSLog(@"REFRESH_MY_TABLE_VIEW: has been called.");
     [dao clearGigsTable];
     [self makeWebServiceConnection];

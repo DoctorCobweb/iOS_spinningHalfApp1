@@ -302,7 +302,7 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Suite 3 /2 Fenwick St South" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-hw-zvF">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Suite 3/2 Fenwick St South" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="U1v-hw-zvF">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="280" id="8ey-9J-2Ze"/>
                                 </constraints>
@@ -324,8 +324,11 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="callOfficeLine:" destination="Qya-Vj-Whd" eventType="touchUpInside" id="B3m-gE-ofn"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-4B-25D">
+                            <button opaque="NO" tag="200" contentMode="scaleToFill" restorationIdentifier="" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hsp-4B-25D">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="vgl-j4-4JS"/>
                                 </constraints>
@@ -337,8 +340,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="spinningHalfFacebook:" destination="Qya-Vj-Whd" eventType="touchUpInside" id="AU6-G4-Brw"/>
+                                    <segue destination="kHa-Ap-nIR" kind="modal" identifier="onlineFacebookButton" id="fd5-5Q-mSD"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rse-Fi-yNC">
+                            <button opaque="NO" tag="201" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rse-Fi-yNC">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="Gw3-9H-VEG"/>
                                 </constraints>
@@ -350,8 +357,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="spinningHalfTwitter:" destination="Qya-Vj-Whd" eventType="touchUpInside" id="0Td-MQ-cj6"/>
+                                    <segue destination="kHa-Ap-nIR" kind="modal" identifier="onlineTwitterButton" id="OdQ-kX-Z2M"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvw-si-PvL">
+                            <button opaque="NO" tag="202" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gvw-si-PvL">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="62" id="joI-qu-gVQ"/>
                                 </constraints>
@@ -363,8 +374,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="spinningHalfYoutube:" destination="Qya-Vj-Whd" eventType="touchUpInside" id="ciG-l1-iQL"/>
+                                    <segue destination="kHa-Ap-nIR" kind="modal" identifier="onlineYoutubeButton" id="w7T-qr-k0X"/>
+                                </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFL-Cp-fMn">
+                            <button opaque="NO" tag="203" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nFL-Cp-fMn">
                                 <constraints>
                                     <constraint firstAttribute="width" constant="65" id="60m-Xc-BQn"/>
                                 </constraints>
@@ -376,6 +391,10 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="spinningHalfWebsite:" destination="Qya-Vj-Whd" eventType="touchUpInside" id="IBS-wL-gmM"/>
+                                    <segue destination="kHa-Ap-nIR" kind="modal" identifier="onlineSpinningHalfWebsiteButton" id="s4y-4h-Xnq"/>
+                                </connections>
                             </button>
                             <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="313 Bellarine St" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zbK-zg-3Yz">
                                 <constraints>
@@ -402,6 +421,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="callOfficeLine:" destination="Qya-Vj-Whd" eventType="touchUpInside" id="DVu-Sh-4QN"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IBq-Fe-zcq">
                                 <constraints>
@@ -415,6 +437,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="callAndreMobile:" destination="Qya-Vj-Whd" eventType="touchUpInside" id="wAi-GO-8qd"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NFt-8c-DrY">
                                 <constraints>
@@ -428,6 +453,9 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="emailBookingsAccount:" destination="Qya-Vj-Whd" eventType="touchUpInside" id="ko7-E0-vcl"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Myp-v5-zcs">
                                 <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
@@ -438,9 +466,12 @@
                                 <state key="highlighted">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="emailInfoAccount:" destination="Qya-Vj-Whd" eventType="touchUpInside" id="WOY-2i-RlP"/>
+                                </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="zbK-zg-3Yz" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="0Gz-8m-c1j"/>
                             <constraint firstItem="Eam-yT-fz2" firstAttribute="bottom" secondItem="eKw-Kn-bU9" secondAttribute="bottom" type="default" id="2BJ-i6-6Uj"/>
@@ -452,7 +483,6 @@
                             <constraint firstItem="IBq-Fe-zcq" firstAttribute="top" secondItem="eKw-Kn-bU9" secondAttribute="top" constant="369" id="Bay-kM-iy0"/>
                             <constraint firstItem="qRo-1Q-WDk" firstAttribute="leading" secondItem="nCq-ND-Yul" secondAttribute="leading" type="default" id="Bsd-ex-m88"/>
                             <constraint firstItem="hsp-4B-25D" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="Cjs-8w-JeM"/>
-                            <constraint firstItem="rse-Fi-yNC" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="89" id="EWC-Va-gRG"/>
                             <constraint firstAttribute="bottom" secondItem="zbK-zg-3Yz" secondAttribute="bottom" constant="74" id="GVC-d0-uY7"/>
                             <constraint firstItem="XmB-2B-gal" firstAttribute="trailing" secondItem="eKw-Kn-bU9" secondAttribute="trailing" type="default" id="JYn-AL-1I0"/>
                             <constraint firstItem="qRo-1Q-WDk" firstAttribute="top" secondItem="eKw-Kn-bU9" secondAttribute="top" constant="123" id="LJ9-cv-jK9"/>
@@ -463,6 +493,7 @@
                             <constraint firstItem="U1v-hw-zvF" firstAttribute="leading" secondItem="nCq-ND-Yul" secondAttribute="leading" type="default" id="SIp-i2-2dZ"/>
                             <constraint firstAttribute="trailing" secondItem="NFt-8c-DrY" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="SLC-Xu-ozM"/>
                             <constraint firstItem="Eam-yT-fz2" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="TRM-sr-g9w"/>
+                            <constraint firstItem="gvw-si-PvL" firstAttribute="leading" secondItem="rse-Fi-yNC" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="Txq-fs-hGn"/>
                             <constraint firstItem="NFt-8c-DrY" firstAttribute="leading" secondItem="IBq-Fe-zcq" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="V7v-ob-5Db"/>
                             <constraint firstItem="nFL-Cp-fMn" firstAttribute="baseline" secondItem="gvw-si-PvL" secondAttribute="baseline" type="default" id="Vq2-nM-31L"/>
                             <constraint firstItem="XmB-2B-gal" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" type="default" id="WEo-Go-jjP"/>
@@ -473,7 +504,7 @@
                             <constraint firstAttribute="bottom" secondItem="hsp-4B-25D" secondAttribute="bottom" constant="127" id="h9A-lq-oKP"/>
                             <constraint firstItem="qRo-1Q-WDk" firstAttribute="trailing" secondItem="nCq-ND-Yul" secondAttribute="trailing" type="default" id="hQK-Qg-0gE"/>
                             <constraint firstItem="frb-BG-ftG" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="jhA-xi-3zt"/>
-                            <constraint firstAttribute="trailing" secondItem="gvw-si-PvL" secondAttribute="trailing" constant="97" id="kHs-C2-KDv"/>
+                            <constraint firstItem="rse-Fi-yNC" firstAttribute="leading" secondItem="hsp-4B-25D" secondAttribute="trailing" constant="8" symbolic="YES" type="default" id="kb8-Ch-5Kb"/>
                             <constraint firstAttribute="trailing" secondItem="hGB-8J-j5h" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="mcR-5h-f1F"/>
                             <constraint firstItem="hGB-8J-j5h" firstAttribute="leading" secondItem="eKw-Kn-bU9" secondAttribute="leading" constant="20" symbolic="YES" type="default" id="o32-HK-nZU"/>
                             <constraint firstItem="XmB-2B-gal" firstAttribute="top" secondItem="eKw-Kn-bU9" secondAttribute="top" type="default" id="qMd-nx-WSU"/>
@@ -486,10 +517,58 @@
                     </view>
                     <tabBarItem key="tabBarItem" title="Contact" image="fourth.png" id="kun-iS-DDe"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics"/>
+                    <connections>
+                        <outlet property="onlineFacebookButton" destination="hsp-4B-25D" id="ftF-cF-TY5"/>
+                        <outlet property="onlineSpinningHalfWebsite" destination="nFL-Cp-fMn" id="5vD-dr-nPf"/>
+                        <outlet property="onlineTwitterButton" destination="rse-Fi-yNC" id="RMe-Ua-zAX"/>
+                        <outlet property="onlineYoutubeButton" destination="gvw-si-PvL" id="F9Q-Oc-ZeA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5os-m2-6tS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="1244"/>
+            <point key="canvasLocation" x="1111" y="1244"/>
+        </scene>
+        <!--Contact Detail View Controller-->
+        <scene sceneID="tsi-pA-PCf">
+            <objects>
+                <viewController id="kHa-Ap-nIR" customClass="ContactDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2g9-8C-p17">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfD-oK-IOT">
+                                <items>
+                                    <navigationItem title="Title" id="ZNh-F5-NFD">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="m6u-mr-vZW">
+                                            <connections>
+                                                <action selector="close:" destination="kHa-Ap-nIR" id="Vp9-As-8CW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WKH-FY-uTZ">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="WKH-FY-uTZ" firstAttribute="trailing" secondItem="2g9-8C-p17" secondAttribute="trailing" type="default" id="3I1-xv-EDN"/>
+                            <constraint firstItem="WKH-FY-uTZ" firstAttribute="leading" secondItem="2g9-8C-p17" secondAttribute="leading" type="default" id="7wv-80-9bA"/>
+                            <constraint firstItem="WKH-FY-uTZ" firstAttribute="bottom" secondItem="2g9-8C-p17" secondAttribute="bottom" type="default" id="ATj-In-TJU"/>
+                            <constraint firstItem="sfD-oK-IOT" firstAttribute="trailing" secondItem="2g9-8C-p17" secondAttribute="trailing" type="default" id="UZ5-Mn-JUU"/>
+                            <constraint firstItem="sfD-oK-IOT" firstAttribute="top" secondItem="2g9-8C-p17" secondAttribute="top" type="default" id="mt7-Hz-ECL"/>
+                            <constraint firstItem="sfD-oK-IOT" firstAttribute="leading" secondItem="2g9-8C-p17" secondAttribute="leading" type="default" id="nLA-n3-h56"/>
+                            <constraint firstItem="WKH-FY-uTZ" firstAttribute="top" secondItem="sfD-oK-IOT" secondAttribute="bottom" type="default" id="zmi-2T-C8O"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="contactDetailWebView" destination="WKH-FY-uTZ" id="STi-xV-QRi"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="gr4-Lh-J33" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1546" y="1244"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -671,7 +750,7 @@
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86t-wz-YpQ">
                                 <items>
                                     <navigationItem title="Service Detail" id="wgk-qN-1Ws">
-                                        <barButtonItem key="rightBarButtonItem" title="Close" id="hEC-L5-Pdk">
+                                        <barButtonItem key="leftBarButtonItem" title="Close" id="hEC-L5-Pdk">
                                             <connections>
                                                 <action selector="close:" destination="kEA-wx-kE2" id="CFG-Nw-JWP"/>
                                             </connections>
@@ -713,6 +792,13 @@
         <image name="third.png" width="30" height="30"/>
     </resources>
     <classes>
+        <class className="ContactDetailViewController" superclassName="UIViewController">
+            <source key="sourceIdentifier" type="project" relativePath="./Classes/ContactDetailViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="close:"/>
+                <relationship kind="outlet" name="contactDetailWebView" candidateClass="UIWebView"/>
+            </relationships>
+        </class>
         <class className="FirstViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FirstViewController.h"/>
             <relationships>
@@ -721,6 +807,20 @@
         </class>
         <class className="FourthViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/FourthViewController.h"/>
+            <relationships>
+                <relationship kind="action" name="callAndreMobile:"/>
+                <relationship kind="action" name="callOfficeLine:"/>
+                <relationship kind="action" name="emailBookingsAccount:"/>
+                <relationship kind="action" name="emailInfoAccount:"/>
+                <relationship kind="action" name="spinningHalfFacebook:"/>
+                <relationship kind="action" name="spinningHalfTwitter:"/>
+                <relationship kind="action" name="spinningHalfWebsite:"/>
+                <relationship kind="action" name="spinningHalfYoutube:"/>
+                <relationship kind="outlet" name="onlineFacebookButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="onlineSpinningHalfWebsite" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="onlineTwitterButton" candidateClass="UIButton"/>
+                <relationship kind="outlet" name="onlineYoutubeButton" candidateClass="UIButton"/>
+            </relationships>
         </class>
         <class className="GigDetailViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/GigDetailViewController.h"/>
@@ -780,4 +880,7 @@
         <simulatedOrientationMetrics key="orientation"/>
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
+    <inferredMetricsTieBreakers>
+        <segue reference="s4y-4h-Xnq"/>
+    </inferredMetricsTieBreakers>
 </document>

@@ -40,9 +40,9 @@
     
     NSArray *mainDishImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg", @"japanese_noodle_with_pork.jpg", @"mushroom_risotto.jpg", @"noodle_with_bbq_pork.jpg", @"thai_shrimp_cake.jpg", @"vegetable_curry.jpg", nil];
     NSArray *drinkDessertImages = [NSArray arrayWithObjects:@"angry_birds_cake.jpg", @"creme_brelee.jpg", @"green_tea.jpg", @"starbucks_coffee.jpg", @"white_chocolate_donut.jpg", nil];
-    recipeImages = [NSArray arrayWithObjects:mainDishImages, drinkDessertImages,mainDishImages, drinkDessertImages, nil];
+    recipeImages = [NSArray arrayWithObjects:mainDishImages, drinkDessertImages,mainDishImages, drinkDessertImages, mainDishImages, nil];
     
-    servicesSectionNames = [NSArray arrayWithObjects:@"Management", @"Rehearsals", @"Promotion & Marketing", @"Technical", nil];
+    servicesSectionNames = [NSArray arrayWithObjects:@"Venue Booking", @"Management", @"Promotions & Marketing", @"Rehearsals", @"Technical", nil];
     
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
     collectionViewLayout.sectionInset = UIEdgeInsetsMake(20, 0, 20, 0);

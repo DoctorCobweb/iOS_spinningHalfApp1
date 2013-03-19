@@ -23,6 +23,7 @@
 
 -(void)makeWebServiceConnection;
 -(void) refreshMyTableView;
+- (IBAction)refreshButton:(id)sender;
 
 
 

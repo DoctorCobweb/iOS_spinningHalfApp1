@@ -536,6 +536,11 @@ static NSString * kName_price = @"price";
     
 }
 
+- (IBAction)refreshButton:(id)sender {
+    [dao clearGigsTable];
+    [self makeWebServiceConnection];
+}
+
 - (void)didReceiveMemoryWarning
 {
     [super didReceiveMemoryWarning];

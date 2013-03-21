@@ -16,6 +16,12 @@
 
 @synthesize serviceImageName;
 @synthesize serviceImageView;
+@synthesize theSelectedService;
+@synthesize title;
+@synthesize info_1;
+@synthesize info_2;
+@synthesize info_3;
+@synthesize navBarTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -30,8 +36,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    self.title = serviceImageName;
+    //self.title = serviceImageName;
     serviceImageView.image = [UIImage imageNamed:serviceImageName];
+    
+    navBarTitle.text = theSelectedService.title;
+    info_1.text = theSelectedService.info_1;
+    info_2.text = theSelectedService.info_2;
+    info_3.text = theSelectedService.info_3;
+    
     
     
 }

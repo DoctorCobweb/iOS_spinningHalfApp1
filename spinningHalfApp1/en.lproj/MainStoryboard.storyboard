@@ -755,7 +755,7 @@
                         <subviews>
                             <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="86t-wz-YpQ">
                                 <items>
-                                    <navigationItem title="Service Detail" id="wgk-qN-1Ws">
+                                    <navigationItem id="wgk-qN-1Ws">
                                         <barButtonItem key="leftBarButtonItem" title="Close" id="hEC-L5-Pdk">
                                             <connections>
                                                 <action selector="close:" destination="kEA-wx-kE2" id="CFG-Nw-JWP"/>
@@ -769,18 +769,70 @@
                                     <constraint firstAttribute="height" constant="200" id="Bcd-Mk-Ylp"/>
                                 </constraints>
                             </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gd7-1o-2j6">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="7Xg-yp-ANs"/>
+                                    <constraint firstAttribute="width" constant="240" id="a2P-fi-D4X"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hWv-dn-XGh">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="bx6-g4-z3r"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jmg-QN-zVi">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="47" id="D33-Ow-Ew5"/>
+                                </constraints>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5lK-py-PmQ">
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="193" id="Kck-jG-PSJ"/>
+                                    <constraint firstAttribute="height" constant="25" id="ar5-sx-8as"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="19"/>
+                                <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                                <color key="shadowColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="fzJ-S4-409" firstAttribute="top" secondItem="1mz-pT-Ibk" secondAttribute="top" constant="76" id="0Yq-KQ-RBS"/>
+                            <constraint firstItem="hWv-dn-XGh" firstAttribute="trailing" secondItem="jmg-QN-zVi" secondAttribute="trailing" type="default" id="3o7-Ql-FuN"/>
+                            <constraint firstItem="hWv-dn-XGh" firstAttribute="trailing" secondItem="Gd7-1o-2j6" secondAttribute="trailing" type="default" id="6US-Ql-e7l"/>
+                            <constraint firstItem="hWv-dn-XGh" firstAttribute="leading" secondItem="jmg-QN-zVi" secondAttribute="leading" type="default" id="6W5-Vd-bXM"/>
+                            <constraint firstItem="hWv-dn-XGh" firstAttribute="leading" secondItem="Gd7-1o-2j6" secondAttribute="leading" type="default" id="8cD-c0-wBn"/>
                             <constraint firstItem="86t-wz-YpQ" firstAttribute="trailing" secondItem="1mz-pT-Ibk" secondAttribute="trailing" type="default" id="Du6-Tb-I2Z"/>
+                            <constraint firstItem="Gd7-1o-2j6" firstAttribute="top" secondItem="fzJ-S4-409" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="I7u-Hf-44q"/>
+                            <constraint firstItem="fzJ-S4-409" firstAttribute="top" secondItem="86t-wz-YpQ" secondAttribute="bottom" type="default" id="JW1-um-9fI"/>
+                            <constraint firstItem="5lK-py-PmQ" firstAttribute="leading" secondItem="1mz-pT-Ibk" secondAttribute="leading" constant="75" id="MZw-XG-mLR"/>
+                            <constraint firstItem="Gd7-1o-2j6" firstAttribute="centerX" secondItem="fzJ-S4-409" secondAttribute="centerX" type="default" id="V8O-IG-gcY"/>
                             <constraint firstItem="fzJ-S4-409" firstAttribute="leading" secondItem="1mz-pT-Ibk" secondAttribute="leading" type="default" id="cwf-6n-LXk"/>
                             <constraint firstItem="86t-wz-YpQ" firstAttribute="top" secondItem="1mz-pT-Ibk" secondAttribute="top" type="default" id="e9C-IW-IOC"/>
+                            <constraint firstAttribute="bottom" secondItem="jmg-QN-zVi" secondAttribute="bottom" constant="15" id="fxx-fL-Hu9"/>
                             <constraint firstItem="86t-wz-YpQ" firstAttribute="leading" secondItem="1mz-pT-Ibk" secondAttribute="leading" type="default" id="ghg-kZ-kTH"/>
+                            <constraint firstItem="fzJ-S4-409" firstAttribute="top" secondItem="5lK-py-PmQ" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="h3m-1S-XgJ"/>
                             <constraint firstItem="fzJ-S4-409" firstAttribute="trailing" secondItem="1mz-pT-Ibk" secondAttribute="trailing" type="default" id="jMx-VL-Zuh"/>
+                            <constraint firstAttribute="bottom" secondItem="hWv-dn-XGh" secondAttribute="bottom" constant="90" id="mzA-Eg-oVM"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="info_1" destination="Gd7-1o-2j6" id="yaQ-d4-B1i"/>
+                        <outlet property="info_2" destination="hWv-dn-XGh" id="1dR-jt-JxA"/>
+                        <outlet property="info_3" destination="jmg-QN-zVi" id="7UP-fy-4u1"/>
+                        <outlet property="navBarTitle" destination="5lK-py-PmQ" id="eJA-0k-Hh4"/>
                         <outlet property="serviceImageView" destination="fzJ-S4-409" id="3wM-Cg-pgT"/>
                     </connections>
                 </viewController>
@@ -863,6 +915,10 @@
             <source key="sourceIdentifier" type="project" relativePath="./Classes/ServicesDetailViewController.h"/>
             <relationships>
                 <relationship kind="action" name="close:"/>
+                <relationship kind="outlet" name="info_1" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="info_2" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="info_3" candidateClass="UITextView"/>
+                <relationship kind="outlet" name="navBarTitle" candidateClass="UILabel"/>
                 <relationship kind="outlet" name="serviceImageView" candidateClass="UIImageView"/>
             </relationships>
         </class>

@@ -69,7 +69,7 @@
      */
 
     //create the database "gigsDB.db" and table "gigsTABLE" in the Documents/ dir of app.
-    [dao createDatabaseAndTable];
+    [dao createGigDatabaseAndTable];
 
     //because we are always calling isDatabaseEmpty
     //if the database connection is not closed & statment
@@ -77,7 +77,7 @@
     //this was because of the multiple return statements in
     //isDatabaseEmpty not closing , finalizing statements.
     //CAUSED MANY WTFs.
-    BOOL var = [dao isDatabaseEmpty];
+    BOOL var = [dao isGigsDatabaseEmpty];
     //BOOL var = [dao clearGigsTable];
     NSLog(@"DATABASE_STATUS: isEmpty = %@", (var ? @"YES": @"NO"));
     
@@ -463,7 +463,7 @@ static NSString * kName_price = @"price";
         if ([dao clearGigsTable]) {
         //save gigs array data to the database
             NSLog(@"clearing gigsTABLE");
-            [dao saveData:gigs];
+            [dao saveGigData:gigs];
             
         } else {
             NSLog(@"PARSER_FAIL: To clear the gigsTABLE table.");
@@ -474,7 +474,7 @@ static NSString * kName_price = @"price";
         //before attempting to read from it.
         
         //wait for the database to finish saving
-        while (!dao.finishedSavingToDatabase) {
+        while (!dao.finishedSavingToGigsDatabase) {
             NSLog(@"PARSER_FAIL: SAVING DATA: Please wait.");
             continue;
         }

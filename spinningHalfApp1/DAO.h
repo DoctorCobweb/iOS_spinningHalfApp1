@@ -14,14 +14,21 @@
 
 @property (strong, nonatomic) NSString *databasePath;
 @property (nonatomic) sqlite3 *gigGuideDB;
-@property BOOL finishedSavingToDatabase;
+@property (nonatomic) sqlite3 *servicesDB;
+@property BOOL finishedSavingToGigsDatabase;
+@property BOOL finishedSavingToServicesDatabase;
 @property BOOL gigsTABLEEmpty;
+@property BOOL servicesTABLEEmpty;
 
 - (NSString *)getDocumentsDirectory;
-- (void)createDatabaseAndTable;
+- (void)createGigDatabaseAndTable;
+- (void)createServicesDatabaseAndTable;
+- (void)dropServicesTable;
 - (BOOL)clearGigsTable;
-- (void)saveData:(NSMutableArray *)gigsArray;
+- (void)saveGigData:(NSMutableArray *)gigsArray;
+- (void)saveServicesData:(NSMutableArray *)servicesArray;
 - (NSMutableArray *)getAllGigs;
--(BOOL)isDatabaseEmpty;
+- (NSMutableArray *)getAllServices;
+-(BOOL)isGigsDatabaseEmpty;
 
 @end

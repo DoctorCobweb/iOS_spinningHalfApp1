@@ -9,19 +9,24 @@
 #import "ServicesCollectionViewController.h"
 #import "ServicesCollectionHeaderView.h"
 #import "ServicesDetailViewController.h"
+#import "DAO.h"
+#import "Service.h"
 
 @interface ServicesCollectionViewController (){
-    NSArray *recipeImages, *servicesSectionNames;
+    NSArray *serviceImages, *servicesSectionNames;
 }
 @end
 
-@implementation ServicesCollectionViewController
+@implementation ServicesCollectionViewController {
+    DAO *dao;
+    NSMutableArray *servicesContent;
+}
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
-        // Custom initialization
+    // Custom initialization
     }
     return self;
 }
@@ -32,21 +37,47 @@
 	// Do any additional setup after loading the view.
     
     self.title = @"Services";
+    dao = [[DAO alloc] init];
+    [dao createServicesDatabaseAndTable];
+    servicesContent = [[NSMutableArray alloc] init];
     
-    // Initialize recipe image array
-    /*
-    recipeImages = [NSArray arrayWithObjects:@"angry_birds_cake.jpg", @"creme_brelee.jpg", @"egg_benedict.jpg", @"full_breakfast.jpg", @"green_tea.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg", @"japanese_noodle_with_pork.jpg", @"mushroom_risotto.jpg", @"noodle_with_bbq_pork.jpg", @"starbucks_coffee.jpg", @"thai_shrimp_cake.jpg", @"vegetable_curry.jpg", @"white_chocolate_donut.jpg", nil];
-     */
     
-    NSArray *mainDishImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg", @"japanese_noodle_with_pork.jpg", @"mushroom_risotto.jpg", @"noodle_with_bbq_pork.jpg", @"thai_shrimp_cake.jpg", @"vegetable_curry.jpg", nil];
-    NSArray *drinkDessertImages = [NSArray arrayWithObjects:@"angry_birds_cake.jpg", @"creme_brelee.jpg", @"green_tea.jpg", @"starbucks_coffee.jpg", @"white_chocolate_donut.jpg", nil];
-    recipeImages = [NSArray arrayWithObjects:mainDishImages, drinkDessertImages,mainDishImages, drinkDessertImages, mainDishImages, nil];
+        
+    // Initialize all the image arrays for each service section.
+    NSArray *venueBookingImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", nil];
     
+    NSArray *managementImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", nil];
+
+    NSArray *promotionAndMarketingImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg", nil];
+    
+    NSArray *rehearsalImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", nil];
+    
+    NSArray *technicalImages = [NSArray arrayWithObjects:@"angry_birds_cake.jpg", @"creme_brelee.jpg", @"green_tea.jpg", @"starbucks_coffee.jpg", nil];
+    
+    //add the image arrays for serviceImages
+    serviceImages = [NSArray arrayWithObjects:venueBookingImages, managementImages,promotionAndMarketingImages, rehearsalImages, technicalImages, nil];
+    
+    //set service section names
     servicesSectionNames = [NSArray arrayWithObjects:@"Venue Booking", @"Management", @"Promotions & Marketing", @"Rehearsals", @"Technical", nil];
     
+    int j;
+    int max_service = 20;
+    for (j = 0; j < max_service; j++) {
+        //create the content to go into each service. 
+        Service *_tmpService = [Service new];
+        _tmpService.title  = [[NSString alloc] initWithFormat: @" %d service title.", j];
+        _tmpService.info_1 = [[NSString alloc] initWithFormat: @"info_1 content for %d service.", j];
+        _tmpService.info_2 = [[NSString alloc] initWithFormat: @"info_2 content for %d service.", j];
+        _tmpService.info_3 = [[NSString alloc] initWithFormat: @"info_3 content for %d service.", j];
+        
+        //add in the Service object to servicesContent array.
+        [servicesContent addObject:_tmpService];
+    }
+    NSLog(@"About to call saveServicesData:servicesArray");
+    [dao saveServicesData:servicesContent];
+
     UICollectionViewFlowLayout *collectionViewLayout = (UICollectionViewFlowLayout*)self.collectionView.collectionViewLayout;
     collectionViewLayout.sectionInset = UIEdgeInsetsMake(20, 0, 20, 0);
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -57,7 +88,7 @@
 
 
 - (NSInteger)collectionView:(UICollectionView *)collectionView numberOfItemsInSection:(NSInteger)section {
-    return [[recipeImages objectAtIndex:section] count];
+    return [[serviceImages objectAtIndex:section] count];
 }
 
 
@@ -66,9 +97,9 @@
     
     UICollectionViewCell *cell = [collectionView dequeueReusableCellWithReuseIdentifier:identifier forIndexPath:indexPath];
     
-    UIImageView *recipeImageView = (UIImageView *)[cell viewWithTag:100];
+    UIImageView *serviceImageView = (UIImageView *)[cell viewWithTag:100];
     //recipeImageView.image = [UIImage imageNamed:[recipeImages[indexPath.section][indexPath.row]];
-    recipeImageView.image = [UIImage imageNamed:[recipeImages objectAtIndex:indexPath.section][indexPath.row]];
+    serviceImageView.image = [UIImage imageNamed:[serviceImages objectAtIndex:indexPath.section][indexPath.row]];
     
     cell.backgroundView = [[UIImageView alloc] initWithImage:[UIImage imageNamed:@"photo-frame.png"]];
 
@@ -81,7 +112,7 @@
 
 - (NSInteger)numberOfSectionsInCollectionView:(UICollectionView *)collectionView
 {
-    return [recipeImages count];
+    return [serviceImages count];
 }
 
 //from CollectionViewDataSource protocol: method needed to display header & footer images/labels.
@@ -114,9 +145,17 @@
         NSArray *indexPaths = [self.collectionView indexPathsForSelectedItems];
         ServicesDetailViewController *destViewController = segue.destinationViewController;
         NSIndexPath *indexPath = [indexPaths objectAtIndex:0];
-        destViewController.serviceImageName = [recipeImages[indexPath.section] objectAtIndex:indexPath.row];
+        destViewController.serviceImageName = [serviceImages[indexPath.section] objectAtIndex:indexPath.row];
+        
+        NSMutableArray *tmp_all_services_array = [dao getAllServices];
+        
+        destViewController.theSelectedService = [tmp_all_services_array objectAtIndex:indexPath.row];
+        
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
     }
+    
+    //[dao dropServicesTable];
+
 }
 
 @end

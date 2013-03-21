@@ -7,10 +7,18 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "Service.h"
 
 @interface ServicesDetailViewController : UIViewController
-@property (weak, nonatomic) IBOutlet UIImageView *serviceImageView;
-@property (weak, nonatomic) NSString *serviceImageName;
+@property (strong, nonatomic) IBOutlet UIImageView *serviceImageView;
+@property (strong, nonatomic) NSString *serviceImageName;
+
+@property (strong, nonatomic) IBOutlet UITextView *info_1;
+@property (strong, nonatomic) IBOutlet UITextView *info_2;
+@property (strong, nonatomic) IBOutlet UITextView *info_3;
+@property (strong, nonatomic) IBOutlet UILabel *navBarTitle;
+
+@property (strong, nonatomic) Service *theSelectedService;
 
 
 - (IBAction)close:(id)sender;

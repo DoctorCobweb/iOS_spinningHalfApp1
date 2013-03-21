@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		65129BA416E7065F00F2B506 /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 65129BA316E7065F00F2B506 /* DAO.m */; };
 		65129BAB16E7072C00F2B506 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 65129BAA16E7072C00F2B506 /* libsqlite3.dylib */; };
+		651923E716FA8E0E0032FFA9 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 651923E616FA8E0E0032FFA9 /* Service.m */; };
 		6553B08C16F02811004125D4 /* ServicesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6553B08B16F02811004125D4 /* ServicesCollectionViewController.m */; };
 		6553B09016F02948004125D4 /* footer_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 6553B08E16F02948004125D4 /* footer_banner.png */; };
 		6553B09116F02948004125D4 /* header_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 6553B08F16F02948004125D4 /* header_banner.png */; };
@@ -65,6 +66,8 @@
 		65129BA216E7065F00F2B506 /* DAO.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DAO.h; sourceTree = "<group>"; };
 		65129BA316E7065F00F2B506 /* DAO.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DAO.m; sourceTree = "<group>"; };
 		65129BAA16E7072C00F2B506 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		651923E516FA8E0E0032FFA9 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Service.h; path = ../Service.h; sourceTree = "<group>"; };
+		651923E616FA8E0E0032FFA9 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Service.m; path = ../Service.m; sourceTree = "<group>"; };
 		6553B08A16F02811004125D4 /* ServicesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesCollectionViewController.h; sourceTree = "<group>"; };
 		6553B08B16F02811004125D4 /* ServicesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesCollectionViewController.m; sourceTree = "<group>"; };
 		6553B08E16F02948004125D4 /* footer_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footer_banner.png; sourceTree = "<group>"; };
@@ -202,6 +205,8 @@
 				65CC2DB816F7F93D00DAD951 /* ContactDetailViewController.m */,
 				6580AEF816DEEF6E0051F1FB /* SecondViewController.h */,
 				6580AEF916DEEF6E0051F1FB /* SecondViewController.m */,
+				651923E516FA8E0E0032FFA9 /* Service.h */,
+				651923E616FA8E0E0032FFA9 /* Service.m */,
 				6553B08A16F02811004125D4 /* ServicesCollectionViewController.h */,
 				6553B08B16F02811004125D4 /* ServicesCollectionViewController.m */,
 				6553B09216F02ADF004125D4 /* ServicesCollectionHeaderView.h */,
@@ -368,6 +373,7 @@
 				6553B09416F02ADF004125D4 /* ServicesCollectionHeaderView.m in Sources */,
 				6553B0BB16F039E2004125D4 /* ServicesDetailViewController.m in Sources */,
 				65CC2DB916F7F93D00DAD951 /* ContactDetailViewController.m in Sources */,
+				651923E716FA8E0E0032FFA9 /* Service.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

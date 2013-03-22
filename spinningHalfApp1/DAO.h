@@ -25,10 +25,12 @@
 - (void)createServicesDatabaseAndTable;
 - (void)dropServicesTable;
 - (BOOL)clearGigsTable;
+- (BOOL)clearServicesTable;
 - (void)saveGigData:(NSMutableArray *)gigsArray;
 - (void)saveServicesData:(NSMutableArray *)servicesArray;
 - (NSMutableArray *)getAllGigs;
 - (NSMutableArray *)getAllServices;
 -(BOOL)isGigsDatabaseEmpty;
+-(BOOL)isServicesDatabaseEmpty;
 
 @end

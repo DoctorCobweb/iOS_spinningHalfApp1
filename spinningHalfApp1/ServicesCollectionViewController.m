@@ -41,37 +41,83 @@
     [dao createServicesDatabaseAndTable];
     servicesContent = [[NSMutableArray alloc] init];
     
+    //leaving this in will result in clearing out the servicesTABLE
+    //out of all its rows EVERYTIME the app is launch...doing this
+    //for dev purposes. perhaps in production this should not happen.
+    if (![dao isServicesDatabaseEmpty]) {
+        [dao clearServicesTable];
+    }
     
         
     // Initialize all the image arrays for each service section.
     NSArray *venueBookingImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", nil];
+
+    NSArray *EventsImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", nil];
     
     NSArray *managementImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", nil];
 
-    NSArray *promotionAndMarketingImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg", nil];
+    NSArray *promotionAndMarketingImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg", @"green_tea.jpg", nil];
     
     NSArray *rehearsalImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", nil];
     
     NSArray *technicalImages = [NSArray arrayWithObjects:@"angry_birds_cake.jpg", @"creme_brelee.jpg", @"green_tea.jpg", @"starbucks_coffee.jpg", nil];
     
     //add the image arrays for serviceImages
-    serviceImages = [NSArray arrayWithObjects:venueBookingImages, managementImages,promotionAndMarketingImages, rehearsalImages, technicalImages, nil];
+    serviceImages = [NSArray arrayWithObjects:venueBookingImages, EventsImages, managementImages,promotionAndMarketingImages, rehearsalImages, technicalImages, nil];
     
     //set service section names
-    servicesSectionNames = [NSArray arrayWithObjects:@"Venue Booking", @"Management", @"Promotions & Marketing", @"Rehearsals", @"Technical", nil];
+    servicesSectionNames = [NSArray arrayWithObjects:@"Venue Booking", @"Events", @"Management", @"Promotions & Marketing", @"Rehearsal Rooms", @"Technical Production", nil];
     
-    int j;
-    int max_service = 20;
-    for (j = 0; j < max_service; j++) {
+    int max_service = 23;
+    for (int j = 0; j < max_service; j++) {
+        
         //create the content to go into each service. 
-        Service *_tmpService = [Service new];
-        _tmpService.title  = [[NSString alloc] initWithFormat: @" %d service title.", j];
-        _tmpService.info_1 = [[NSString alloc] initWithFormat: @"info_1 content for %d service.", j];
-        _tmpService.info_2 = [[NSString alloc] initWithFormat: @"info_2 content for %d service.", j];
-        _tmpService.info_3 = [[NSString alloc] initWithFormat: @"info_3 content for %d service.", j];
+        Service *tmpService = [Service new];
+        
+        /*
+        tmpService.title  = [[NSString alloc] initWithFormat: @" %d service title.", j];
+        tmpService.info_1 = [[NSString alloc] initWithFormat: @"info_1 content for %d service.", j];
+        tmpService.info_2 = [[NSString alloc] initWithFormat: @"info_2 content for %d service.", j];
+        tmpService.info_3 = [[NSString alloc] initWithFormat: @"info_3 content for %d service.", j];
+         */
+        
+        
+        //this is a really verbose way to get strings from the servicesStrings.strings
+        //file and then put it into the temporary Service object. each step is clearly
+        //laid out cause to make sure this is really working as expected. seems to be.
+        NSString *theTitleString;
+        NSString *theInfo1String;
+        NSString *theInfo2String;
+        NSString *theInfo3String;
+        
+        NSString *tmpTitleString = [[NSString alloc] initWithFormat:@"title%d", j];
+        NSString *tmpInfo1String = [[NSString alloc] initWithFormat:@"info%d_1", j];
+        NSString *tmpInfo2String = [[NSString alloc] initWithFormat:@"info%d_2", j];
+        NSString *tmpInfo3String = [[NSString alloc] initWithFormat:@"info%d_3", j];
+        
+        theTitleString = NSLocalizedStringFromTable (tmpTitleString, @"servicesStrings", nil);
+        theInfo1String = NSLocalizedStringFromTable (tmpInfo1String, @"servicesStrings", nil);
+        theInfo2String = NSLocalizedStringFromTable (tmpInfo2String, @"servicesStrings", nil);
+        theInfo3String = NSLocalizedStringFromTable (tmpInfo3String, @"servicesStrings", nil);
+        
+        /*
+        NSLog(@"%@", theTitleString);
+        NSLog(@"%@", theInfo1String);
+        NSLog(@"%@", theInfo2String);
+        NSLog(@"%@", theInfo3String);
+        */
+        
+        tmpService.title = theTitleString;
+        tmpService.info_1 = theInfo1String;
+        tmpService.info_2 = theInfo2String;
+        tmpService.info_3 = theInfo3String;
         
         //add in the Service object to servicesContent array.
-        [servicesContent addObject:_tmpService];
+        [servicesContent addObject:tmpService];
+        
+
+        
+        
     }
     NSLog(@"About to call saveServicesData:servicesArray");
     [dao saveServicesData:servicesContent];
@@ -165,7 +211,7 @@
         
         absolute_item_no = no_of_items_in_prev_sections + indexPath.row;
 
-        NSLog(@"indexPath.row = %d, indexPath.section = %d, no_of_items_in_prev_sections = %d, absolute_item_no = %d", indexPath.row, indexPath.section, no_of_items_in_prev_sections, absolute_item_no);
+        //NSLog(@"indexPath.row = %d, indexPath.section = %d, no_of_items_in_prev_sections = %d, absolute_item_no = %d", indexPath.row, indexPath.section, no_of_items_in_prev_sections, absolute_item_no);
         
         destViewController.theSelectedService = [tmp_all_services_array objectAtIndex:absolute_item_no];
         

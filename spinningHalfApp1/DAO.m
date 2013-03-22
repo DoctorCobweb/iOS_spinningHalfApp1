@@ -104,6 +104,52 @@
     }
 }
 
+- (BOOL)clearServicesTable{
+    servicesTABLEEmpty = NO;
+    NSString *mDocsDir = self.getDocumentsDirectory;
+    //NSLog(@"DAO: mDocsDir = %@", mDocsDir);
+    
+    
+    
+    //build the path to the database file
+    //it should be located at:
+    //"<application_home>/Documents/gigsDB.db"
+    databasePath = [[NSString alloc] initWithString:[mDocsDir stringByAppendingPathComponent:@"servicesDB.db"]];
+    
+    NSFileManager *fileMgr = [NSFileManager defaultManager];
+    const char *dbpath = [databasePath UTF8String];
+    if ([fileMgr fileExistsAtPath:databasePath] == YES) {
+        
+        
+        //sqlite3_open will create a database if it doesnt already exist.
+        if (sqlite3_open(dbpath, &servicesDB) == SQLITE_OK) {
+            char *errMsg;
+            const char *sql_stmt = "DELETE FROM servicesTABLE";
+            
+            if (sqlite3_exec(servicesDB, sql_stmt, NULL, NULL, &errMsg) != SQLITE_OK) {
+                NSLog(@"DAO_ERROR: Failed to delete all rows in servicesTABLE");
+                NSLog(@"DAO_ERROR: errMsg: %s", errMsg);
+                
+                sqlite3_close(servicesDB);
+                return NO;
+            } else {
+                NSLog(@"DAO_SUCCESS: Deleted all rows from table \"servicesTABLE\".");
+                servicesTABLEEmpty = YES;
+            }
+            sqlite3_close(servicesDB);
+            return YES;
+        } else {
+            NSLog(@"DAO_ERROR: Failed to open/create servicesDB.db database");
+            sqlite3_close(servicesDB);
+            return NO;
+        }
+    }
+    sqlite3_close(servicesDB);
+    NSLog(@"DAO_ERROR: There doesnt seem to be a database called servicesDB.db here");
+    return YES;
+}
+
+
 - (void)saveServicesData:(NSMutableArray *)servicesArray
 {
     finishedSavingToServicesDatabase = NO;
@@ -397,12 +443,13 @@ return gigs;
                 
                 NSString *info_3Field = [[NSString alloc] initWithUTF8String:(const char *)sqlite3_column_text(statement, 4)];
                 
-                
+                /*
                 NSLog(@"----------------------------------\n");
 
                 NSLog(@"DAO_SERVICE_QUERY_RESULT: Result matched for query. The row[%d] returned is: primaryId=%@, title=%@, info_1=%@, info_2=%@, info_3=%@", i, primaryIdField, titleField, info_1Field, info_2Field, info_3Field);
                 
                 NSLog(@"----------------------------------\n");
+                 */
                 
                 Service *_tmpService = [Service new];
                 _tmpService.primaryId = primaryIdField;
@@ -462,6 +509,42 @@ return gigs;
     sqlite3_close(gigGuideDB);
     return YES;
 }
+
+//NOTE:u must always closed the database and finalize any
+//statements before EACH return. Otherwise, u get Err: Database locked.
+-(BOOL)isServicesDatabaseEmpty{
+    sqlite3_stmt *statement;
+    const char *dbpath = [databasePath UTF8String];
+    
+    if (sqlite3_open(dbpath, &servicesDB) == SQLITE_OK) {
+        NSString *querySQL = [NSString stringWithFormat:@"SELECT * FROM servicesTABLE"];
+        
+        const char *query_stmt = [querySQL UTF8String];
+        
+        if (sqlite3_prepare_v2(servicesDB, query_stmt, -1, &statement, NULL) == SQLITE_OK) {
+            
+            if (sqlite3_step(statement) != SQLITE_ROW) {
+                NSLog(@"DAO_SERVICES_TABLE IS EMPTY: No rows in servicesTABLE.");
+                sqlite3_finalize(statement);
+                sqlite3_close(servicesDB);
+                return YES;
+            } else {
+                sqlite3_finalize(statement);
+                sqlite3_close(servicesDB);
+                return NO;
+            }
+        }
+        sqlite3_close(servicesDB);
+    } else {
+        NSLog(@"DAO_ERROR: Unable to open the servicesDB.db database.");
+    }
+    //if control reaches here then assume there are no rows in table,
+    //go and fetch them.
+    //potential BUG??
+    sqlite3_close(servicesDB);
+    return YES;
+}
+
 
 
 @end

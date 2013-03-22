@@ -55,6 +55,7 @@
 		6580AF0D16DEF3570051F1FB /* fourth@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0B16DEF3570051F1FB /* fourth@2x.png */; };
 		6580AF1016DEF35E0051F1FB /* third.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0E16DEF35E0051F1FB /* third.png */; };
 		6580AF1116DEF35E0051F1FB /* third@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6580AF0F16DEF35E0051F1FB /* third@2x.png */; };
+		65C77DED16FBFBA400D93EDA /* servicesStrings.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65C77DEC16FBFBA400D93EDA /* servicesStrings.strings */; };
 		65CC2DB916F7F93D00DAD951 /* ContactDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65CC2DB816F7F93D00DAD951 /* ContactDetailViewController.m */; };
 		65CC2DBC16F808AC00DAD951 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65CC2DBB16F808AC00DAD951 /* MessageUI.framework */; };
 		65D4796616E57C3C00A48D07 /* Gig.m in Sources */ = {isa = PBXBuildFile; fileRef = 65D4796516E57C3C00A48D07 /* Gig.m */; };
@@ -124,6 +125,7 @@
 		6580AF0B16DEF3570051F1FB /* fourth@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fourth@2x.png"; sourceTree = "<group>"; };
 		6580AF0E16DEF35E0051F1FB /* third.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = third.png; sourceTree = "<group>"; };
 		6580AF0F16DEF35E0051F1FB /* third@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "third@2x.png"; sourceTree = "<group>"; };
+		65C77DEC16FBFBA400D93EDA /* servicesStrings.strings */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.strings; path = servicesStrings.strings; sourceTree = "<group>"; };
 		65CC2DB716F7F93D00DAD951 /* ContactDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ContactDetailViewController.h; path = ../ContactDetailViewController.h; sourceTree = "<group>"; };
 		65CC2DB816F7F93D00DAD951 /* ContactDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ContactDetailViewController.m; path = ../ContactDetailViewController.m; sourceTree = "<group>"; };
 		65CC2DBB16F808AC00DAD951 /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
@@ -209,6 +211,7 @@
 				651923E616FA8E0E0032FFA9 /* Service.m */,
 				6553B08A16F02811004125D4 /* ServicesCollectionViewController.h */,
 				6553B08B16F02811004125D4 /* ServicesCollectionViewController.m */,
+				65C77DEC16FBFBA400D93EDA /* servicesStrings.strings */,
 				6553B09216F02ADF004125D4 /* ServicesCollectionHeaderView.h */,
 				6553B09316F02ADF004125D4 /* ServicesCollectionHeaderView.m */,
 				6553B0B916F039E2004125D4 /* ServicesDetailViewController.h */,
@@ -350,6 +353,7 @@
 				6553B0B616F03202004125D4 /* photo-frame-selected.png in Resources */,
 				6553B0B716F03202004125D4 /* photo-frame.png in Resources */,
 				6553B0B816F03202004125D4 /* photo-frame@2x.png in Resources */,
+				65C77DED16FBFBA400D93EDA /* servicesStrings.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

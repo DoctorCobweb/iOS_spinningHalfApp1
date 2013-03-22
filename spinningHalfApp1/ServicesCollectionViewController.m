@@ -115,6 +115,8 @@
     return [serviceImages count];
 }
 
+
+
 //from CollectionViewDataSource protocol: method needed to display header & footer images/labels.
 - (UICollectionReusableView *)collectionView:(UICollectionView *)collectionView viewForSupplementaryElementOfKind:(NSString *)kind atIndexPath:(NSIndexPath *)indexPath
 {
@@ -149,7 +151,23 @@
         
         NSMutableArray *tmp_all_services_array = [dao getAllServices];
         
-        destViewController.theSelectedService = [tmp_all_services_array objectAtIndex:indexPath.row];
+        //this holds the absolute index value for the item in the collection view
+        int absolute_item_no = 0;
+        
+        //holds the number of items in all previous sections
+        int no_of_items_in_prev_sections = 0;
+        
+        //loop over previous sections to add in each's no of rows
+        //to get no_of_items_in_prev_sections value.
+        for (int j = 0; j < indexPath.section; j++) {
+            no_of_items_in_prev_sections += [self collectionView:self.collectionView numberOfItemsInSection:j];
+        }
+        
+        absolute_item_no = no_of_items_in_prev_sections + indexPath.row;
+
+        NSLog(@"indexPath.row = %d, indexPath.section = %d, no_of_items_in_prev_sections = %d, absolute_item_no = %d", indexPath.row, indexPath.section, no_of_items_in_prev_sections, absolute_item_no);
+        
+        destViewController.theSelectedService = [tmp_all_services_array objectAtIndex:absolute_item_no];
         
         [self.collectionView deselectItemAtIndexPath:indexPath animated:NO];
     }

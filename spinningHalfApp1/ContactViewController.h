@@ -1,0 +1,14 @@
+//
+//  ContactViewController.h
+//  spinningHalfApp1
+//
+//  Created by andre trosky on 23/03/13.
+//  Copyright (c) 2013 andre trosky. All rights reserved.
+//
+
+#import <UIKit/UIKit.h>
+
+@interface ContactViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+
+
+@end

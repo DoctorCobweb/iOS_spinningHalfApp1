@@ -33,6 +33,7 @@
 		6553B0B716F03202004125D4 /* photo-frame.png in Resources */ = {isa = PBXBuildFile; fileRef = 6553B0B416F03201004125D4 /* photo-frame.png */; };
 		6553B0B816F03202004125D4 /* photo-frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6553B0B516F03201004125D4 /* photo-frame@2x.png */; };
 		6553B0BB16F039E2004125D4 /* ServicesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6553B0BA16F039E2004125D4 /* ServicesDetailViewController.m */; };
+		6574601A170006AD001CA804 /* PurchaseTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65746019170006AD001CA804 /* PurchaseTicketsViewController.m */; };
 		6580AED716DEEF6E0051F1FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6580AED616DEEF6E0051F1FB /* UIKit.framework */; };
 		6580AED916DEEF6E0051F1FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6580AED816DEEF6E0051F1FB /* Foundation.framework */; };
 		6580AEDB16DEEF6E0051F1FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6580AEDA16DEEF6E0051F1FB /* CoreGraphics.framework */; };
@@ -96,6 +97,8 @@
 		6553B0B516F03201004125D4 /* photo-frame@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "photo-frame@2x.png"; sourceTree = "<group>"; };
 		6553B0B916F039E2004125D4 /* ServicesDetailViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesDetailViewController.h; sourceTree = "<group>"; };
 		6553B0BA16F039E2004125D4 /* ServicesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesDetailViewController.m; sourceTree = "<group>"; };
+		65746018170006AD001CA804 /* PurchaseTicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseTicketsViewController.h; sourceTree = "<group>"; };
+		65746019170006AD001CA804 /* PurchaseTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseTicketsViewController.m; sourceTree = "<group>"; };
 		6580AED216DEEF6E0051F1FB /* spinningHalfApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spinningHalfApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6580AED616DEEF6E0051F1FB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6580AED816DEEF6E0051F1FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -227,6 +230,8 @@
 				6580AF0516DEF00A0051F1FB /* ThirdViewController.m */,
 				65D4796816E597AB00A48D07 /* images */,
 				6580AEDD16DEEF6E0051F1FB /* Supporting Files */,
+				65746018170006AD001CA804 /* PurchaseTicketsViewController.h */,
+				65746019170006AD001CA804 /* PurchaseTicketsViewController.m */,
 			);
 			path = spinningHalfApp1;
 			sourceTree = "<group>";
@@ -384,6 +389,7 @@
 				65CC2DB916F7F93D00DAD951 /* ContactDetailViewController.m in Sources */,
 				651923E716FA8E0E0032FFA9 /* Service.m in Sources */,
 				65A07C5F16FD917E0028B669 /* ContactViewController.m in Sources */,
+				6574601A170006AD001CA804 /* PurchaseTicketsViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

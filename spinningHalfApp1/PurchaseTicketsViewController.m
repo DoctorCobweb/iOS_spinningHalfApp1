@@ -1,21 +1,21 @@
 //
-//  ContactDetailViewController.m
+//  PurchaseTicketsViewController.m
 //  spinningHalfApp1
 //
-//  Created by andre trosky on 19/03/13.
+//  Created by andre trosky on 25/03/13.
 //  Copyright (c) 2013 andre trosky. All rights reserved.
 //
 
-#import "ContactDetailViewController.h"
+#import "PurchaseTicketsViewController.h"
 
-@interface ContactDetailViewController ()
+@interface PurchaseTicketsViewController ()
 
 @end
 
-@implementation ContactDetailViewController
+@implementation PurchaseTicketsViewController
 
-@synthesize contactDetailWebView;
-@synthesize WEBVIEW_URL;
+@synthesize webView;
+@synthesize URL_STRING;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -31,9 +31,11 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSURL *url = [NSURL URLWithString:self.WEBVIEW_URL];
+    NSURL *url = [NSURL URLWithString:self.URL_STRING];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
-    [contactDetailWebView loadRequest:requestObj];
+    [webView loadRequest:requestObj];
+    
+    NSLog(@"%@", URL_STRING);
 }
 
 
@@ -43,10 +45,4 @@
     // Dispose of any resources that can be recreated.
 }
 
-
-/*
-- (IBAction)close:(id)sender {
-        [self dismissViewControllerAnimated:YES completion:NULL];
-}
- */
 @end

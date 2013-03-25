@@ -54,7 +54,7 @@
 
     NSArray *EventsImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", nil];
     
-    NSArray *managementImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", nil];
+    NSArray *managementImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"hamburger.jpg", @"hamburger.jpg", nil];
 
     NSArray *promotionAndMarketingImages = [NSArray arrayWithObjects:@"egg_benedict.jpg", @"full_breakfast.jpg", @"ham_and_cheese_panini.jpg", @"ham_and_egg_sandwich.jpg", @"hamburger.jpg", @"instant_noodle_with_egg.jpg", @"green_tea.jpg", nil];
     
@@ -68,7 +68,7 @@
     //set service section names
     servicesSectionNames = [NSArray arrayWithObjects:@"Venue Booking", @"Events", @"Management", @"Promotions & Marketing", @"Rehearsal Rooms", @"Technical Production", nil];
     
-    int max_service = 23;
+    int max_service = 25;
     for (int j = 0; j < max_service; j++) {
         
         //create the content to go into each service. 

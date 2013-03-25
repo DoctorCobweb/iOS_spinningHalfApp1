@@ -13,14 +13,11 @@
 @property (strong, nonatomic) IBOutlet UIImageView *serviceImageView;
 @property (strong, nonatomic) NSString *serviceImageName;
 
-@property (strong, nonatomic) IBOutlet UITextView *info_1;
+@property (weak, nonatomic) IBOutlet UILabel *info_1;
 @property (strong, nonatomic) IBOutlet UITextView *info_2;
 @property (strong, nonatomic) IBOutlet UITextView *info_3;
-@property (strong, nonatomic) IBOutlet UILabel *navBarTitle;
 
 @property (strong, nonatomic) Service *theSelectedService;
 
-
-- (IBAction)close:(id)sender;
 
 @end

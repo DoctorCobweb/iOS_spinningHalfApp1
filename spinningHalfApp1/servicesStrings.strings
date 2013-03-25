@@ -9,10 +9,10 @@
 //the number of sets of strings (the 4 'elements' title, info_1, info_2, info_3)
 //needs to match the number of items in the collectionview!!!
 
-"title0" = "Wool Exchange";
+"title0" = "The Wool Exchange";
 "info0_1" = "this is info0_1 stuff";
 "info0_2" = "this is info0_2 stuff";
-"info0_3" = "this is info0_3 stuff";
+"info0_3" = "Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.";
 
 "title1" = "The Yarra Hotel";
 "info1_1" = "this is info1_1 stuff";
@@ -54,77 +54,87 @@
 "info8_2" = "this is info8_2 stuff";
 "info8_3" = "this is info8_3 stuff";
 
-"title9" = "Leikography";
+"title9" = "Eater of the Sky";
 "info9_1" = "this is info9_1 stuff";
 "info9_2" = "this is info9_2 stuff";
 "info9_3" = "this is info9_3 stuff";
 
-"title10" = "Printing";
+"title10" = "The Greeting Method";
 "info10_1" = "this is info10_1 stuff";
 "info10_2" = "this is info10_2 stuff";
 "info10_3" = "this is info10_3 stuff";
 
-"title11" = "Distribution";
+"title11" = "Leikography";
 "info11_1" = "this is info11_1 stuff";
 "info11_2" = "this is info11_2 stuff";
 "info11_3" = "this is info11_3 stuff";
 
-"title12" = "Merchandising";
+"title12" = "Printing";
 "info12_1" = "this is info12_1 stuff";
 "info12_2" = "this is info12_2 stuff";
 "info12_3" = "this is info12_3 stuff";
 
-"title13" = "Graphic Design";
+"title13" = "Distribution";
 "info13_1" = "this is info13_1 stuff";
 "info13_2" = "this is info13_2 stuff";
 "info13_3" = "this is info13_3 stuff";
 
-"title14" = "Photography";
+"title14" = "Merchandising";
 "info14_1" = "this is info14_1 stuff";
 "info14_2" = "this is info14_2 stuff";
 "info14_3" = "this is info14_3 stuff";
 
-"title15" = "CD Duplication";
+"title15" = "Graphic Design";
 "info15_1" = "this is info15_1 stuff";
 "info15_2" = "this is info15_2 stuff";
 "info15_3" = "this is info15_3 stuff";
 
-"title16" = "Mobile App Design";
+"title16" = "Photography";
 "info16_1" = "this is info16_1 stuff";
 "info16_2" = "this is info16_2 stuff";
 "info16_3" = "this is info16_3 stuff";
 
-"title17" = "Main Room";
+"title17" = "CD Duplication";
 "info17_1" = "this is info17_1 stuff";
 "info17_2" = "this is info17_2 stuff";
 "info17_3" = "this is info17_3 stuff";
 
-"title18" = "Studio Room";
+"title18" = "Mobile App Design";
 "info18_1" = "this is info18_1 stuff";
 "info18_2" = "this is info18_2 stuff";
 "info18_3" = "this is info18_3 stuff";
 
-"title19" = "PA Hire";
+"title19" = "Main Room";
 "info19_1" = "this is info19_1 stuff";
 "info19_2" = "this is info19_2 stuff";
 "info19_3" = "this is info19_3 stuff";
 
-"title20" = "Sound Engineer Hire";
+"title20" = "Studio Room";
 "info20_1" = "this is info20_1 stuff";
 "info20_2" = "this is info20_2 stuff";
 "info20_3" = "this is info20_3 stuff";
 
-"title21" = "Recording Studios";
+"title21" = "PA Hire";
 "info21_1" = "this is info21_1 stuff";
 "info21_2" = "this is info21_2 stuff";
 "info21_3" = "this is info21_3 stuff";
 
-"title22" = "Mobile App Design";
+"title22" = "Sound Engineer Hire";
 "info22_1" = "this is info22_1 stuff";
 "info22_2" = "this is info22_2 stuff";
 "info22_3" = "this is info22_3 stuff";
 
-"title23" = "this is title 23";
+"title23" = "Recording Studios";
 "info23_1" = "this is info23_1 stuff";
 "info23_2" = "this is info23_2 stuff";
 "info23_3" = "this is info23_3 stuff";
+
+"title24" = "Mobile App Design";
+"info24_1" = "this is info24_1 stuff";
+"info24_2" = "this is info24_2 stuff";
+"info24_3" = "this is info24_3 stuff";
+
+"title25" = "this is title 25";
+"info25_1" = "this is info25_1 stuff";
+"info25_2" = "this is info25_2 stuff";
+"info25_3" = "this is info25_3 stuff";

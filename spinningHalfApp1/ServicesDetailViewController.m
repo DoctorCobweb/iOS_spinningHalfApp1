@@ -21,7 +21,6 @@
 @synthesize info_1;
 @synthesize info_2;
 @synthesize info_3;
-@synthesize navBarTitle;
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -36,16 +35,12 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    //self.title = serviceImageName;
+    self.title = theSelectedService.title;
     serviceImageView.image = [UIImage imageNamed:serviceImageName];
     
-    navBarTitle.text = theSelectedService.title;
-    info_1.text = theSelectedService.info_1;
+    info_1.text = [[NSString alloc] initWithFormat:@"  %@", theSelectedService.info_1];
     info_2.text = theSelectedService.info_2;
     info_3.text = theSelectedService.info_3;
-    
-    
-    
 }
 
 - (void)didReceiveMemoryWarning
@@ -54,7 +49,5 @@
     // Dispose of any resources that can be recreated.
 }
 
-- (IBAction)close:(id)sender {
-    [self dismissViewControllerAnimated:YES completion:NULL];
-}
+
 @end

@@ -13,6 +13,6 @@
 @property (strong, nonatomic) NSString *WEBVIEW_URL;
 @property (weak, nonatomic) IBOutlet UIWebView *contactDetailWebView;
 
-- (IBAction)close:(id)sender;
+//- (IBAction)close:(id)sender;
 
 @end

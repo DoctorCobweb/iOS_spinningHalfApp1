@@ -195,7 +195,7 @@
 
 
 - (void)callOfficeLine{
-    NSLog(@"Pressed callOfficeLine");
+    //NSLog(@"Pressed callOfficeLine");
     NSString *officeNumber = @"tel://0352221186";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:officeNumber]];
     
@@ -203,15 +203,15 @@
 
 
 - (void)callAndreMobile{
-    NSLog(@"Pressed callAndreMobile");
+    //NSLog(@"Pressed callAndreMobile");
     NSString *andreMobileNumber = @"tel://0421866977";
     [[UIApplication sharedApplication] openURL:[NSURL URLWithString:andreMobileNumber]];
 }
 
 
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
-    NSLog(@"CONTACT_TABLE_VIEW: row selected = %d, section selected = %d", indexPath.row, indexPath.section);
+    //NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
+    //NSLog(@"CONTACT_TABLE_VIEW: row selected = %d, section selected = %d", indexPath.row, indexPath.section);
     
     if ([segue.identifier isEqualToString:@"contactOfficeLocationSegue"]) {
         ContactDetailViewController *destViewController = segue.destinationViewController;

@@ -17,6 +17,7 @@
 @property (strong, nonatomic) IBOutlet UILabel *gigDetailVenueLabel;
 @property (strong, nonatomic) IBOutlet UITextView *gigDetailDescriptionLabel;
 @property (strong, nonatomic) IBOutlet UILabel *gigDetailTixUrlLabel;
+@property (strong, nonatomic) IBOutlet UIButton *gigDetailTixUrlButton;
 @property (strong, nonatomic) IBOutlet UILabel *gigDetailPriceLabel;
 
 //this will hold the reference to the gig selected in table view. passed

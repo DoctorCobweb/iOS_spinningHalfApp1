@@ -7,6 +7,7 @@
 //
 
 #import "GigDetailViewController.h"
+#import "PurchaseTicketsViewController.h"
 
 @interface GigDetailViewController ()
 
@@ -19,6 +20,7 @@
 @synthesize gigDetailVenueLabel;
 @synthesize gigDetailDescriptionLabel;
 @synthesize gigDetailTixUrlLabel;
+@synthesize gigDetailTixUrlButton;
 @synthesize gigDetailPriceLabel;
 @synthesize theSelectedGig;
 
@@ -33,6 +35,7 @@
 
 - (void)viewDidLoad
 {
+    //self.navigationController.navigationItem.backBarButtonItem
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
@@ -44,7 +47,10 @@
     gigDetailVenueLabel.text = theSelectedGig.venue;
     gigDetailDescriptionLabel.text = theSelectedGig.description;
     gigDetailTixUrlLabel.text = theSelectedGig.tixUrl;
+    //gigDetailTixUrlButton.setTitleLabel = theSelectedGig.tixUrl;
     gigDetailPriceLabel.text = theSelectedGig.price;
+    
+    
 }
 
 - (void)didReceiveMemoryWarning
@@ -52,5 +58,16 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    if ([segue.identifier isEqualToString:@"onlineTicketPurchaseSegue"]) {
+        PurchaseTicketsViewController *destViewController = segue.destinationViewController;
+        
+        
+        
+        destViewController.URL_STRING = theSelectedGig.tixUrl;
+    }
+}
+
 
 @end

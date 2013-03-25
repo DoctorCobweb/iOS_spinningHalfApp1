@@ -7,8 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <MessageUI/MessageUI.h>
 
-@interface ContactViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate>
+@interface ContactViewController : UITableViewController <UITableViewDataSource, UITableViewDelegate, MFMailComposeViewControllerDelegate>
 
+
+- (void)emailInfoAccount;
+- (void)emailBookingsAccount;
+- (void)callOfficeline;
+- (void)callAndreMobile;
 
 @end

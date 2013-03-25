@@ -38,7 +38,7 @@
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     self.title = @"Contact";
-    online_urls = [NSArray arrayWithObjects:@"https://www.facebook.com/spinning.half", @"https://twitter.com/spinninghalf", @"http://www.youtube.com/user/SpinningHalfLive/videos?flow=grid&view=0", @"https://www.facebook.com/spinning.half" ,nil];
+    online_urls = [NSArray arrayWithObjects:@"https://www.facebook.com/spinning.half", @"https://twitter.com/spinninghalf", @"http://www.youtube.com/user/SpinningHalfLive/videos?flow=grid&view=0", @"http://www.spinninghalf.com.au" ,nil];
 }
 
 - (void)didReceiveMemoryWarning
@@ -74,6 +74,29 @@
     [self presentViewController:mc animated:YES completion:NULL];
     
 }
+
+- (IBAction)emailBookingsAccount:(id)sender {
+    NSLog(@"Pressed emailBookingsAccount");
+    NSLog(@"Pressed emailInfoAccount");
+    // Email Subject
+    NSString *emailTitle = @"Booking Inquiry";
+    // Email Content
+    NSString *messageBody = @"Please add email content here.";
+    // To address
+    NSArray *toRecipents = [NSArray arrayWithObject:@"bookings@spinninghalf.com.au"];
+    
+    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
+    mc.mailComposeDelegate = self;
+    [mc setSubject:emailTitle];
+    [mc setMessageBody:messageBody isHTML:NO];
+    [mc setToRecipients:toRecipents];
+    
+    // Present mail view controller on screen
+    [self presentViewController:mc animated:YES completion:NULL];
+    
+    
+}
+
 
 //this is part of the MFMailComposerViewControllerDelegate protocol.
 - (void) mailComposeController:(MFMailComposeViewController *)controller didFinishWithResult:(MFMailComposeResult)result error:(NSError *)error
@@ -123,27 +146,6 @@
 }
 
 
-- (IBAction)emailBookingsAccount:(id)sender {
-    NSLog(@"Pressed emailBookingsAccount");
-    NSLog(@"Pressed emailInfoAccount");
-    // Email Subject
-    NSString *emailTitle = @"Booking Inquiry";
-    // Email Content
-    NSString *messageBody = @"Please add email content here.";
-    // To address
-    NSArray *toRecipents = [NSArray arrayWithObject:@"bookings@spinninghalf.com.au"];
-    
-    MFMailComposeViewController *mc = [[MFMailComposeViewController alloc] init];
-    mc.mailComposeDelegate = self;
-    [mc setSubject:emailTitle];
-    [mc setMessageBody:messageBody isHTML:NO];
-    [mc setToRecipients:toRecipents];
-    
-    // Present mail view controller on screen
-    [self presentViewController:mc animated:YES completion:NULL];
-    
-
-}
 
 
 -(void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {

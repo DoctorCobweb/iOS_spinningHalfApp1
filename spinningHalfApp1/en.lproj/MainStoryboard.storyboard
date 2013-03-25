@@ -34,7 +34,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="10" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1273" y="-720"/>
+            <point key="canvasLocation" x="1187" y="-764"/>
         </scene>
         <!--Second View Controller-->
         <scene sceneID="8hr-hA-lU8">
@@ -121,7 +121,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="q8L-VJ-ntF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1255" y="-26"/>
+            <point key="canvasLocation" x="1187" y="-78"/>
         </scene>
         <!--Gig Detail View Controller-->
         <scene sceneID="wm2-FY-S5o">
@@ -272,7 +272,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgq-xN-VgJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1704" y="-26"/>
+            <point key="canvasLocation" x="1610" y="-78"/>
         </scene>
         <!--Fourth View Controller - Contact-->
         <scene sceneID="dnb-7D-KBK">
@@ -532,14 +532,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5os-m2-6tS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="720" y="1844"/>
+            <point key="canvasLocation" x="2220" y="1848"/>
         </scene>
-        <!--Contact View Controller - Contact-->
+        <!--Contact View Controller-->
         <scene sceneID="6gR-vw-XRc">
             <objects>
                 <tableViewController id="DQC-mC-ali" customClass="ContactViewController" sceneMemberID="viewController">
                     <tableView key="view" opaque="NO" clipsSubviews="YES" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="static" style="grouped" separatorStyle="singleLineEtched" rowHeight="44" sectionHeaderHeight="10" sectionFooterHeight="10" id="osP-Bz-J58">
-                        <rect key="frame" x="0.0" y="20" width="320" height="411"/>
+                        <rect key="frame" x="0.0" y="64" width="320" height="367"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                         <sections>
@@ -578,6 +578,9 @@
                                             <constraint firstAttribute="trailing" secondItem="En0-gD-uTy" secondAttribute="trailing" constant="20" type="default" id="pMb-XJ-pNX"/>
                                             <constraint firstItem="cfO-E0-7tg" firstAttribute="leading" secondItem="En0-gD-uTy" secondAttribute="leading" type="default" id="wYQ-4Q-ICq"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="xLx-ha-5ad" kind="modal" identifier="contactOfficeLocationSegue" id="Qdp-PX-Vbz"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="2Yu-ib-GcR">
                                         <rect key="frame" x="0.0" y="91" width="320" height="44"/>
@@ -685,6 +688,9 @@
                                             <constraint firstItem="rt0-Pn-jHO" firstAttribute="top" secondItem="SxZ-iu-eq9" secondAttribute="top" constant="3" id="rWw-Fk-YpS"/>
                                             <constraint firstAttribute="trailing" secondItem="o25-WS-hN7" secondAttribute="trailing" constant="20" type="default" id="xq6-Lv-mm2"/>
                                         </constraints>
+                                        <connections>
+                                            <segue destination="xLx-ha-5ad" kind="modal" identifier="contactRehearsalsLocationSegue" id="dh4-ZL-Ilm"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" id="Ozv-1x-OFo">
                                         <rect key="frame" x="0.0" y="271" width="320" height="44"/>
@@ -808,6 +814,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="xLx-ha-5ad" kind="modal" identifier="contactSpinningHalfFacebookSegue" id="NrH-Rg-bfg"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Ubc-E1-29f" style="IBUITableViewCellStyleDefault" id="tlh-wC-H7V">
                                         <rect key="frame" x="0.0" y="495" width="320" height="44"/>
@@ -824,6 +833,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="xLx-ha-5ad" kind="modal" identifier="contactSpinningHalfTwitterSegue" id="CfX-uf-Aco"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="Y7I-dF-gSX" style="IBUITableViewCellStyleDefault" id="XKv-JQ-9PL">
                                         <rect key="frame" x="0.0" y="539" width="320" height="44"/>
@@ -840,6 +852,9 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="xLx-ha-5ad" kind="modal" identifier="contactSpinningHalfYoutubeSegue" id="DaJ-f9-2ux"/>
+                                        </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" textLabel="z7I-hP-1zT" style="IBUITableViewCellStyleDefault" id="mbk-fT-8Sn">
                                         <rect key="frame" x="0.0" y="583" width="320" height="45"/>
@@ -856,16 +871,62 @@
                                             </subviews>
                                             <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </view>
+                                        <connections>
+                                            <segue destination="xLx-ha-5ad" kind="modal" identifier="contactSpinningHalfWebsiteSegue" id="Qoj-Zi-6Ve"/>
+                                        </connections>
                                     </tableViewCell>
                                 </cells>
                             </tableViewSection>
                         </sections>
                     </tableView>
-                    <tabBarItem key="tabBarItem" title="Contact" image="first" id="rOO-tg-HVP"/>
+                    <navigationItem key="navigationItem" id="137-Z5-Mof"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1yM-gC-jDL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="715" y="1218"/>
+            <point key="canvasLocation" x="1271" y="1210"/>
+        </scene>
+        <!--Contact Detail View Controller-->
+        <scene sceneID="ikN-57-5Zb">
+            <objects>
+                <viewController id="xLx-ha-5ad" customClass="ContactDetailViewController" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="xvy-ap-JAE">
+                        <rect key="frame" x="0.0" y="20" width="320" height="460"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <navigationBar contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Wf3-rs-dAY">
+                                <items>
+                                    <navigationItem title="Location" id="mmM-BB-cdJ">
+                                        <barButtonItem key="leftBarButtonItem" title="Back" id="f0b-v4-88K">
+                                            <connections>
+                                                <action selector="close:" destination="xLx-ha-5ad" id="9cQ-Dl-tMW"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="j9s-9m-ccF">
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="Wf3-rs-dAY" firstAttribute="top" secondItem="xvy-ap-JAE" secondAttribute="top" type="default" id="H1C-Fq-4HT"/>
+                            <constraint firstItem="j9s-9m-ccF" firstAttribute="top" secondItem="Wf3-rs-dAY" secondAttribute="bottom" type="default" id="MO2-wR-Ljr"/>
+                            <constraint firstItem="j9s-9m-ccF" firstAttribute="leading" secondItem="xvy-ap-JAE" secondAttribute="leading" type="default" id="VbK-vh-Zdv"/>
+                            <constraint firstItem="Wf3-rs-dAY" firstAttribute="trailing" secondItem="xvy-ap-JAE" secondAttribute="trailing" type="default" id="aAD-QE-LPh"/>
+                            <constraint firstItem="j9s-9m-ccF" firstAttribute="bottom" secondItem="xvy-ap-JAE" secondAttribute="bottom" type="default" id="cb2-Vo-3XA"/>
+                            <constraint firstItem="Wf3-rs-dAY" firstAttribute="leading" secondItem="xvy-ap-JAE" secondAttribute="leading" type="default" id="dd5-gL-Ewm"/>
+                            <constraint firstItem="j9s-9m-ccF" firstAttribute="trailing" secondItem="xvy-ap-JAE" secondAttribute="trailing" type="default" id="sHV-AI-iC3"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" id="ugl-vg-WYR"/>
+                    <connections>
+                        <outlet property="contactDetailWebView" destination="j9s-9m-ccF" id="afQ-4g-3Ko"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="RYp-jf-A3T" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1664" y="1219"/>
         </scene>
         <!--Contact Detail View Controller-->
         <scene sceneID="tsi-pA-PCf">
@@ -907,7 +968,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gr4-Lh-J33" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1155" y="1844"/>
+            <point key="canvasLocation" x="2655" y="1848"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="15">
@@ -923,7 +984,7 @@
                         <segue destination="Z6A-71-nuh" kind="relationship" relationship="viewControllers" id="26"/>
                         <segue destination="lN7-gf-8Md" kind="relationship" relationship="viewControllers" id="27"/>
                         <segue destination="NTC-9Z-ShZ" kind="relationship" relationship="viewControllers" id="csF-Fp-NoR"/>
-                        <segue destination="DQC-mC-ali" kind="relationship" relationship="viewControllers" id="f6l-wm-Ob7"/>
+                        <segue destination="PN9-Ms-WsH" kind="relationship" relationship="viewControllers" id="f6l-wm-Ob7"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14" sceneMemberID="firstResponder"/>
@@ -1173,6 +1234,25 @@
             </objects>
             <point key="canvasLocation" x="1546" y="604"/>
         </scene>
+        <!--Navigation Controller - Contact-->
+        <scene sceneID="e7P-nL-uZU">
+            <objects>
+                <navigationController id="PN9-Ms-WsH" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Contact" image="first" id="rOO-tg-HVP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="anB-Y0-er3">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DQC-mC-ali" kind="relationship" relationship="rootViewController" id="zcR-C4-JXY"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1iS-Pp-x9A" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="745" y="1210"/>
+        </scene>
     </scenes>
     <resources>
         <image name="first" width="16" height="16"/>
@@ -1280,6 +1360,7 @@
         <simulatedScreenMetrics key="destination"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="w7T-qr-k0X"/>
+        <segue reference="NrH-Rg-bfg"/>
+        <segue reference="s4y-4h-Xnq"/>
     </inferredMetricsTieBreakers>
 </document>

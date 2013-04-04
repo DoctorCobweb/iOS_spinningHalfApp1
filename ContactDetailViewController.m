@@ -16,6 +16,8 @@
 
 @synthesize contactDetailWebView;
 @synthesize WEBVIEW_URL;
+@synthesize sectionTitle;
+
 
 - (id)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,6 +36,7 @@
     NSURL *url = [NSURL URLWithString:self.WEBVIEW_URL];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [contactDetailWebView loadRequest:requestObj];
+    self.title = sectionTitle;
 }
 
 
@@ -44,9 +47,4 @@
 }
 
 
-/*
-- (IBAction)close:(id)sender {
-        [self dismissViewControllerAnimated:YES completion:NULL];
-}
- */
 @end

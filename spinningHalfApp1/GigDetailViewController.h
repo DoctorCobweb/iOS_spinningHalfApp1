@@ -8,8 +8,9 @@
 
 #import <UIKit/UIKit.h>
 #import "Gig.h"
+#import <PassKit/PassKit.h>
 
-@interface GigDetailViewController : UIViewController
+@interface GigDetailViewController : UIViewController <PKAddPassesViewControllerDelegate>
 
 //properties needed to display the selected gig details.
 @property (strong, nonatomic) IBOutlet UILabel *gigDetailShowLabel;

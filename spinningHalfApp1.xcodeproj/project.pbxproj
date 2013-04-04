@@ -10,6 +10,11 @@
 		65129BA416E7065F00F2B506 /* DAO.m in Sources */ = {isa = PBXBuildFile; fileRef = 65129BA316E7065F00F2B506 /* DAO.m */; };
 		65129BAB16E7072C00F2B506 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 65129BAA16E7072C00F2B506 /* libsqlite3.dylib */; };
 		651923E716FA8E0E0032FFA9 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 651923E616FA8E0E0032FFA9 /* Service.m */; };
+		6522966C170D902C0062C3E3 /* freehugcoupon.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 6522966B170D902C0062C3E3 /* freehugcoupon.pkpass */; };
+		65229671170D94220062C3E3 /* newtonFaulknerTicket.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 65229670170D94220062C3E3 /* newtonFaulknerTicket.pkpass */; };
+		65373412170D518E004B95D9 /* orange_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 65373411170D518E004B95D9 /* orange_icon_57x57.png */; };
+		65373414170D51CB004B95D9 /* orange_icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 65373413170D51CB004B95D9 /* orange_icon_114x114.png */; };
+		65373416170D559A004B95D9 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65373415170D559A004B95D9 /* PassKit.framework */; };
 		6553B08C16F02811004125D4 /* ServicesCollectionViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6553B08B16F02811004125D4 /* ServicesCollectionViewController.m */; };
 		6553B09016F02948004125D4 /* footer_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 6553B08E16F02948004125D4 /* footer_banner.png */; };
 		6553B09116F02948004125D4 /* header_banner.png in Resources */ = {isa = PBXBuildFile; fileRef = 6553B08F16F02948004125D4 /* header_banner.png */; };
@@ -34,6 +39,7 @@
 		6553B0B816F03202004125D4 /* photo-frame@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6553B0B516F03201004125D4 /* photo-frame@2x.png */; };
 		6553B0BB16F039E2004125D4 /* ServicesDetailViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6553B0BA16F039E2004125D4 /* ServicesDetailViewController.m */; };
 		6574601A170006AD001CA804 /* PurchaseTicketsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 65746019170006AD001CA804 /* PurchaseTicketsViewController.m */; };
+		657DD4F7170142FF007281B3 /* orange_button.png in Resources */ = {isa = PBXBuildFile; fileRef = 657DD4F6170142FF007281B3 /* orange_button.png */; };
 		6580AED716DEEF6E0051F1FB /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6580AED616DEEF6E0051F1FB /* UIKit.framework */; };
 		6580AED916DEEF6E0051F1FB /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6580AED816DEEF6E0051F1FB /* Foundation.framework */; };
 		6580AEDB16DEEF6E0051F1FB /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6580AEDA16DEEF6E0051F1FB /* CoreGraphics.framework */; };
@@ -71,6 +77,11 @@
 		65129BAA16E7072C00F2B506 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		651923E516FA8E0E0032FFA9 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Service.h; path = ../Service.h; sourceTree = "<group>"; };
 		651923E616FA8E0E0032FFA9 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Service.m; path = ../Service.m; sourceTree = "<group>"; };
+		6522966B170D902C0062C3E3 /* freehugcoupon.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = freehugcoupon.pkpass; sourceTree = "<group>"; };
+		65229670170D94220062C3E3 /* newtonFaulknerTicket.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; name = newtonFaulknerTicket.pkpass; path = ../newtonFaulknerTicket.pkpass; sourceTree = "<group>"; };
+		65373411170D518E004B95D9 /* orange_icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange_icon_57x57.png; path = ../orange_icon_57x57.png; sourceTree = "<group>"; };
+		65373413170D51CB004B95D9 /* orange_icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange_icon_114x114.png; path = ../orange_icon_114x114.png; sourceTree = "<group>"; };
+		65373415170D559A004B95D9 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
 		6553B08A16F02811004125D4 /* ServicesCollectionViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ServicesCollectionViewController.h; sourceTree = "<group>"; };
 		6553B08B16F02811004125D4 /* ServicesCollectionViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesCollectionViewController.m; sourceTree = "<group>"; };
 		6553B08E16F02948004125D4 /* footer_banner.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = footer_banner.png; sourceTree = "<group>"; };
@@ -99,6 +110,7 @@
 		6553B0BA16F039E2004125D4 /* ServicesDetailViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ServicesDetailViewController.m; sourceTree = "<group>"; };
 		65746018170006AD001CA804 /* PurchaseTicketsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PurchaseTicketsViewController.h; sourceTree = "<group>"; };
 		65746019170006AD001CA804 /* PurchaseTicketsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PurchaseTicketsViewController.m; sourceTree = "<group>"; };
+		657DD4F6170142FF007281B3 /* orange_button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = orange_button.png; sourceTree = "<group>"; };
 		6580AED216DEEF6E0051F1FB /* spinningHalfApp1.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = spinningHalfApp1.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6580AED616DEEF6E0051F1FB /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		6580AED816DEEF6E0051F1FB /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -147,6 +159,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				65373416170D559A004B95D9 /* PassKit.framework in Frameworks */,
 				65CC2DBC16F808AC00DAD951 /* MessageUI.framework in Frameworks */,
 				65129BAB16E7072C00F2B506 /* libsqlite3.dylib in Frameworks */,
 				6580AED716DEEF6E0051F1FB /* UIKit.framework in Frameworks */,
@@ -161,6 +174,7 @@
 		6580AEC716DEEF6E0051F1FB = {
 			isa = PBXGroup;
 			children = (
+				65373415170D559A004B95D9 /* PassKit.framework */,
 				65CC2DBB16F808AC00DAD951 /* MessageUI.framework */,
 				65129BAA16E7072C00F2B506 /* libsqlite3.dylib */,
 				6580AEDC16DEEF6E0051F1FB /* spinningHalfApp1 */,
@@ -190,6 +204,8 @@
 		6580AEDC16DEEF6E0051F1FB /* spinningHalfApp1 */ = {
 			isa = PBXGroup;
 			children = (
+				65229670170D94220062C3E3 /* newtonFaulknerTicket.pkpass */,
+				6522966B170D902C0062C3E3 /* freehugcoupon.pkpass */,
 				6580AEE516DEEF6E0051F1FB /* AppDelegate.h */,
 				6580AEE616DEEF6E0051F1FB /* AppDelegate.m */,
 				65129BA216E7065F00F2B506 /* DAO.h */,
@@ -197,16 +213,12 @@
 				6580AEEE16DEEF6E0051F1FB /* MainStoryboard.storyboard */,
 				65D4796B16E5ACE600A48D07 /* GigDetailViewController.h */,
 				65D4796C16E5ACE600A48D07 /* GigDetailViewController.m */,
+				65746018170006AD001CA804 /* PurchaseTicketsViewController.h */,
+				65746019170006AD001CA804 /* PurchaseTicketsViewController.m */,
 				65D4796416E57C3C00A48D07 /* Gig.h */,
 				65D4796516E57C3C00A48D07 /* Gig.m */,
 				6580AEF116DEEF6E0051F1FB /* FirstViewController.h */,
 				6580AEF216DEEF6E0051F1FB /* FirstViewController.m */,
-				6580AEF416DEEF6E0051F1FB /* first.png */,
-				6580AEF616DEEF6E0051F1FB /* first@2x.png */,
-				6580AF0A16DEF3560051F1FB /* fourth.png */,
-				6580AF0E16DEF35E0051F1FB /* third.png */,
-				6580AF0F16DEF35E0051F1FB /* third@2x.png */,
-				6580AF0B16DEF3570051F1FB /* fourth@2x.png */,
 				6580AF0716DEF0160051F1FB /* FourthViewController.h */,
 				65A07C5D16FD917E0028B669 /* ContactViewController.h */,
 				65A07C5E16FD917E0028B669 /* ContactViewController.m */,
@@ -224,14 +236,10 @@
 				6553B09316F02ADF004125D4 /* ServicesCollectionHeaderView.m */,
 				6553B0B916F039E2004125D4 /* ServicesDetailViewController.h */,
 				6553B0BA16F039E2004125D4 /* ServicesDetailViewController.m */,
-				6580AEFB16DEEF6E0051F1FB /* second.png */,
-				6580AEFD16DEEF6E0051F1FB /* second@2x.png */,
 				6580AF0416DEF00A0051F1FB /* ThirdViewController.h */,
 				6580AF0516DEF00A0051F1FB /* ThirdViewController.m */,
 				65D4796816E597AB00A48D07 /* images */,
 				6580AEDD16DEEF6E0051F1FB /* Supporting Files */,
-				65746018170006AD001CA804 /* PurchaseTicketsViewController.h */,
-				65746019170006AD001CA804 /* PurchaseTicketsViewController.m */,
 			);
 			path = spinningHalfApp1;
 			sourceTree = "<group>";
@@ -253,6 +261,17 @@
 		65D4796816E597AB00A48D07 /* images */ = {
 			isa = PBXGroup;
 			children = (
+				6580AEFB16DEEF6E0051F1FB /* second.png */,
+				6580AEFD16DEEF6E0051F1FB /* second@2x.png */,
+				6580AEF416DEEF6E0051F1FB /* first.png */,
+				6580AEF616DEEF6E0051F1FB /* first@2x.png */,
+				6580AF0A16DEF3560051F1FB /* fourth.png */,
+				6580AF0E16DEF35E0051F1FB /* third.png */,
+				6580AF0F16DEF35E0051F1FB /* third@2x.png */,
+				657DD4F6170142FF007281B3 /* orange_button.png */,
+				6580AF0B16DEF3570051F1FB /* fourth@2x.png */,
+				65373413170D51CB004B95D9 /* orange_icon_114x114.png */,
+				65373411170D518E004B95D9 /* orange_icon_57x57.png */,
 				6553B0B316F03201004125D4 /* photo-frame-selected.png */,
 				6553B0B416F03201004125D4 /* photo-frame.png */,
 				6553B0B516F03201004125D4 /* photo-frame@2x.png */,
@@ -364,6 +383,11 @@
 				6553B0B716F03202004125D4 /* photo-frame.png in Resources */,
 				6553B0B816F03202004125D4 /* photo-frame@2x.png in Resources */,
 				65C77DED16FBFBA400D93EDA /* servicesStrings.strings in Resources */,
+				657DD4F7170142FF007281B3 /* orange_button.png in Resources */,
+				65373412170D518E004B95D9 /* orange_icon_57x57.png in Resources */,
+				65373414170D51CB004B95D9 /* orange_icon_114x114.png in Resources */,
+				6522966C170D902C0062C3E3 /* freehugcoupon.pkpass in Resources */,
+				65229671170D94220062C3E3 /* newtonFaulknerTicket.pkpass in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

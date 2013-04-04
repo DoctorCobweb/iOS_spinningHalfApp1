@@ -12,7 +12,6 @@
 
 @property (strong, nonatomic) NSString *WEBVIEW_URL;
 @property (weak, nonatomic) IBOutlet UIWebView *contactDetailWebView;
-
-//- (IBAction)close:(id)sender;
+@property (strong, nonatomic) NSString *sectionTitle;
 
 @end

@@ -25,6 +25,11 @@
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [_webView loadRequest:requestObj];
     
+    //THIS SETS ALL BUTTONS IN THE APP TO ORANGE!!!
+    //only needed once in app codebase.
+    [[UIBarButtonItem appearance] setTintColor:[UIColor orangeColor]];
+
+    
 }
 
 - (void)didReceiveMemoryWarning

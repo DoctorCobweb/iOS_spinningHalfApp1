@@ -31,11 +31,14 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
-    NSURL *url = [NSURL URLWithString:self.URL_STRING];
+    NSString *localhost = @"http://localhost:8080/~andre/";
+    NSURL *url = [NSURL URLWithString:localhost];
+    //NSURL *url = [NSURL URLWithString:self.URL_STRING];
     NSURLRequest *requestObj = [NSURLRequest requestWithURL:url];
     [webView loadRequest:requestObj];
     
     NSLog(@"%@", URL_STRING);
+    NSLog(@"%@", localhost);
 }
 
 

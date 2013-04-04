@@ -8,6 +8,7 @@
 
 #import "GigDetailViewController.h"
 #import "PurchaseTicketsViewController.h"
+#import <PassKit/PassKit.h>
 
 @interface GigDetailViewController ()
 
@@ -50,7 +51,48 @@
     //gigDetailTixUrlButton.setTitleLabel = theSelectedGig.tixUrl;
     gigDetailPriceLabel.text = theSelectedGig.price;
     
+    //[gigDetailTixUrlButton setBackgroundImage:[UIImage imageNamed:@"orange_button.png"] forState:UIControlStateNormal];
+    //[[gigDetailTixUrlButton appearance] setTintColor:[UIColor orangeColor]];
     
+    
+    //*******************************************************************************
+    //UNCOMMENT THIS SECTION TO USE PASSBOOK PASS
+    //PLAYING AROUND WITH PASSKIT ETC.
+    
+    if ([PKPassLibrary isPassLibraryAvailable]) {
+        NSLog(@"Pass Library is available");
+        
+        
+        NSString *name = @"newtonFaulknerTicket.pkpass";
+        
+        //create the full path to the .pkpass file
+        NSString *passFile = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:name];
+        NSLog(@"%@", passFile);
+        //add contents of .pkpass to instance of NSData
+        NSData *passData = [NSData dataWithContentsOfFile:passFile];
+        
+        NSError *error = nil;
+        
+        //create the new PKPass object
+        PKPass *thePass = [[PKPass alloc] initWithData:passData error:&error];
+        
+        //to display to pass object must use this special
+        //view controller.
+        PKAddPassesViewController *addController = [[PKAddPassesViewController alloc] initWithPass:thePass];
+        addController.delegate = self;
+        [self presentViewController:addController animated:YES completion:nil];
+    }
+     
+    //************************************************************************************
+    
+}
+
+
+//part of Pass Controller delegate protocol
+- (void)addPassesViewControllerDidFinish:(PKAddPassesViewController *)controller
+{
+    //pass added
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)didReceiveMemoryWarning

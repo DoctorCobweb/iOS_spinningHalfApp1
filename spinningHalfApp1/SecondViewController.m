@@ -48,9 +48,7 @@
     [refreshControl addTarget:self action:@selector(refreshMyTableView)
                     forControlEvents:UIControlEventValueChanged];
                     self.refreshControl = refreshControl;
-    //THIS SETS ALL BUTTONS IN THE APP TO ORANGE!!!
-    //only needed once in app codebase.
-    [[UIBarButtonItem appearance] setTintColor:[UIColor orangeColor]];
+    
     
     /*
     //set the title for pull request

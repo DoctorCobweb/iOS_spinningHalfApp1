@@ -216,9 +216,11 @@
     if ([segue.identifier isEqualToString:@"contactOfficeLocationSegue"]) {
         ContactDetailViewController *destViewController = segue.destinationViewController;
         destViewController.WEBVIEW_URL = @"https://maps.google.com.au/maps?q=suite+3%2F2+fenwick+st+south+geelong&hl=en&sll=-36.605471,145.469483&sspn=5.308336,9.876709&hnear=3%2F2+Fenwick+St+S,+Geelong+Victoria+3220&t=m&z=16";
+        destViewController.sectionTitle = @"Office Location";
     } else if ([segue.identifier isEqualToString:@"contactRehearsalsLocationSegue"]) {
         ContactDetailViewController *destViewController = segue.destinationViewController;
         destViewController.WEBVIEW_URL = @"https://maps.google.com.au/maps?q=313+bellarine+st+geelong&hl=en&sll=-38.152627,144.353078&sspn=0.010158,0.01929&hnear=313+Bellerine+St,+South+Geelong+Victoria+3220&t=m&z=16";
+        destViewController.sectionTitle = @"Rehearsals Location";
     } else if ([segue.identifier isEqualToString:@"contactSpinningHalfFacebookSegue"]) {
         ContactDetailViewController *destViewController = segue.destinationViewController;
         destViewController.WEBVIEW_URL = online_urls[0];

@@ -48,31 +48,28 @@
     gigDetailVenueLabel.text = theSelectedGig.venue;
     gigDetailDescriptionLabel.text = theSelectedGig.description;
     gigDetailTixUrlLabel.text = theSelectedGig.tixUrl;
-    //gigDetailTixUrlButton.setTitleLabel = theSelectedGig.tixUrl;
     gigDetailPriceLabel.text = theSelectedGig.price;
     
-    //[gigDetailTixUrlButton setBackgroundImage:[UIImage imageNamed:@"orange_button.png"] forState:UIControlStateNormal];
-    //[[gigDetailTixUrlButton appearance] setTintColor:[UIColor orangeColor]];
-    
-    
+    /*
     //*******************************************************************************
-    //UNCOMMENT THIS SECTION TO USE PASSBOOK PASS
     //PLAYING AROUND WITH PASSKIT ETC.
     
     if ([PKPassLibrary isPassLibraryAvailable]) {
-        NSLog(@"Pass Library is available");
+        NSLog(@"GIG_DETAIL_VIEW_CONTROLLER: Pass Library is available");
         
         
-        NSString *name = @"newtonFaulknerTicket.pkpass";
+        NSString *name = @"/newtonFaulknerTicket.pkpass";
         
-        //create the full path to the .pkpass file
-        NSString *passFile = [[[NSBundle mainBundle] resourcePath] stringByAppendingPathComponent:name];
-        NSLog(@"%@", passFile);
+        NSArray *dirPaths = NSSearchPathForDirectoriesInDomains(NSDocumentDirectory, NSUserDomainMask, YES);
+        NSString *docsDir = dirPaths[0];
+        NSString *passFile = [docsDir stringByAppendingFormat:name];
+        
+        NSLog(@"GIG_DETAIL_VIEW_CONTROLLER: passFile location: %@", passFile);
+        
         //add contents of .pkpass to instance of NSData
         NSData *passData = [NSData dataWithContentsOfFile:passFile];
         
         NSError *error = nil;
-        
         //create the new PKPass object
         PKPass *thePass = [[PKPass alloc] initWithData:passData error:&error];
         
@@ -82,8 +79,8 @@
         addController.delegate = self;
         [self presentViewController:addController animated:YES completion:nil];
     }
-     
-    //************************************************************************************
+     //************************************************************************************
+     */
     
 }
 

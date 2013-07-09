@@ -129,7 +129,7 @@
         receivedData = [NSMutableData data];
     } else {
         //inform the user that the connection failed.
-        NSLog(@"The connection failed, dude.");
+        NSLog(@"SECOND VIEW CONTROLLER: The connection failed, dude.");
     }
 }
 

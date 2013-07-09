@@ -7,8 +7,11 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <PassKit/PassKit.h>
 
-@interface PurchaseTicketsViewController : UIViewController
+@interface PurchaseTicketsViewController : UIViewController <PKAddPassesViewControllerDelegate>
+
+@property (nonatomic, strong) NSMutableData *receivedData;
 @property (strong, nonatomic) IBOutlet UIWebView *webView;
 
 @property (strong, nonatomic) NSString *URL_STRING;

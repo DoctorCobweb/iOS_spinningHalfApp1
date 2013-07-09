@@ -11,7 +11,6 @@
 		65129BAB16E7072C00F2B506 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 65129BAA16E7072C00F2B506 /* libsqlite3.dylib */; };
 		651923E716FA8E0E0032FFA9 /* Service.m in Sources */ = {isa = PBXBuildFile; fileRef = 651923E616FA8E0E0032FFA9 /* Service.m */; };
 		6522966C170D902C0062C3E3 /* freehugcoupon.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 6522966B170D902C0062C3E3 /* freehugcoupon.pkpass */; };
-		65229671170D94220062C3E3 /* newtonFaulknerTicket.pkpass in Resources */ = {isa = PBXBuildFile; fileRef = 65229670170D94220062C3E3 /* newtonFaulknerTicket.pkpass */; };
 		65373412170D518E004B95D9 /* orange_icon_57x57.png in Resources */ = {isa = PBXBuildFile; fileRef = 65373411170D518E004B95D9 /* orange_icon_57x57.png */; };
 		65373414170D51CB004B95D9 /* orange_icon_114x114.png in Resources */ = {isa = PBXBuildFile; fileRef = 65373413170D51CB004B95D9 /* orange_icon_114x114.png */; };
 		65373416170D559A004B95D9 /* PassKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 65373415170D559A004B95D9 /* PassKit.framework */; };
@@ -78,7 +77,6 @@
 		651923E516FA8E0E0032FFA9 /* Service.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Service.h; path = ../Service.h; sourceTree = "<group>"; };
 		651923E616FA8E0E0032FFA9 /* Service.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Service.m; path = ../Service.m; sourceTree = "<group>"; };
 		6522966B170D902C0062C3E3 /* freehugcoupon.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; path = freehugcoupon.pkpass; sourceTree = "<group>"; };
-		65229670170D94220062C3E3 /* newtonFaulknerTicket.pkpass */ = {isa = PBXFileReference; lastKnownFileType = file; name = newtonFaulknerTicket.pkpass; path = ../newtonFaulknerTicket.pkpass; sourceTree = "<group>"; };
 		65373411170D518E004B95D9 /* orange_icon_57x57.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange_icon_57x57.png; path = ../orange_icon_57x57.png; sourceTree = "<group>"; };
 		65373413170D51CB004B95D9 /* orange_icon_114x114.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = orange_icon_114x114.png; path = ../orange_icon_114x114.png; sourceTree = "<group>"; };
 		65373415170D559A004B95D9 /* PassKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PassKit.framework; path = System/Library/Frameworks/PassKit.framework; sourceTree = SDKROOT; };
@@ -204,7 +202,6 @@
 		6580AEDC16DEEF6E0051F1FB /* spinningHalfApp1 */ = {
 			isa = PBXGroup;
 			children = (
-				65229670170D94220062C3E3 /* newtonFaulknerTicket.pkpass */,
 				6522966B170D902C0062C3E3 /* freehugcoupon.pkpass */,
 				6580AEE516DEEF6E0051F1FB /* AppDelegate.h */,
 				6580AEE616DEEF6E0051F1FB /* AppDelegate.m */,
@@ -387,7 +384,6 @@
 				65373412170D518E004B95D9 /* orange_icon_57x57.png in Resources */,
 				65373414170D51CB004B95D9 /* orange_icon_114x114.png in Resources */,
 				6522966C170D902C0062C3E3 /* freehugcoupon.pkpass in Resources */,
-				65229671170D94220062C3E3 /* newtonFaulknerTicket.pkpass in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
